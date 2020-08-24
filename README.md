@@ -10,7 +10,9 @@ Descripción de los integrantes:
 
 Micaela Stempellato: tengo conocimientos en diseño UX y programación front-end, ya que soy graduade de Diseño Multimedia.
 
-Maximiliano Colla: tengo conocimientos de programación orientada a objetos orientado al back-end y bases de datos relacionales con MySQL
+Maximiliano Colla: tengo conocimientos de programación orientada a objetos orientado al back-end y bases de datos relacionales con MySQL.
+
+Patricio Quipildor: tengo conocimientos básicos de programación y un título como técnico agropecuaria.
 
 
 Inspiración en referentes del mercado:
