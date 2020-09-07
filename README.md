@@ -33,3 +33,5 @@ Clientes a los que apuntan:
 Funcionalidades implementadas:
     Domestika: https://www.domestika.org/en
     
+
+Link del tablero de trabajo: https://trello.com/b/R7kGUVcE/sprint-1-para-el-27-8 
