@@ -1,0 +1,1 @@
+Se realizó una buena división de tareas y un buen trabajo en general. Por otro lado concluimos en que podríamos mejorar los tiempos para no llegar tan justos a la fecha de entrega y la comunicación
