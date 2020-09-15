@@ -1,0 +1,153 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    margin: 0;
+}
+.header_info{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 20px;
+}
+.header_titulo{
+font-family: 'Berkshire Swash', cursive; 
+font-size: 28px;
+width: 280px;
+margin-left: 10%;
+}
+
+.header_texto{
+    width: 280px;
+    padding-top: 11px;
+    margin-left: 10%;
+}
+
+.header_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
+    padding: 15px 0 20px 0;
+    margin-left: 10%;
+}
+
+.header_boton{
+    border: 3px solid #98D991;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    width: 102px;
+    padding: 5px;
+}
+
+
+.home_header{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   /* background-image: url(../img/header_background.jpg);*/
+    position: relative;
+
+}
+
+  .home_header::after {
+    content: "";
+    background: url(../img/header_background.jpg);
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 400%;
+    background-position: initial;
+  }
+
+  .home_cursos{
+      background-color: #D2E8C9;
+      color: black;
+  }
+
+  .subtitulo{
+      background-color: rgba(255, 255, 255, 0.75);
+      margin: 15px;
+      text-align: center;
+      width: 33%;
+      font-size: 18px;
+      padding: 10px;
+      font-weight: 100;
+  }
+  .cursos_boton{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 23px;
+  }
+
+  .categoria_img{
+      border-radius: 50%;
+      border: 1px solid #707070;
+      width: 209px;
+      margin: auto;
+  }
+
+  .categoria{
+      color: #173B0E;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 79%;
+      padding-bottom: 16px;
+  }
+
+  .categorias{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+  }
+
+  .una_categoria{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subtitulo_cursos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  .categoria_cursos{
+      text-align: center;
+  }
+
+  .categoria_titulo{
+    text-align: center;
+    margin: 15px 0 30px 0;
+    width: auto;
+  }
+
+  .home_newsletter{
+    width: auto;
+  }
+
+  .home_promociones{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .promociones_info{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .promociones_boton{
+    border: 3px solid #98D991;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    width: 130px;
+    padding: 5px;
+  }
