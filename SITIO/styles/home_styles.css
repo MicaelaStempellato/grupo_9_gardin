@@ -91,6 +91,12 @@ margin-left: 10%;
       border: 1px solid #707070;
       width: 209px;
       margin: auto;
+      transition: all 1s;
+  }
+
+  .categoria_link{
+      text-decoration: none;
+      color: black;
   }
 
   .categoria{
@@ -100,6 +106,7 @@ margin-left: 10%;
       align-items: center;
       width: 79%;
       padding-bottom: 16px;
+      margin: auto;
   }
 
   .categorias{
@@ -137,11 +144,20 @@ margin-left: 10%;
   .home_promociones{
       display: flex;
       flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
   }
 
   .promociones_info{
       display: flex;
       flex-direction: column;
+      text-align: center;
+      align-items: center;
+  }
+
+  .promociones_info p{
+    padding: 14px;
+    width: 80%;
   }
 
   .promociones_boton{
@@ -151,3 +167,19 @@ margin-left: 10%;
     width: 130px;
     padding: 5px;
   }
+
+  .promociones_img{
+      width: 80%;
+  }
+
+  .promociones_img img{
+      width: 100%;
+  }
+
+  #titulo_experiencia, #titulo_ambiente{
+      display: none;
+  }
+
+  #por_experiencia, #por_ambiente{
+    display: none;
+}
