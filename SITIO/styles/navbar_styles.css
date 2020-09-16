@@ -145,6 +145,10 @@ a{
     display: none;
 }
 
+.estoy_aca{
+    background-color: #D2E8C9;
+}
+
 @media (min-width: 768px){
     .hamburger{
         display: none!important;
@@ -220,6 +224,11 @@ a{
 
     .menu a:hover{
         color: #4C9C45;
+    }
+
+    .estoy_aca{
+        background-color: white;
+        color: #4B9C45;
     }
 
 }
