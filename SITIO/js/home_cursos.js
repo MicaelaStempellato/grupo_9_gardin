@@ -1,7 +1,7 @@
 $("#boton2").on('click', function(){
   
-    $("#titulo_experiencia").fadeToggle();
-    $("#por_experiencia").fadeToggle();
+    $("#titulo_experiencia").fadeToggle(2000);
+    $("#por_experiencia").fadeToggle(2000);
   
   $("#titulo_edad").hide();
   $("#por_edad").hide();
@@ -12,8 +12,8 @@ $("#boton2").on('click', function(){
 
 $("#boton1").on('click', function(){
   
-    $("#titulo_ambiente").fadeToggle();
-    $("#por_ambiente").fadeToggle();
+    $("#titulo_ambiente").fadeToggle(2000);
+    $("#por_ambiente").fadeToggle(2000);
   
    $("#titulo_edad").hide();
    $("#por_edad").hide();
@@ -23,8 +23,8 @@ $("#boton1").on('click', function(){
 
 $("#boton3").on('click', function(){
   
-    $("#titulo_edad").fadeToggle();
-    $("#por_edad").fadeToggle();
+    $("#titulo_edad").fadeToggle(2000);
+    $("#por_edad").fadeToggle(2000);
   
    $("#titulo_experiencia").hide();
    $("#por_experiencia").hide();
@@ -34,8 +34,8 @@ $("#boton3").on('click', function(){
 
   $("#boton4").on('click', function(){
   
-    $("#titulo_ambiente").fadeToggle();
-    $("#por_ambiente").fadeToggle();
+    $("#titulo_ambiente").fadeToggle(2000);
+    $("#por_ambiente").fadeToggle(2000);
   
    $("#titulo_experiencia").hide();
    $("#por_experiencia").hide();
@@ -45,8 +45,8 @@ $("#boton3").on('click', function(){
   
   $("#boton5").on('click', function(){
   
-    $("#titulo_experiencia").fadeToggle();
-    $("#por_experiencia").fadeToggle();
+    $("#titulo_experiencia").fadeToggle(2000);
+    $("#por_experiencia").fadeToggle(2000);
   
    $("#titulo_ambiente").hide();
    $("#por_ambiente").hide();
@@ -56,8 +56,76 @@ $("#boton3").on('click', function(){
 
   $("#boton6").on('click', function(){
   
-    $("#titulo_edad").fadeToggle();
-    $("#por_edad").fadeToggle();
+    $("#titulo_edad").fadeToggle(2000);
+    $("#por_edad").fadeToggle(2000);
+  
+   $("#titulo_ambiente").hide();
+   $("#por_ambiente").hide();
+  
+	
+  });
+
+
+  $("#boton8").on('click', function(){
+  
+    $("#titulo_experiencia").fadeToggle(2000);
+    $("#por_experiencia").fadeToggle(2000);
+  
+  $("#titulo_edad").hide();
+  $("#por_edad").hide();
+
+	
+  });
+	
+
+$("#boton7").on('click', function(){
+  
+    $("#titulo_ambiente").fadeToggle(2000);
+    $("#por_ambiente").fadeToggle(2000);
+  
+   $("#titulo_edad").hide();
+   $("#por_edad").hide();
+
+	
+  });
+
+$("#boton9").on('click', function(){
+  
+    $("#titulo_edad").fadeToggle(2000);
+    $("#por_edad").fadeToggle(2000);
+  
+   $("#titulo_experiencia").hide();
+   $("#por_experiencia").hide();
+
+	
+  });
+
+  $("#boton10").on('click', function(){
+  
+    $("#titulo_ambiente").fadeToggle(2000);
+    $("#por_ambiente").fadeToggle(2000);
+  
+   $("#titulo_experiencia").hide();
+   $("#por_experiencia").hide();
+  
+	
+  });
+  
+  $("#boton11").on('click', function(){
+  
+    $("#titulo_experiencia").fadeToggle(2000);
+    $("#por_experiencia").fadeToggle(2000);
+  
+   $("#titulo_ambiente").hide();
+   $("#por_ambiente").hide();
+
+	
+  });
+
+  $("#boton12").on('click', function(){
+  
+    $("#titulo_edad").fadeToggle(2000);
+    $("#por_edad").fadeToggle(2000);
   
    $("#titulo_ambiente").hide();
    $("#por_ambiente").hide();
