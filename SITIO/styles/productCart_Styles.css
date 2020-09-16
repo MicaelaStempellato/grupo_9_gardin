@@ -1,0 +1,322 @@
+h2{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
+
+h3{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+p{
+    font-family: 'Nunito', sans-serif;
+}
+
+/*
+Colores
+
+Verde oscuro #4B9C45
+Verde claro #9AD08F
+Rojo #C75D5D
+Amarrillo #FFFBE9
+*/
+
+body{
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.resumen-carrito{
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFFBE9;
+}
+
+.numeros{
+    width: 45%;
+}
+
+.total-ahorrado{
+    margin: 0;
+    text-decoration-line: line-through;
+}
+
+.pago{
+    width: 45%;
+}
+
+.boton-pagar{
+    color: white;
+    width: 100%;
+    height: 45px;
+    background-color: #4B9C45;
+    border-style: none;
+    font-size: 20px;
+}
+
+.medios-de-pago{
+    margin: 5px 10px;
+}
+
+.medio-de-pago{
+    width: 30%;
+}
+
+.cupon{
+    background-color: #9AD08F;
+    width: 100%;
+}
+
+.cupon form{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.casilla-cupon{
+    flex-grow: 3;
+    height: 30px;
+    border-style: none;
+}
+
+/*
+::-webkit-input-placeholder { color: red; }
+Firefox 18- 
+:-moz-placeholder { color: red; }
+Firefox 19+
+::-moz-placeholder {color: red; }
+:-ms-input-placeholder { color: red; }
+*/
+
+.boton-cupon{
+    border-style: none;
+    background-color: transparent;
+
+    height: 30px;
+    align-self: center;
+    color: white;
+    font-size: 20px;
+}
+
+.n-de-cursos{
+    margin-left: 10px;
+    width: 100%;
+}
+
+.lista-del-carrito{
+    background-color: white;
+    width: 100%;
+    padding: 0 5px;
+    flex-wrap: wrap;
+}
+
+.producto{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.miniatura-detalles{
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+}
+
+.miniatura{
+    width: 50%;
+    height: auto;
+}
+
+.detalles{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detalles p{
+    margin: 0;
+}
+
+.titulo-y-profesor{
+    margin-bottom: 5px;
+}
+
+.idiomas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.eliminar--precio{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.eliminar{
+    align-self: flex-end;
+}
+
+.boton-eliminar{
+    border-style: none;
+    background-color: transparent;
+    color: #C75D5D;
+}
+
+.precios{
+    text-align: end;
+}
+
+.precio-sin-descuento{
+    text-decoration-line: line-through;
+    margin: 0;
+}
+
+.barra-divisora{
+    border: 1px solid black
+}
+
+/*.texto-importante{
+    background-color: white;
+    margin: 0;
+    padding: 16px;
+}*/
+
+.ofertas{
+    margin-left: 5px;
+}
+
+.miniatura-ofertas{
+    width: 30%;
+    margin: 0 5px;
+}
+
+/*Correccion para pantallas muy pequeñas*/
+
+@media (max-width: 376px){
+
+    .boton-pagar{
+        font-size: 15px;
+    }
+
+    .boton-cupon{
+        font-size: 15px;
+    }
+
+    .miniatura-detalles{
+        width: 50%;
+    }
+}
+
+/*......TABLETS.....*/
+
+@media (min-width: 426px){
+
+    .body{
+        padding: 0;
+    }
+
+    .resumen-carrito{
+        justify-content: center;
+    }
+
+    .numeros{
+        width: 30%;
+    }
+
+    .pago{
+        width: 30%;
+    }
+
+    .cupon{
+        width: 60%;
+    }
+
+    .detalles{
+        margin: 0 5px;
+    }
+}
+
+/*.....LAPTOPS.....*/
+
+@media (min-width: 770px){
+
+    body{
+        margin: 0 auto;
+        width: 1000px;
+    }
+
+    .n-de-cursos{
+        margin-left: 110px;
+    }
+
+    .lista-del-carrito{
+        width: 66%;
+    }
+
+    .resumen-carrito{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 30%;
+        order: 1;
+    }
+
+    .pago{
+        order: 2;
+    }
+
+    .numeros{
+        width: 100%;
+    }
+
+    .cupon{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .cupon form{
+        padding: 5px;
+        display: block;
+        margin-right: 5px;
+    }
+
+    .casilla-cupon{
+        display: block;
+        flex-grow: initial;
+        width: 100%;
+    }
+
+    .boton-cupon{
+        display: block;
+        width: 100%;
+        height: 50px;
+    }
+
+    .pago{
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .boton-pagar{
+        order: 0;
+        height: 70px;
+    }
+
+    .medios-de-pago{
+        order: 0;
+    }
+}
