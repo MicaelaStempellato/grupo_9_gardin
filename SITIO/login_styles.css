@@ -1,0 +1,99 @@
+h2{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
+
+h3{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+p{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+}
+
+a{
+    text-decoration-line: none;
+    color: #4B9C45;
+    font-family: 'Nunito', sans-serif;
+}
+
+/*
+Colores
+
+Verde oscuro #4B9C45
+Verde claro #9AD08F
+Rojo #C75D5D
+Amarrillo #FFFBE9
+*/
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 30px 30px 50px 30px;
+}
+
+.ingresar{
+    display: inline;
+}
+
+.ir-a-registro{
+    display: inline;
+    align-self: center;
+}
+
+.formulario{
+    margin: 0 auto;
+}
+
+.user-email{
+    display: block;
+    margin: 0 auto 20px auto;
+    width:300px;
+    height: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+}
+
+.pass{
+    display: block;
+    margin: 0 auto 20px auto;
+    width:300px;
+    height: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+
+}
+
+.boton{
+    margin: 0 25%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 40px;
+    border-style: none;
+    background-color: #9AD08F;
+    color:white;
+    font-size: 25px;
+}
+
+.miss-pass{
+    margin: 0 32%;
+    width: 100%;
+}
+
+main form{
+    margin-left: ;
+}

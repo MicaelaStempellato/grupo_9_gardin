@@ -12,6 +12,12 @@ p{
     font-family: 'Nunito', sans-serif;
 }
 
+a{
+    text-decoration-line: none;
+    color: black;
+    font-family: 'Nunito', sans-serif;
+}
+
 /*
 Colores
 
@@ -63,6 +69,7 @@ main {
     background-color: #4B9C45;
     border-style: none;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .medios-de-pago{
@@ -90,23 +97,14 @@ main {
     border-style: none;
 }
 
-/*
-::-webkit-input-placeholder { color: red; }
-Firefox 18- 
-:-moz-placeholder { color: red; }
-Firefox 19+
-::-moz-placeholder {color: red; }
-:-ms-input-placeholder { color: red; }
-*/
-
 .boton-cupon{
     border-style: none;
     background-color: transparent;
-
     height: 30px;
     align-self: center;
     color: white;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .n-de-cursos{
@@ -137,6 +135,7 @@ Firefox 19+
 .miniatura{
     width: 50%;
     height: auto;
+    cursor: pointer;
 }
 
 .detalles{
@@ -201,6 +200,7 @@ Firefox 19+
 .miniatura-ofertas{
     width: 30%;
     margin: 0 5px;
+    cursor: pointer;
 }
 
 /*Correccion para pantallas muy pequeñas*/
