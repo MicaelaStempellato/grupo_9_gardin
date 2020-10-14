@@ -1,0 +1,457 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    margin: 0;
+}
+
+.max_width{
+    max-width: 1500px;
+    margin: auto;
+}
+
+.header_info{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 20px;
+}
+.header_titulo{
+font-family: 'Berkshire Swash', cursive; 
+font-size: 28px;
+width: 280px;
+margin-left: 10%;
+}
+
+.header_texto{
+    width: 280px;
+    padding-top: 11px;
+    margin-left: 10%;
+}
+
+.header_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
+    padding: 15px 0 20px 0;
+    margin-left: 10%;
+}
+
+.header_boton{
+    border: 3px solid #98D991;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    width: 102px;
+    padding: 5px;
+    transition: all 1s;
+}
+
+.header_boton:hover{
+ background-color: rgba(154, 208, 143, 0.5);
+}
+
+
+.home_header{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   /* background-image: url(../img/header_background.jpg);*/
+    position: relative;
+
+}
+
+  .home_header::after {
+    content: "";
+    background: url(../img/header_background.jpg);
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: initial;
+  }
+
+  .home_cursos{
+      background-color: #D2E8C9;
+      color: black;
+  }
+
+  .subtitulo{
+      background-color: rgba(255, 255, 255, 0.75);
+      margin: 15px;
+      text-align: center;
+      width: 33%;
+      font-size: 18px;
+      padding: 10px;
+      font-weight: 100;
+  }
+  .cursos_boton{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 23px;
+    transition: all 1s;
+  }
+
+  .cursos_boton:hover{
+      color: white;
+  }
+.cursos_boton:focus {
+    outline:0;
+}
+
+  .categoria_img{
+      border-radius: 50%;
+      border: 1px solid #707070;
+      width: 209px;
+      margin: auto;
+      
+  }
+
+  .categoria_link:hover{
+    transform: scale(1.05);
+  }
+
+  .categoria_link{
+      text-decoration: none;
+      color: black;
+      transition: all 1s;
+      width: fit-content;
+  }
+
+  .categoria{
+      color: #173B0E;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 71%;
+      padding-bottom: 16px;
+      margin: auto;
+  }
+
+  .categorias{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 1500px;
+      margin: auto;
+  }
+
+  .una_categoria{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subtitulo_cursos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  .categoria_cursos{
+      text-align: center;
+  }
+
+  .categoria_titulo{
+    text-align: center;
+    margin: 15px 0 30px 0;
+    width: auto;
+    color: #201513;
+  }
+
+  .home_promociones{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      max-width: 1500px;
+      margin: auto;
+  }
+
+  .promociones_info{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      color: #4A443D;
+  }
+
+  .promociones_info p{
+    padding: 14px;
+    width: 80%;
+  }
+
+  .promociones_boton{
+    border: 3px solid #98D991;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    width: 130px;
+    padding: 5px;
+    transition: all 1s;
+}
+
+.promociones_boton:hover{
+ background-color: rgba(75, 156, 69, 1);
+ color: white;
+ border: 3px solid #4C9C45;;
+}
+
+  .promociones_img{
+      width: 80%;
+  }
+
+  .promociones_img img{
+      width: 100%;
+      opacity: 0.75;
+  }
+
+  #titulo_experiencia, #titulo_ambiente{
+      display: none;
+  }
+
+  #por_experiencia, #por_ambiente{
+    display: none;
+}
+
+.subtitulo_promo{
+    margin-bottom: 15px;
+    text-align: center;
+    width: 33%;
+    font-size: 18px;
+}
+
+.home_promo{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.color_fondo{
+    background-color: #D2E8C9;
+}
+
+.promo_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4A443D;
+}
+
+.promo_titulo p{
+    width: auto;
+    padding: 0 10%;
+}
+
+.home_newsletter{
+    width: 293px;
+    padding: 11px;
+    margin: 15px;
+    border: 1px solid gainsboro;
+    transition: all 1s;
+  }
+
+  .home_newsletter:focus {
+    outline-color: #4C9C45;
+}
+
+.home_newsletter:hover {
+    border: 1px solid #4C9C45;
+}
+
+  .boton_promo{
+      color: white;
+      background-color: #4C9C45;
+      padding: 10px;
+      border: none;
+      width: 150px;
+      transition: all 1s;
+  }
+
+  .boton_promo:hover{
+      background-color: rgba(75, 156, 69, 0.8);
+  }
+
+  .promociones_info a{
+    width: fit-content;
+  }
+
+  .cursos_boton2{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 23px;
+    transition: all 1s;
+    display: none;
+    width: fit-content;
+    margin-bottom: 55px;
+  }
+
+  .cursos_boton2:hover{
+      color: white;
+  }
+.cursos_boton2:focus {
+    outline:0;
+}
+
+  @media (min-width: 768px){
+
+    .home_header::after {
+    background-size: 110%;
+    }
+
+    .categorias{
+        flex-direction: row;
+        padding: 0 5%;
+        box-sizing: border-box;
+        
+    }
+
+    .home_promociones {
+        flex-direction: row;
+        padding: 20px 3%;
+        box-sizing: border-box;
+    }
+
+    .promociones_img{
+        width: 100%;
+    }
+
+    .promo_titulo p{
+        padding: 0 20%;
+    }
+
+    .subtitulo_promo {
+        margin-top: 5px;
+    }
+
+    .header_titulo {
+        font-size: 30px;
+        width: 414px;
+    }
+
+    .header_texto {
+        width: 356px;
+        font-size: 18px;
+    }
+
+    .header_boton{
+        font-size: 15px;
+    }
+
+    .promociones_boton{
+        font-size: 15px;
+        width: 145px;
+    }
+
+  }
+
+  @media (min-width: 1200px){
+
+    .home_header::after {
+        background-size: cover;
+        }
+
+    .header_titulo {
+        font-size: 45px;
+        width: 40%;
+    }
+
+    .header_texto {
+        width: 35%;
+        font-size: 24px;
+        padding-top: 15px;
+    }
+
+    .header_links {
+        width: 315px;
+        padding: 18px 0 32px 0;
+    }
+
+    .header_boton{
+        width: 130px;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .promociones_img {
+        padding: 26px;
+    }
+
+    .promociones_info p{
+        font-size: 18px;
+        padding: 24px;
+    }
+
+    .promociones_boton{
+        font-size: 18px;
+        width: 182px;
+        padding: 10px;
+    }
+
+    .categoria_titulo{
+        font-size: 20px;
+    }
+
+    .home_promo{
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: 20px 180px 34px 180px;
+        align-items: baseline;
+        width: 1252px;
+        margin: auto;
+        justify-content: space-around;
+    }
+
+    .subtitulo_promo{
+        width: 100%;
+        text-align: start;
+    }
+
+    .promo_titulo p{
+        padding: 0;
+    }
+
+    .promo_titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: start;
+        width: 377px;
+        box-sizing: border-box;
+    }
+
+    .promo_input form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .promo_input{
+        width: fit-content;
+    }
+
+    .home_newsletter{
+        font-size: 16px;
+        margin: 15px 0 15px 15px; 
+    }
+
+    .boton_promo{
+        font-size: 16px;
+    }
+
+    .cursos_boton2{
+        display: initial;
+    }
+
+    .cursos_boton{
+        display: none;
+    }
+
+  }
