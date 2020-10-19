@@ -56,6 +56,30 @@
     color: white;
 }
 
+.errorTitle{
+    color: #C75D5D; 
+    font-size: 15px
+}
+
+.errores ul li{
+ list-style: none;
+ color: #C75D5D; 
+}
+
+.errores ul{
+    padding-left: 0px;
+}
+
+.errores{
+    padding-left: 20px;
+}
+
+@media (min-width: 768px){
+    .formTitle{
+        padding-top: 10px;
+    }
+}
+
 @media (min-width: 1200px){
     .formularioProducto form{
         display: flex;
@@ -69,6 +93,7 @@
     }
     .formTitle{
         margin: 20px;
+        padding-left: 4.3%;
     }
     .botones_form{
         display: flex;
@@ -79,5 +104,9 @@
     }
     .crear_boton, .cancelar_boton{
         width: 23%;
+    }
+
+    .errores{
+        padding-left: 80px;
     }
 }

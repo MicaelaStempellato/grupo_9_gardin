@@ -6,35 +6,82 @@
 
     
     <div class="formularioProducto">
-    <form action="/products/create" method="POST">
+    <form action="/products/create" method="POST" enctype="multipart/form-data">
         <h2 class="formTitle">Crear un nuevo curso</h2>
+        <div class="errores">
+        <% if(typeof errors != 'undefined'){ %>
+            <p class="errorTitle">ERROR</p>
+            <ul>
+                <% for(let i=0; i<errors.length; i++){ %>
+                    <li style="font-size: 13px"><%= errors[i].msg %> </li> 
+                <% } %> 
+            </ul> 
+            <% } %> 
+        </div>
+
         <section>
-            <input type="text" placeholder="Nombre" name="nombre">
-            <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción..."></textarea>
-            <select name="edad" id="edad">
+            <input type="text" placeholder="Nombre" name="nombre" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.nombre : "" %>">
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción..." required minlength="20" maxlength="400"><%= typeof old != "undefined" ? old.descripcion : "" %></textarea>
+            <select name="edad" id="edad" required>
                 <option value="">Edad recomendada</option>
-                <option value="ninos">Niños</option>
-                <option value="jovenes_adultos">Jóvenes adultos</option>
-                <option value="adultos">Adultos</option>
+                <% if (old.edad == "ninos"){ %> 
+                    <option value="ninos" selected>Niños</option>
+                <% } else { %> 
+                    <option value="ninos">Niños</option>
+                <% } %> 
+                <% if (old.edad == "jovenes_adultos"){ %> 
+                    <option value="jovenes_adultos" selected>Jóvenes adultos</option>
+                <% } else { %> 
+                    <option value="jovenes_adultos">Jóvenes adultos</option>
+                <% } %> 
+                <% if (old.edad == "adultos"){ %> 
+                    <option value="adultos" selected>Adultos</option>
+                <% } else { %> 
+                    <option value="adultos">Adultos</option>
+                <% } %> 
             </select>
-            <select name="experiencia" id="edad">
+            <select name="experiencia" id="experiencia" required>
                 <option value="">Experiencia recomendada</option>
-                <option value="empezando">Empezando</option>
-                <option value="con_conocimiento">Con conocimiento</option>
-                <option value="avanzado">Avanzada</option>
+                <% if (old.experiencia == "empezando"){ %> 
+                    <option value="empezando" selected>Empezando</option>
+                <% } else { %> 
+                    <option value="empezando">Empezando</option>
+                <% } %> 
+                <% if (old.experiencia == "con_conocimiento"){ %> 
+                    <option value="con_conocimiento" selected>Con conocimiento</option>
+                <% } else { %> 
+                    <option value="con_conocimiento">Con conocimiento</option>
+                <% } %> 
+                <% if (old.experiencia == "avanzado"){ %> 
+                    <option value="avanzado" selected>Avanzada</option>
+                <% } else { %> 
+                    <option value="avanzado">Avanzada</option>
+                <% } %> 
             </select>
-            <select name="ambiente" id="edad">
+            <select name="ambiente" id="ambiente" required>
                 <option value="">Ambiente</option>
-                <option value="interior">Interior</option>
-                <option value="patios_balcones">Patios y balcones</option>
-                <option value="jardin">Jardín</option>
+                <% if (old.ambiente == "interior"){ %> 
+                    <option value="interior" selected>Interior</option>
+                <% } else { %> 
+                    <option value="interior">Interior</option>
+                <% } %> 
+                <% if (old.ambiente == "patios_balcones"){ %> 
+                    <option value="patios_balcones" selected>Patios y balcones</option>
+                <% } else { %> 
+                    <option value="patios_balcones">Patios y balcones</option>
+                <% } %> 
+                <% if (old.ambiente == "jardin"){ %> 
+                    <option value="jardin" selected>Jardín</option>
+                <% } else { %> 
+                    <option value="jardin">Jardín</option>
+                <% } %> 
             </select>
         </section>
         <section>
-            <input type="file" name="image">
-            <input type="text" name="idioma" placeholder="Idioma">
-            <input type="text" name="precio" placeholder="Precio Total">
-            <textarea name="unidades" id="" cols="30" rows="10" placeholder="Unidades a ver..."></textarea>
+            <input type="file" name="image" id="image" required>
+            <input type="text" name="idioma" placeholder="Idioma" required value="<%= typeof old != "undefined" ? old.idioma : "" %>">
+            <input type="text" name="precio" placeholder="Precio Total" required value="<%= typeof old != "undefined" ? old.precio : "" %>">
+            <textarea name="unidades" id="" cols="30" rows="10" placeholder="Unidades a ver..." required minlength="20"><%= typeof old != "undefined" ? old.unidades : "" %></textarea>
         </section>
         <div class="botones_form">
         <button type="submit" class="crear_boton">Crear Curso</button>
