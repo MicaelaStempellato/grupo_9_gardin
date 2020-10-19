@@ -35,7 +35,8 @@ var storage = multer.diskStorage({
 
 /* GET pcreate form page. */
 router.get('/', productsController.create);
-router.get('/edit', productsController.edit);
+router.get('/edit/:id', productsController.edit);
 router.post('/', upload.single('image'), productValidator.product, productsController.store);
+router.put('/edit/:id', upload.single('image'), productValidator.update, productsController.update);
 
 module.exports = router;

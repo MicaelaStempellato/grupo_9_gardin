@@ -24,6 +24,7 @@
             <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción..." required minlength="20" maxlength="400"><%= typeof old != "undefined" ? old.descripcion : "" %></textarea>
             <select name="edad" id="edad" required>
                 <option value="">Edad recomendada</option>
+                <% if (typeof old != "undefined"){ %>
                 <% if (old.edad == "ninos"){ %> 
                     <option value="ninos" selected>Niños</option>
                 <% } else { %> 
@@ -39,9 +40,15 @@
                 <% } else { %> 
                     <option value="adultos">Adultos</option>
                 <% } %> 
+                <% } else { %> 
+                    <option value="ninos">Niños</option>
+                    <option value="jovenes_adultos">Jóvenes adultos</option>
+                    <option value="adultos">Adultos</option>
+                    <% } %> 
             </select>
             <select name="experiencia" id="experiencia" required>
                 <option value="">Experiencia recomendada</option>
+                <% if (typeof old != "undefined"){ %>
                 <% if (old.experiencia == "empezando"){ %> 
                     <option value="empezando" selected>Empezando</option>
                 <% } else { %> 
@@ -57,9 +64,15 @@
                 <% } else { %> 
                     <option value="avanzado">Avanzada</option>
                 <% } %> 
+                <% } else { %> 
+                    <option value="empezando">Empezando</option>
+                    <option value="con_conocimiento">Con conocimiento</option>
+                    <option value="avanzado">Avanzada</option>
+                    <% } %> 
             </select>
             <select name="ambiente" id="ambiente" required>
                 <option value="">Ambiente</option>
+                <% if (typeof old != "undefined"){ %>
                 <% if (old.ambiente == "interior"){ %> 
                     <option value="interior" selected>Interior</option>
                 <% } else { %> 
@@ -75,6 +88,11 @@
                 <% } else { %> 
                     <option value="jardin">Jardín</option>
                 <% } %> 
+                <% } else { %> 
+                    <option value="interior">Interior</option>
+                    <option value="patios_balcones">Patios y balcones</option>
+                    <option value="jardin">Jardín</option>
+                    <% } %> 
             </select>
         </section>
         <section>
