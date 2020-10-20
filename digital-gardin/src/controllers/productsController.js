@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const { product } = require('../middlewares/productValidator');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -86,7 +87,11 @@ module.exports = {
 
 		
 		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', products });
-	}
+	},
+
+	carrito: function(req, res, next) {
+		res.render('products/productCart', { title: 'Carrito', css: 'productCart_Styles' });
+	  }
 
 
 }

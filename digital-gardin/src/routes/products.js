@@ -42,8 +42,19 @@ var storage = multer.diskStorage({
  router.post('/create', upload.single('image'), productValidator.product, productsController.store);
  router.put('/edit/:id', upload.single('image'), productValidator.update, productsController.update);
  
-   
+ /* Ir al carrito*/   
+ router.get('/carrito', productsController.carrito);
 
+ /*
+router.get('/:cursoElegido', function(req, res, next) {
+    let cursoElegido = req.params.cursoElegido;
+    if (cursoElegido == undefined){
+        res.send('No hay resultados para '+cursoElegido)
+    }else{
+        res.send('Bienvenidos al curso '+cursoElegido)
+    }
+    
+  });*/
 
 /* GET product detail page. */
 router.get('/ver/:id', productsController.mostrarCursoElegido);
