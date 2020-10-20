@@ -1,91 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/1879ea28d1.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/stylesheets/pdetail_styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
-        <title>Digital Gardin</title>
+        <%- include('../partials/head') %>
     </head>
     <body>
         
 
-
+        <%- include('../partials/navbar') %>
 
         <main>
-            <article class="principal_curso">
-                <section class="detalle_curso">
+            <section class="principal_curso">
+                <article class="detalle_curso">
                     
+                    <!-- titulo foto y descripcion en detalle_curso -->
 
                     <div class="sector_detalle">
-
-                        <img src="/images/curso.jpeg" alt="Foto del curso">
-                        <h3 class="titulo">Jardineria avanzada</h3>
-                        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illum quia quam impedit consequatur maxime consequuntur iste debitis non aliquid excepturi adipisci hic explicabo architecto minus veniam, ipsam error tempora.</p>
+                        
+                        
+                        <div class = "principal_img">
+                            <img src="/images/curso.jpeg" alt="Foto del curso" class="curso-img">
+                        </div>
+                        <h2 class="titulo">Jardineria avanzada</h2>
+                        <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illum quia quam impedit consequatur maxime consequuntur iste debitis non aliquid excepturi adipisci hic explicabo architecto minus veniam, ipsam error tempora.</p>
                         
                     </div>
                     
-                </section>  
+                </article>  
 
 
-                <section class="sector_docente">
+                <article class="sector_docente">
 
                     <div class="contenedor_docente">
-                        <div class="docente_foto">
-                            <img src="/images/noperfilpic.jpg" alt="Foto del profesor" height="100px" width="100px">   
-                        </div>
-                        <p class="docente_desc">Curso dictado por: Gonzas</p>
+                        <p class="docente_desc">Por: Gonzas</p>
                         <p class="docente_desc">Programador Web Full Stack</p>
                         
                     </div>
-                </section>
+                </article>
+
+                <article class="separador"></article>
 
 
-                <section class="botones_comprayver">
+                <article class="botones_comprayver">
                     <div class="contenedor_botones">
-                        <button class="cursos_boton">Agregar a carrito</button>
-                        <button class="cursos_boton">Ver programa</button>
+                        <button class="cursos_boton">Comprar</button>
                     </div>
-                </section>
+                </article>
                 
 
                 
 
 
 
-                <section class="sector_programa">
-                    <h3 class="detalle">¿Qué vamos a ver en el curso?</h3>
-                    <p class="unidad">Unidad x: Nombre de la unidad</p>
-                    <div class="sel_unidad">
-                        <input type="radio" name="unity" id="unity" checked>
-                        <input type="radio" name="unity" id="unity">
-                        <input type="radio" name="unity" id="unity">
-                        <input type="radio" name="unity" id="unity">
-                        <input type="radio" name="unity" id="unity">
-                    </div>
-                    <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illum quia quam impedit consequatur maxime consequuntur iste debitis non aliquid excepturi adipisci hic explicabo architecto minus veniam, ipsam error tempora.</p>
-                </section>
+                <article class="sector_programa">
+                    <h2 class="detalle_programa">¿Qué vamos a ver en el curso?</h3>
+                    <p class="unidad_programa">Unidad x: Nombre de la unidad</p>
+                    <p class="descripcion_programa">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illum quia quam impedit consequatur maxime consequuntur iste debitis non aliquid excepturi adipisci hic explicabo architecto minus veniam, ipsam error tempora.</p>
+                </article>
 
 
-                
-
-                <section class="sector_esptecnicas"> 
-                    <div class = "specifications">
-                        <h3 class = "t_spf">Especificaciones técnicas</h3>
-                        <div class="t_spfs">
-                            <p>Idioma</p>
-                            <p>Duración</p>
-                            <p>Full HD</p>
-                            <p>Audio </p>
-                        </div>
-                    </div>
-                </section>
+    
 
 
 
-            </article>
+            </section>
 
-
+        </main>
+        <%- include('../partials/footer') %>
     </body>
+    <%- include('../partials/linksJsAbajo') %>
 </html>

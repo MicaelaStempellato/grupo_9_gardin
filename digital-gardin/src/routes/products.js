@@ -46,9 +46,7 @@ var storage = multer.diskStorage({
 
 
 /* GET product detail page. */
-router.get('/:id', function(req, res, next) {
-  res.render('products/productDetail', { title: 'Express' });
-});
+router.get('/ver/:id', productsController.mostrarCursoElegido);
 
 
 

@@ -80,7 +80,11 @@ module.exports = {
     
     listadoTodo: function(req, res, next) {
         res.render('products/todosCursos', { title: 'Digital Gardin', css: 'listadoTodos', products });
-      }
+	},
+	
+	mostrarCursoElegido: function(req, res, next) {
+		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', products });
+	}
 
 
 }
