@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "id": 1,
+    "nombre": "Jardineria 101",
+    "descripcion": "Enseñamos lo básico de la jardinería para empezar.",
+    "edad": "jovenes_adultos",
+    "experiencia": "empezando",
+    "ambiente": "patios_balcones",
+    "idioma": "Español",
+    "precio": "2500",
+    "unidades": "Unidad 1: Dónde conseguir los elementos básicos\r\nUnidad 2: Armado de macetas\r\nUnidad 3: Cuidado de capullos\r\nUnidad 4: Mantenimiento de plantas",
+    "image": "image-1603155381115.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Crear bonsais desde cero",
+    "descripcion": "Aprende el antiguo arte oriental de crear bonsais.\r\nEl arte del bonsái se originó en China hace unos dos mil años, en donde se conoce como Penjing, como objeto de culto para los monjes taoístas. Para ellos era símbolo de eternidad, el árbol representaba un puente entre lo divino y lo humano, el cielo y la tierra.",
+    "edad": "adultos",
+    "experiencia": "avanzado",
+    "ambiente": "interior",
+    "idioma": "Japonés",
+    "precio": "5000",
+    "unidades": "Unidad 1: El Lugar Correcto\r\nUnidad 2: Especies Fáciles de Cultivar\r\nUnidad 3: Conseguir un Tiesto Adecuado\r\nUnidad 4: Tierra o Sustrato para Bonsái\r\nUnidad 5: Preparar el Tiesto\r\nUnidad 6: Poda de Ramas y Raíces\r\nUnidad 7: Cuidado y Mantenimiento",
+    "image": "image-1603158889872.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Armar una huerta en tu jardín",
+    "descripcion": "Aprenderán a armar una huerta casera desde cero y sobre el cuidado de una gran variedad de frutas y vegetales.",
+    "edad": "jovenes_adultos",
+    "experiencia": "con_conocimiento",
+    "ambiente": "jardin",
+    "idioma": "Inglés",
+    "precio": "2000",
+    "unidades": "Unidad 1: Los bancales\r\nUnidad 2: La tierra\r\nUnidad 3: El abono\r\nUnidad 4: La siembra\r\nUnidad 5: El mantenimiento\r\nUnidad 6: La cosecha",
+    "image": "image-1603160114061.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Tener tu propio limonero",
+    "descripcion": "Aprende cómo conseguir y cuidar de tu propio árbol de limones.",
+    "edad": "jovenes_adultos",
+    "experiencia": "empezando",
+    "ambiente": "patios_balcones",
+    "idioma": "Español",
+    "precio": "1500",
+    "unidades": "Unidad 1: Conseguir el árbol perfecto\r\nUnidad 2: Necesidades de los cítricos\r\nUnidad 3: Cuidados del árbol\r\nUnidad 4: Cuándo se cultiva",
+    "image": "image-1603160939825.jpg"
+  }
+]

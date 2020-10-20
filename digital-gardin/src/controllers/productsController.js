@@ -76,7 +76,11 @@ module.exports = {
 		let curso = products.find(unProducto => id == unProducto.id)
 		return res.render('product-edit-form', {errors: errors.errors, old: req.body, curso})
 	}
-	}
+    },
+    
+    listadoTodo: function(req, res, next) {
+        res.render('products/todosCursos', { title: 'Digital Gardin', css: 'listadoTodos', products });
+      }
 
 
 }
