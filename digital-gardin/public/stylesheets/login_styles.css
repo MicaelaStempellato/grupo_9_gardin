@@ -1,15 +1,19 @@
-.ingresar{
+h2{
     font-family: 'Nunito', sans-serif;
     margin: 0;
 }
 
+h3{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
 
-.ir-a-registro{
+p{
     font-family: 'Nunito', sans-serif;
     margin: 0;
 }
 
-.link-login{
+a{
     text-decoration-line: none;
     color: #4B9C45;
     font-family: 'Nunito', sans-serif;
@@ -24,13 +28,13 @@ Rojo #C75D5D
 Amarrillo #FFFBE9
 */
 
-.login-main{
+main{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.main-header-login{
+.main-header{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -46,7 +50,7 @@ Amarrillo #FFFBE9
     align-self: center;
 }
 
-.login-main .formulario{
+.formulario{
     margin: 0 auto;
 }
 
@@ -73,7 +77,7 @@ Amarrillo #FFFBE9
 
 }
 
-.login-main .formulario .boton{
+.boton{
     margin: 0 25%;
     margin-top: 50px;
     margin-bottom: 10px;
@@ -90,6 +94,6 @@ Amarrillo #FFFBE9
     width: 100%;
 }
 
-.login-main form{
-    margin-left: auto;
+main form{
+    margin-left: ;
 }
