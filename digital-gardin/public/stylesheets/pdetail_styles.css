@@ -7,7 +7,7 @@
 .principal_curso{
     display:flex;
     flex-direction: column;
-    background-color: #D2E8C9;
+    background-color: #D2E8C9;  
 }
 
 .descripcion{
@@ -117,4 +117,52 @@
     }
 
 
+}
+
+
+@media (min-width: 1024px){
+
+
+    .principal_curso{
+        display:flex;
+        flex-direction: column;
+        background-color: #D2E8C9;  
+    }
+
+
+    .sector_requisitos{
+        width: 250px;
+        display:flex;
+        flex-direction: column;
+        background-color: #80A37D;
+        text-align: center ;
+        margin-bottom: 80px;
+        position: relative;
+        left:1000px;
+        bottom: 755px;
+    }
+
+    .curso-img{
+        width: 60%;
+        margin-left: 30px;
+        margin-top: 50px;
+    }
+
+    .titulo, .descripcion{
+        margin-left: 30px;
+    }
+
+    .cursos_boton{
+        width: 180px;
+        height: 70px;
+        
+    }
+
+    .efecto_redondeado{
+        width: 350px;
+        height: 350px;
+        padding: 20px;
+    }
+
+    
 }
