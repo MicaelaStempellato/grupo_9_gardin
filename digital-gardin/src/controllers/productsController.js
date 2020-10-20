@@ -83,6 +83,8 @@ module.exports = {
 	},
 	
 	mostrarCursoElegido: function(req, res, next) {
+
+		
 		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', products });
 	}
 

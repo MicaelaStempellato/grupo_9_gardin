@@ -35,36 +35,86 @@
 
 
 .separador{
-    height: 1px;
+    height: 2px;
     width: 80%;
-    background-color:rgba(255, 255, 255, 0);
+    background-color:rgba(122, 107, 107, 0);
     align-self: center;
 }
 
 
-.botones_comprayver{
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    font-size: 23px;
-    transition: all 1s;
-    width: 30%;
-    align-self: center;
-    position: relative;
-    bottom: 20px;
+.cursos_boton{
+
+    margin: 0 25%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 50%;
+    height: 40px;
+    border-style: none;
+    background-color: #9AD08F;
+    color:white;
+    font-size: 25px;
 }
 
 .botones_comprayver:hover{
-    color: white;
-}
+    outline-color: #4C9C45;
+    
+}    
 
 
 .sector_programa{
     background-color: white;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.efecto_redondeado{
+    width: 90%;
+    height: 50%;
+    align-self:center;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border: 0px solid #000000;
+    opacity: 0.5;
+}
+
+.detalle_programa, .unidad_programa, .descripcion_programa, .idioma_programa{
+    margin-top:20px;
+    width: 90%;
+
+}
+
+.sector_requisitos{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    position: relative;
+    background-color: #80A37D;
+    text-align: center ;
     
 }
 
-.detalle_programa, .unidad_programa, .descripcion_programa{
-    margin:20px;
-    width: 90%;
+.img_requisitos{
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    align-self: center;
 }
 
+
+@media (min-width: 768px){
+
+    .sector_requisitos{
+        
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #80A37D;
+        text-align: center ;
+        
+    }
+
+
+}
