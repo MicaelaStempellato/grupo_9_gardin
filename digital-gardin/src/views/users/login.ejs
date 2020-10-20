@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/login_styles.css">
-    <title>Iniciar sesión</title>
-</head>
+    <%- include('../partials/head') %>
 <body>
-    <main>
-        <div class="main-header">
+    <%- include('../partials/navbar') %>
+    <main class="login-main">
+        <div class="main-header-login">
             <h2 class="ingresar">Ingresar</h2>
-            <p class="ir-a-registro">¿No tenes cuenta? <a href="">registrate</a></p>
+            <p class="ir-a-registro">¿No tenes cuenta? <a class="link-login" href="/users/signin">registrate</a></p>
         </div>
         <form class="formulario" action="" >
             <input class="user-email" type="text" name="email" placeholder="E-mail o nombre de usuario">
             <input class="pass" type="password" name="pass" placeholder="Constraseña">
             <button class="boton" type="submit">Ingresar </button>
         </form>
-            <a class="miss-pass" href="">¿Olvidaste tu clave?</a>
+            <a class="miss-pass link-login" href="">¿Olvidaste tu clave?</a>
     </main>
+    <%- include('../partials/footer') %>
 </body>
+<%- include('../partials/linksJsAbajo') %>
 </html>
