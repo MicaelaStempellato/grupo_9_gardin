@@ -5,3 +5,8 @@ Se realizó una buena división de tareas y un buen trabajo en general. Por otro
 Retrospectiva: Sprint 2
 
 Se completó la totalidad de las tareas solicitadas por el sprint, no obstante, faltó mayor organización de tiempos para agilizar el cumplimiento de tareas en tiempo y forma. La comunicación sigue siendo uno de los puntos a mejorar como también aumentar la productividad
+
+Retrospectiva: Sprint 3
+
+Se logró completar la totalidad de las tareas asignadas por el sprint, asi mismo, consideramos que la asignación de tareas para cada integrante del equipo fue despareja, quedando como punto a mejorar el compañerismo y el compromiso para trabajar de manera conjunta como un equipo. 
+Otro punto a mejorar es la definición estética de algunos sitios como su adaptabilidad entre formatos.
