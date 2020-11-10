@@ -1,86 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
+        <!-- HEAD --->
         <%- include('../partials/head') %>
     </head>
+        
     <body>
+            
         
 
-        <%- include('../partials/navbar') %>
+        <div class="contenedor">
 
-        <main>
-            <section class="principal_curso">
-                <article class="detalle_curso">
-                    
+            <!-- HEADER --->
+            <%- include('../partials/navbar') %>    
+
+            <main>
+                <article class="portada">
                     <!-- titulo foto y descripcion en detalle_curso -->
 
-                    <div class="sector_detalle">
-                        
-                        
-                        <div class = "principal_img">
-                            <img src="/images/curso.jpeg" alt="Foto del curso" class="curso-img">
-                        </div>
-
-                        <h2 class="titulo"><%= products[0].nombre %></h2>
-                        <p class="descripcion"><%= products[0].descripcion %></p>
-                        
-                    </div>
                     
-                </article>  
-
-
-                <article class="sector_docente">
-
-                    <div class="contenedor_docente">
-                        <p class="docente_desc">Por: Gonzas</p>
-                        <p class="docente_desc">Programador Web Full Stack</p>
-                        
-                    </div>
+                    <h1><%= products[0].nombre %></h1>
+                    <p><%= products[0].descripcion %></p>  
+                    <img src="/images/curso.jpeg" alt="Foto del curso" class="curso-img">
+                    
+                    <p class="descripcion_completa">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus labore ullam error quibusdam natus ea, libero, nulla aperiam sit porro delectus, est laudantium optio minus sapiente autem molestias deserunt.
+                    </p>
+                   
                 </article>
 
-                
+                <article class="programa">
 
-
-                <article class="botones_comprayver">
-                    <div class="contenedor_botones">
-                        <button class="cursos_boton">Comprar</button>
+                    <h2>¿Que vamos a ver en el curso?</h2>
+                    <div class="unidades_curso">
+                        <p>Unidad 1: </p>
+                        <p>Unidad 2: </p>
+                        <p>Unidad 3: </p>
+                        <p>Unidad 4: </p>
                     </div>
-                </article>
-                
-
-                
-                <article class="sector_requisitos">
-
-                
-                    <h3 class="requisito_edad">Dirigido a: </h3>
-                    <img src="/images/edadjoven.png" alt="edad" class="img_requisitos"> 
-                    <h3 class="requisito_ambiente">Para: </h3>
-                    <img src="/images/ambientejardin.png" alt="ambiente" class="img_requisitos">  
-                    <h3 class="requisito_experiencia">Experiencia previa: </h3>
-                    <img src="/images/experienciaavanzado.png" alt="experiencia" class="img_requisitos">  
-                
-
-                </article>    
-
-
-                <h2 class="detalle_programa">¿Qué vamos a ver en el curso?</h2>
-                <article class="sector_programa efecto_redondeado">
-                    
-                    <p class="unidad_programa">Unidad x: Nombre de la unidad</p>
-                    <p class="descripcion_programa">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae illum quia quam impedit consequatur maxime consequuntur iste debitis non aliquid excepturi adipisci hic explicabo architecto minus veniam, ipsam error tempora.</p>
-                    <div class="separador"></div>
-                    
+                    <h2>¿A quien va dirigido?</h2>
+                    <p class="dirigido_a_quien">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus labore ullam error quibusdam natus ea, libero, nulla aperiam sit porro delectus, est laudantium optio minus sapiente autem molestias deserunt.
+                    </p>
+                    <h2>Requisitos</h2>
+                    <p class="requisitos">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus labore ullam error quibusdam natus ea, libero, nulla aperiam sit porro delectus, est laudantium optio minus sapiente autem molestias deserunt.
+                    </p>
                 </article>
 
 
-                <!------ PODRIA PONER IDIOMA Y DEMAS DATOS (SONIDO, SUBTITULOS, ETC)------>
+            </main>  
+
+            <aside>
+                <button class="boton">Añadir a carro</button>
+                
+                
+                <div class="datos_curso">
+                    
+                    
+                    <p class="precio">Precio:</p>    
+                    
+
+                    <p class="dat__">Dictado por: </p>
+                    <p class="dat__">Dificultad: </p>
+                    <p class="dat__">Dirigido a: </p>
+                    <p class="dat__">Ambiente: </p>
+                    <p class="dat__">Idioma: </p>
+                    <p class="dat__">Duracion: </p>
 
 
+                </div>
+            </aside>
+                
 
-            </section>
-
-        </main>
-        <%- include('../partials/footer') %>
+            <!-- FOOTER --->
+            <%- include('../partials/footer') %>
+        </div>
     </body>
+
+    
     <%- include('../partials/linksJsAbajo') %>
 </html>
