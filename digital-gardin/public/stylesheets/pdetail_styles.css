@@ -105,21 +105,34 @@ aside img{
     width: 50%;
 }
 
-aside .boton{
+aside .botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside .botones .boton{
     color: white;
     font-size: xx-large;
     background-color: #4C9C45;
     padding: 10px;
     border: none;
-    width: 90%;
+    width: 70%;
+    height: 70%;
     transition: all 1s;
     
 }
 
 
-aside .boton_peq{
-    display: none;
-    
+aside .botones .delete{
+    color: white;
+    font-size: xx-large;
+    background-color: #FF1C45;
+    padding: 10px;
+    border: none;
+    width: 70%;
+    height: 70%;
+    transition: all 1s;
 }
 
 

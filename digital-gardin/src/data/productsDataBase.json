@@ -46,5 +46,17 @@
     "precio": "1500",
     "unidades": "Unidad 1: Conseguir el árbol perfecto\r\nUnidad 2: Necesidades de los cítricos\r\nUnidad 3: Cuidados del árbol\r\nUnidad 4: Cuándo se cultiva",
     "image": "image-1603160939825.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Tomatería nivel 1",
+    "descripcion": "Conviértete en el maestro del tomate, partiendo desde las bases, podrás sembrar hermosos árboles de tomates muy coloridos y saludables. En este primer nivel nos centraremos en qué tipo de tierras son necesarias y como hidratarlas para lograr una cosecha exitosa.",
+    "edad": "ninos",
+    "experiencia": "empezando",
+    "ambiente": "jardin",
+    "idioma": "Español",
+    "precio": "650",
+    "unidades": "Unidad 1: Dónde conseguir los elementos básicos\\r\\nUnidad 2: Preparado de tierras\\r\\nUnidad 3: La importancia de un buen regado\\r\\nUnidad 4: Cuidados generales\"",
+    "image": "image-1605046797869.jpg"
   }
 ]

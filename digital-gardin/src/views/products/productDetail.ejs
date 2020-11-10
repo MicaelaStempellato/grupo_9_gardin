@@ -20,8 +20,8 @@
                     <!-- titulo foto y descripcion en detalle_curso -->
 
                     
-                    <h1><%= products[0].nombre %></h1>
-                    <p><%= products[0].descripcion %></p>  
+                    <h1><%= products[cursoSel].nombre %></h1>
+                    <p><%= products[cursoSel].descripcion %></p>  
                     <img src="/images/curso.jpeg" alt="Foto del curso" class="curso-img">
                     
                     <p class="descripcion_completa">
@@ -53,9 +53,10 @@
             </main>  
 
             <aside>
-                <button class="boton">Añadir a carro</button>
-                
-                
+                <class class="botones">
+                    <button class="boton">Añadir a carro</button>
+                    <button class="delete">Eliminar curso</button>
+                </class>
                 <div class="datos_curso">
                     
                     

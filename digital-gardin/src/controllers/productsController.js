@@ -11,21 +11,21 @@ module.exports = {
     create: function(req, res, next) {
         res.render('products/createForm', { title: 'Crear Curso', css: 'crearCurso' });
       },
-      edit: function(req, res, next) {
-        let id = req.params.id
+	edit: function(req, res, next) {
+		let id = req.params.id
 		let curso = products.find(unProducto => id == unProducto.id)
 		res.render('products/editForm', {curso, title: 'Editar Curso', css: 'crearCurso'})
-      },
-      store: function(req, res, next) {
-        let errors = validationResult(req);
+		},
+	store: function(req, res, next) {
+		let errors = validationResult(req);
 		if(errors.isEmpty()){
 
-            let elId;
-            if(products==""){
-                elId = 1
-            } else{
-                elId = products[products.length-1].id+1
-            };
+			let elId;
+			if(products==""){
+				elId = 1
+			} else{
+				elId = products[products.length-1].id+1
+			};
 
 		let newProduct = {
 			id: elId,
@@ -58,25 +58,25 @@ module.exports = {
 				producto.precio = req.body.precio;
 				producto.unidades = req.body.unidades;
 				if(req.file == undefined){
-				producto.image = producto.image
+					producto.image = producto.image
 				}else{
-				fs.unlinkSync(path.join(__dirname, '../../public/images/cursos/', producto.image));
-				producto.image = req.file.filename
-			}
+					fs.unlinkSync(path.join(__dirname, '../../public/images/cursos/', producto.image));
+					producto.image = req.file.filename
+				}
 			}
 		})
 
-		productsJSON= JSON.stringify(products, null, 2);
+			productsJSON= JSON.stringify(products, null, 2);
 
-		fs.writeFileSync(productsFilePath, productsJSON);
+			fs.writeFileSync(productsFilePath, productsJSON);
 
-		res.redirect('/');
+			res.redirect('/');
 
-	} else {
-		let id = req.params.id
-		let curso = products.find(unProducto => id == unProducto.id)
-		return res.render('product-edit-form', {errors: errors.errors, old: req.body, curso})
-	}
+		} else {
+			let id = req.params.id
+			let curso = products.find(unProducto => id == unProducto.id)
+			return res.render('product-edit-form', {errors: errors.errors, old: req.body, curso})
+		}
     },
     
     listadoTodo: function(req, res, next) {
@@ -85,13 +85,12 @@ module.exports = {
 	
 	mostrarCursoElegido: function(req, res, next) {
 
-		
-		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', products });
+		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', products, cursoSel: (req.params.id)-1 });
 	},
 
 	carrito: function(req, res, next) {
 		res.render('products/productCart', { title: 'Carrito', css: 'productCart_Styles' });
-	  }
+	}
 
 
 }
