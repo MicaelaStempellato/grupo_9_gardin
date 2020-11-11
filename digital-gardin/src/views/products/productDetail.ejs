@@ -20,12 +20,12 @@
                     <!-- titulo foto y descripcion en detalle_curso -->
 
                     
-                    <h1><%= products[cursoSel].nombre %></h1>
-                    <p><%= products[cursoSel].descripcion %></p>  
-                    <img src="/images/curso.jpeg" alt="Foto del curso" class="curso-img">
+                    <h1><%= product.nombre %></h1>
+                    
+                    <img src="/images/cursos/<%= product.image %>"   alt="Foto del curso" class="curso-img">
                     
                     <p class="descripcion_completa">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus labore ullam error quibusdam natus ea, libero, nulla aperiam sit porro delectus, est laudantium optio minus sapiente autem molestias deserunt.
+                        <%= product.descripcion %>
                     </p>
                    
                 </article>
@@ -33,20 +33,26 @@
                 <article class="programa">
 
                     <h2>¿Que vamos a ver en el curso?</h2>
-                    <div class="unidades_curso">
-                        <p>Unidad 1: </p>
-                        <p>Unidad 2: </p>
-                        <p>Unidad 3: </p>
-                        <p>Unidad 4: </p>
+                    
+                    <div class="unidades">
+
+                        <% for ( let i = 0; i < unidades.length; i++ ) {  %>
+                        
+                            <p class="unidad"> <%= ("U"+(i+1)) + " - " + unidades[i] %> </p>
+
+                        <% } %>
                     </div>
-                    <h2>¿A quien va dirigido?</h2>
-                    <p class="dirigido_a_quien">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus labore ullam error quibusdam natus ea, libero, nulla aperiam sit porro delectus, est laudantium optio minus sapiente autem molestias deserunt.
-                    </p>
-                    <h2>Requisitos</h2>
-                    <p class="requisitos">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus labore ullam error quibusdam natus ea, libero, nulla aperiam sit porro delectus, est laudantium optio minus sapiente autem molestias deserunt.
-                    </p>
+
+                
+                    <h2>Herramientas necesarias</h2>
+                    
+                    <div class="requisitos">
+                        <% for ( let i = 0; i < product.requisitos.length; i++ ) {  %>
+                    
+                            <p class="requisito"> <%= product.requisitos[i] %> </p>
+
+                        <% } %>
+                    </div>
                 </article>
 
 
@@ -60,15 +66,12 @@
                 <div class="datos_curso">
                     
                     
-                    <p class="precio">Precio:</p>    
-                    
-
-                    <p class="dat__">Dictado por: </p>
-                    <p class="dat__">Dificultad: </p>
-                    <p class="dat__">Dirigido a: </p>
-                    <p class="dat__">Ambiente: </p>
-                    <p class="dat__">Idioma: </p>
-                    <p class="dat__">Duracion: </p>
+                    <p class="dat__ precio">Precio: <%= "$" + product.precio %></p>    
+                    <p class="dat__">Dictado por:  <%= product.profesor %> </p>
+                    <p class="dat__">Dirigido a: <%= product.experiencia %> </p>
+                    <p class="dat__">Ambiente: <%= product.ambiente %></p>
+                    <p class="dat__">Idioma: <%= product.idioma %></p>
+                    <p class="dat__">Duracion: <%= product.duracion %></p>
 
 
                 </div>

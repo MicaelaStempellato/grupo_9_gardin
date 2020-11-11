@@ -67,6 +67,7 @@ module.exports = {
 		})
 
 			productsJSON= JSON.stringify(products, null, 2);
+			
 
 			fs.writeFileSync(productsFilePath, productsJSON);
 
@@ -84,8 +85,16 @@ module.exports = {
 	},
 	
 	mostrarCursoElegido: function(req, res, next) {
+		let product = products[(req.params.id)-1];
+		let unidades = product.unidades;
+		
+		unidades.forEach(unidad => {
+			console.log("probando");
+			console.log(unidad);
+		});
+		
 
-		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', products, cursoSel: (req.params.id)-1 });
+		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', product, unidades});
 	},
 
 	carrito: function(req, res, next) {
