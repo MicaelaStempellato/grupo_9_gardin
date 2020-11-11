@@ -81,7 +81,82 @@
             <input type="file" name="image" id="image">
             <input type="text" name="idioma" placeholder="Idioma" required value="<%= typeof old != "undefined" ? old.idioma : curso.idioma %>">
             <input type="text" name="precio" placeholder="Precio Total" required value="<%= typeof old != "undefined" ? old.precio : curso.precio %>">
-            <textarea name="unidades" id="" cols="30" rows="10" placeholder="Unidades a ver..." required minlength="20"><%= typeof old != "undefined" ? old.unidades : curso.unidades %></textarea>
+
+
+            <article>
+                <label class="unitsTitle">Unidades:</label>
+                <%if(typeof old != "undefined"){%>
+    
+                <ul id="newElementId">
+    
+                <% old.unidades.forEach(unidad => {%>
+                
+                <li>
+                 
+                <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=unidad%>">
+    
+            </li>
+    
+                <%})%>
+    
+            </ul>
+    
+                <%}else{%>
+
+                    <ul id="newElementId">
+    
+                        <% curso.unidades.forEach(unidad => {%>
+                        
+                        <li>
+                         
+                        <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=unidad%>">
+            
+                    </li>
+                    <%})%>
+    
+                </ul>
+    
+                <%}%>
+    
+                <script type="text/JavaScript">
+                    function createNewElement() {
+                        // First create a DIV element.
+                        var txtNewInputBox = document.createElement('li');
+                    
+                        // Then add the content (a new input box) of the element.
+                        txtNewInputBox.innerHTML = "<input type='text' id='newInputBox' class='units' name='unidades' minlength='5' required placeholder='Unidad...'>";
+                    
+                        // Finally put it where it is supposed to appear.
+                        document.getElementById("newElementId").appendChild(txtNewInputBox);
+    
+                    }
+    
+    
+    
+                    function deleteElement(elementId) {
+    
+                        let units = document.getElementById('newElementId');
+                        units.removeChild(units.lastElementChild);
+    
+                    }
+                    </script>
+
+    
+                <ul id="newElementId"></ul>
+                
+                <section class="masMenos">
+                <div>
+                    <input type="button" value="+" onclick="createNewElement();"/>
+                 </div>
+    
+                 <div>
+                    <input type="button" value="-" onclick="deleteElement();"/>
+                 </div>
+
+                </section>
+    
+                </article>
+
         </section>
         <div class="botones_form">
         <button type="submit" class="crear_boton">Guardar Curso</button>

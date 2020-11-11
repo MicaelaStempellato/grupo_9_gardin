@@ -76,7 +76,7 @@ module.exports = {
 		} else {
 			let id = req.params.id
 			let curso = products.find(unProducto => id == unProducto.id)
-			return res.render('product-edit-form', {errors: errors.errors, old: req.body, curso})
+			return res.render('products/editForm', {errors: errors.errors, old: req.body, curso, title: 'Editar Curso', css: 'crearCurso'})
 		}
     },
     

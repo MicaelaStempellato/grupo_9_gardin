@@ -17,7 +17,7 @@
     "image": "image-1603155381115.jpg",
     "profesor": "Gonza",
     "duracion": "4 meses",
-    "requisitos" : [
+    "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
       "Tenedor de jardín",
@@ -26,7 +26,7 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-      ]
+    ]
   },
   {
     "id": 2,
@@ -44,9 +44,9 @@
       "Mantenimiento de plantas"
     ],
     "image": "image-1603158889872.jpg",
-    "profesor": "Gonza" ,
+    "profesor": "Gonza",
     "duracion": "4 meses",
-    "requisitos" : [
+    "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
       "Tenedor de jardín",
@@ -55,7 +55,7 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-      ]
+    ]
   },
   {
     "id": 3,
@@ -75,7 +75,7 @@
     "image": "image-1603160114061.png",
     "profesor": "Gonza",
     "duracion": "4 meses",
-    "requisitos" : [
+    "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
       "Tenedor de jardín",
@@ -84,7 +84,7 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-      ]
+    ]
   },
   {
     "id": 4,
@@ -104,7 +104,7 @@
     "image": "image-1603160939825.jpg",
     "profesor": "Gonza",
     "duracion": "4 meses",
-    "requisitos" : [
+    "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
       "Tenedor de jardín",
@@ -113,7 +113,7 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-      ]
+    ]
   },
   {
     "id": 5,
@@ -133,7 +133,7 @@
     "image": "image-1605046797869.jpg",
     "profesor": "Gonza",
     "duracion": "4 meses",
-    "requisitos" : [
+    "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
       "Tenedor de jardín",
@@ -142,6 +142,6 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-      ]
+    ]
   }
 ]
