@@ -52,6 +52,9 @@ main{
 
 .formulario{
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .user-email{
@@ -79,21 +82,46 @@ main{
 
 .boton{
     margin: 0 25%;
-    margin-top: 50px;
+    margin-top: 33px;
     margin-bottom: 10px;
-    width: 50%;
+    width: 142px;
     height: 40px;
     border-style: none;
     background-color: #9AD08F;
     color:white;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .miss-pass{
-    margin: 0 32%;
-    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
-main form{
-    margin-left: ;
+.formularioLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+@media (min-width: 768px){
+
+    .main-header {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: 40px 30px 40px 30px;
+    }
+
+    .ir-a-registro{
+        display: block;
+    }
+
+    .ingresar {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+
+
