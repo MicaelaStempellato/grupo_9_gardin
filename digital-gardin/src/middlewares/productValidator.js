@@ -45,8 +45,8 @@ module.exports={
         .notEmpty()
         .withMessage("Las unidades son obligatorias")
         .bail()
-        .isLength({min: 20})
-        .withMessage("Las uidades deben tener mínimo 20 caracteres"),
+        .isLength({min: 5})
+        .withMessage("Las uidades deben tener mínimo 5 caracteres"),
         body("edad")
         .notEmpty()
         .withMessage("La edad es obligatoria"),
@@ -100,8 +100,8 @@ module.exports={
         .notEmpty()
         .withMessage("Las unidades son obligatorias")
         .bail()
-        .isLength({min: 20})
-        .withMessage("Las uidades deben tener mínimo 20 caracteres"),
+        .isLength({min: 5})
+        .withMessage("Las uidades deben tener mínimo 5 caracteres"),
         body("edad")
         .notEmpty()
         .withMessage("La edad es obligatoria"),
