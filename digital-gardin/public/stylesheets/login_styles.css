@@ -32,13 +32,16 @@ main{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: 1vh;
+    margin-bottom: 18vh;
 }
 
 .main-header{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin: 30px 30px 50px 30px;
+    margin: 30px 0px 50px -30px;
+    text-align: center;
 }
 
 .ingresar{

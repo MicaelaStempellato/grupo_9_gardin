@@ -35,19 +35,19 @@ main{
     align-items: center;
     margin-top: 20px;
     width: 100%;
+    margin-bottom: 5vh;
 }
 
 .main-header{
     display: flex;
-    flex-direction: column  ;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 20px 20px 40px 20px;
+    box-sizing: border-box;
+    margin: 40px 0px 40px 0px;
+    text-align: center;
 }
 
-.registrarse{
-    margin-top: 20px;
-}
 
 .ir-a-login{
     display: inline;
@@ -59,6 +59,8 @@ main{
     display: flex;
     flex-direction: column;
     justify-items: center;
+    margin-left: 0px;
+    align-items: center;
 }
 
 .user-email, .user-name, .user-surname, .pass{
@@ -75,23 +77,23 @@ main{
 
 
 .boton{
-    margin: 0 10%;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    width: 50%;
+    margin: 0 25%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 142px;
     height: 40px;
     border-style: none;
     background-color: #9AD08F;
     color:white;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 
-main form{
-    margin-left: ;
-}
+@media(min-width: 768px){
 
-
-@media(){
+    .main-header {
+        display: block;
+        text-align: center;
+    }
 
 }
