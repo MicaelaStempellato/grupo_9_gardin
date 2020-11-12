@@ -1,5 +1,34 @@
 [
   {
+    "id": 1,
+    "nombre": "Jardineria 101",
+    "descripcion": "Enseñamos lo básico de la jardinería para empezar.",
+    "edad": "jovenes_adultos",
+    "experiencia": "empezando",
+    "ambiente": "patios_balcones",
+    "idioma": "Español",
+    "precio": "2500",
+    "unidades": [
+      "Dónde conseguir los elementos básicos",
+      "Armado de macetas",
+      "Cuidado de capullos",
+      "Mantenimiento de plantas"
+    ],
+    "image": "image-1603155381115.jpg",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
+    "requisitos": [
+      "Regadera",
+      "Tijera de Podar Setos",
+      "Tenedor de jardín",
+      "Rastrillo de jardín",
+      "Pala de Punta",
+      "Pala ancha o plana",
+      "Rastrillo plástico",
+      "Rastillo Metálico"
+    ]
+  },
+  {
     "id": 2,
     "nombre": "Crear bonsais desde cero",
     "descripcion": "Aprende el antiguo arte oriental de crear bonsais.\r\nEl arte del bonsái se originó en China hace unos dos mil años, en donde se conoce como Penjing, como objeto de culto para los monjes taoístas. Para ellos era símbolo de eternidad, el árbol representaba un puente entre lo divino y lo humano, el cielo y la tierra.",
@@ -73,6 +102,35 @@
       "Mantenimiento de plantas"
     ],
     "image": "image-1603160939825.jpg",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
+    "requisitos": [
+      "Regadera",
+      "Tijera de Podar Setos",
+      "Tenedor de jardín",
+      "Rastrillo de jardín",
+      "Pala de Punta",
+      "Pala ancha o plana",
+      "Rastrillo plástico",
+      "Rastillo Metálico"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Tomatería nivel 1",
+    "descripcion": "Conviértete en el maestro del tomate, partiendo desde las bases, podrás sembrar hermosos árboles de tomates muy coloridos y saludables. En este primer nivel nos centraremos en qué tipo de tierras son necesarias y como hidratarlas para lograr una cosecha exitosa.",
+    "edad": "ninos",
+    "experiencia": "empezando",
+    "ambiente": "jardin",
+    "idioma": "Español",
+    "precio": "650",
+    "unidades": [
+      "Dónde conseguir los elementos básicos",
+      "Armado de macetas",
+      "Cuidado de capullos",
+      "Mantenimiento de plantas"
+    ],
+    "image": "image-1605046797869.jpg",
     "profesor": "Gonza",
     "duracion": "4 meses",
     "requisitos": [

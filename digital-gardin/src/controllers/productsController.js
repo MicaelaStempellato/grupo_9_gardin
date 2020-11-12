@@ -85,16 +85,25 @@ module.exports = {
 	},
 	
 	mostrarCursoElegido: function(req, res, next) {
-		let product = products[(req.params.id)-1];
-		let unidades = product.unidades;
+		let product = products[(req.params.id)];
 		
-		unidades.forEach(unidad => {
-			console.log("probando");
-			console.log(unidad);
-		});
+		
+		
 		
 
-		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', product, unidades});
+		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', product});
+	},
+
+	delete: function (req,res,next){
+
+		let idDelete = req.params.id-1;
+		let newBase = products.filter(producto => producto.id != idDelete);
+		let newBaseJSON= JSON.stringify(newBase, null, 2);
+		
+
+		fs.writeFileSync(productsFilePath, newBaseJSON);
+
+		res.redirect('/');
 	},
 
 	carrito: function(req, res, next) {

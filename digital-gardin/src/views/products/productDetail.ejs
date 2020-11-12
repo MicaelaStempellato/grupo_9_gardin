@@ -32,19 +32,19 @@
 
                 <article class="programa">
 
-                    <h2>¿Que vamos a ver en el curso?</h2>
+                    <h2 class="desc_unidades">¿Que vamos a ver en el curso?</h2>
                     
                     <div class="unidades">
 
-                        <% for ( let i = 0; i < unidades.length; i++ ) {  %>
+                        <% for ( let i = 0; i < product.unidades.length; i++ ) {  %>
                         
-                            <p class="unidad"> <%= ("U"+(i+1)) + " - " + unidades[i] %> </p>
+                            <p class="unidad"> <%= ("U"+(i+1)) + " - " + product.unidades[i] %> </p>
 
                         <% } %>
                     </div>
 
                 
-                    <h2>Herramientas necesarias</h2>
+                    <h2 class="desc_requisitos">Herramientas necesarias</h2>
                     
                     <div class="requisitos">
                         <% for ( let i = 0; i < product.requisitos.length; i++ ) {  %>
@@ -60,8 +60,16 @@
 
             <aside>
                 <class class="botones">
-                    <button class="boton">Añadir a carro</button>
-                    <button class="delete">Eliminar curso</button>
+                    <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button>
+                    
+                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="delete_boton"><i class="fas fa-trash-alt basura"></i></button>
+                    </form>
+
+                    
+                    <button class="edit_boton"><i class="fas fa-edit editar"></i></button>
+                    
+                    
                 </class>
                 <div class="datos_curso">
                     

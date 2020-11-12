@@ -3,7 +3,8 @@ var router = express.Router();
 let productsController = require('../controllers/productsController')
 const multer = require('multer');
 const path = require('path');
-let productValidator = require('../middlewares/productValidator')
+let productValidator = require('../middlewares/productValidator');
+const { Router } = require('express');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -38,10 +39,14 @@ var storage = multer.diskStorage({
  /* Los forms para crear y editar cursos*/
  router.get('/create', productsController.create);
  router.get('/edit/:id', productsController.edit);
+
+ 
+ 
  /* Al crear o editar un curso*/
  router.post('/create', upload.single('image'), productValidator.product, productsController.store);
  router.put('/edit/:id', upload.single('image'), productValidator.update, productsController.update);
- 
+
+
  /* Ir al carrito*/   
  router.get('/carrito', productsController.carrito);
 
@@ -59,7 +64,7 @@ router.get('/:cursoElegido', function(req, res, next) {
 /* GET product detail page. */
 router.get('/ver/:id', productsController.mostrarCursoElegido);
 
-
+router.delete('/delete/:id', productsController.delete);
 
   
 

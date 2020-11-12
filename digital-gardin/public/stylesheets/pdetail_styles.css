@@ -145,7 +145,7 @@ aside .botones{
     align-items: center;
 }
 
-aside .botones .boton{
+aside .botones .buy_boton{
     color: white;
     font-size: xx-large;
     background-color: #4C9C45;
@@ -157,15 +157,31 @@ aside .botones .boton{
     
 }
 
+aside .botones .modify_botons{
+    display: flex;
+    justify-content:    space-around;
+    margin-top: 2%;
+}
 
-aside .botones .delete{
+aside .botones .delete_boton{
     color: white;
     font-size: xx-large;
     background-color: #FF1C45;
     padding: 10px;
     border: none;
-    width: 70%;
-    height: 70%;
+    width: 30%;
+    height: 100%;
+    transition: all 1s;
+}
+
+aside .botones .edit_boton{
+    color: white;
+    font-size: xx-large;
+    background-color: orange;
+    padding: 10px;
+    border: none;
+    width: 30%;
+    height: 100%;
     transition: all 1s;
 }
 
@@ -196,13 +212,27 @@ aside .botones .delete{
 
     main .programa .requisitos{
 
-        margin-top: 50%;
-        padding: 1%;
+        margin-top: 10%;
+       
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
     }
+
+    main .programa .desc_requisitos{
+
+        margin-top: 50%;
+        
+        
+    }
+
+    main .programa .requisito{
+
+        width: 50%;
+        
+    }
+
     aside{
         width: 100%;
         padding:0;
