@@ -108,7 +108,7 @@
     
                 <ul id="newElementId">
     
-                <% old.unidades.forEach(unidad => {%>
+                <% old.unidades.forEach(unidad => { %>
                 
                 <li>
                  
@@ -122,6 +122,7 @@
     
                 <%}else{%>
                 
+                <input type="text" name="unidades" required minlength="5" placeholder='Unidad...' value= "<%= typeof old != "undefined" ? old.unidades : "" %>">
                 <input type="text" name="unidades" required minlength="5" placeholder='Unidad...' value= "<%= typeof old != "undefined" ? old.unidades : "" %>">
     
                 <%}%>
@@ -197,6 +198,7 @@
         
                     <%}else{%>
                     
+                    <input type="text" name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%= typeof old != "undefined" ? old.requisitos : "" %>">
                     <input type="text" name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%= typeof old != "undefined" ? old.requisitos : "" %>">
         
                     <%}%>
