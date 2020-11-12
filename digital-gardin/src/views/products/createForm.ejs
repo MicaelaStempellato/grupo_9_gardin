@@ -105,18 +105,23 @@
             <article>
                 <label class="unitsTitle">Unidades:</label>
                 <%if(typeof old != "undefined"){%>
+
+                <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=old.unidades[0]%>">
+                
+                <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=old.unidades[1]%>">
     
                 <ul id="newElementId">
+
     
-                <% old.unidades.forEach(unidad => { %>
+                <% for(let i = 2; i < old.unidades.length; i++){ %>
                 
                 <li>
                  
-                <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=unidad%>">
+                <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=old.unidades[i]%>">
     
             </li>
     
-                <%})%>
+                <%}%>
     
             </ul>
     
@@ -181,18 +186,22 @@
                 <article>
                     <label class="unitsTitle">Requisitos:</label>
                     <%if(typeof old != "undefined"){%>
+
+                    <input type="text" class='requisitos' name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%=old.requisitos[0]%>">
+                
+                    <input type="text" class='requisitos' name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%=old.requisitos[1]%>">
         
                     <ul id="newElementId2">
         
-                    <% old.requisitos.forEach(requisito => {%>
+                    <% for(let i = 2; i < old.requisitos.length; i++){ %>
                     
                     <li>
                      
-                    <input type="text" class='requisitos' name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%=requisito%>">
+                    <input type="text" class='requisitos' name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%=old.requisitos[i]%>">
         
                 </li>
         
-                    <%})%>
+                    <%}%>
         
                 </ul>
         
