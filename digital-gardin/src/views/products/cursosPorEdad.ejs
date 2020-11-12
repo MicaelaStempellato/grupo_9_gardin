@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/navbar') %>
+    <%- include('../partials/categoriasCursos') %>
+
+    <h2 class="tituloCursos">Todos los cursos para 
+    
+    </h2>
+    <div class="losProductos">
+    <% productsEdad.forEach(producto => {  %>
+    <article class="unProducto">
+        <a href="/products/ver/<%=producto.id%>">
+        <section class="sectionProducto imgProducto">
+            <img src="/images/cursos/<%=producto.image%>" alt="<%=producto.nombre%>">
+        </section>
+        <section class="sectionProducto infoProducto">
+            <h3><%=producto.nombre%></h3>
+            <p><%=producto.descripcion%> </p>
+        </section>
+    </a>
+    </article>
+    <% }) %> 
+</div>
+
+    <%- include('../partials/footer') %>
+</body>
+<%- include('../partials/linksJsAbajo') %>
+</html>

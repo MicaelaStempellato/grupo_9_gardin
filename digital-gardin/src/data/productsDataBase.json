@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Jardineria 101",
     "descripcion": "Enseñamos lo básico de la jardinería para empezar.",
-    "edad": "jovenes_adultos",
+    "edad": "ninos",
     "experiencia": "empezando",
     "ambiente": "patios_balcones",
     "profesor": "Gonza",
@@ -134,10 +134,6 @@
       "Riego",
       "Mantenimiento"
     ],
-<<<<<<< HEAD
-    "image": "image-1605140123781.jpg",
-=======
->>>>>>> b1011e68291f55114284f6ac410ff8b970e75458
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -148,7 +144,7 @@
       "Rastrillo plástico",
       "Rastillo Metálico"
     ],
-    "image": "image-1605046797869.jpg"
+    "image": "image-1605140123781.jpg"
   },
   {
     "id": 6,

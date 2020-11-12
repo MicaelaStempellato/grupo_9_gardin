@@ -46,6 +46,8 @@ var storage = multer.diskStorage({
  router.post('/create', upload.single('image'), productValidator.product, productsController.store);
  router.put('/edit/:id', upload.single('image'), productValidator.update, productsController.update);
 
+  /* Cursos filtrados */
+  router.get('/edad/:edad', productsController.filtroEdad);
 
  /* Ir al carrito*/   
  router.get('/carrito', productsController.carrito);

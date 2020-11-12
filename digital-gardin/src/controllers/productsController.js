@@ -111,7 +111,15 @@ module.exports = {
 
 	carrito: function(req, res, next) {
 		res.render('products/productCart', { title: 'Carrito', css: 'productCart_Styles' });
-	}
+	},
+
+	filtroEdad: function(req, res, next) {
+        let productsEdad = products.filter(function(producto){
+            return producto.edad == req.params.edad;
+        })
+        
+        res.render('products/cursosPorEdad', { title: 'Cursos por Edad', css: 'listadoTodos', productsEdad });
+    }
 
 
 }
