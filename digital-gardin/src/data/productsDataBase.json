@@ -1,42 +1,11 @@
 [
   {
-    "id": 1,
-    "nombre": "Jardineria 101",
-    "descripcion": "Enseñamos lo básico de la jardinería para empezar.",
-    "edad": "ninos",
-    "experiencia": "empezando",
-    "ambiente": "patios_balcones",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
-    "idioma": "Español",
-    "precio": "2500",
-    "unidades": [
-      "Dónde conseguir los elementos básicos",
-      "Armado de macetas",
-      "Cuidado de capullos",
-      "Mantenimiento de plantas"
-    ],
-    "requisitos": [
-      "Regadera",
-      "Tijera de Podar Setos",
-      "Tenedor de jardín",
-      "Rastrillo de jardín",
-      "Pala de Punta",
-      "Pala ancha o plana",
-      "Rastrillo plástico",
-      "Rastillo Metálico"
-    ],
-    "image": "image-1603155381115.jpg"
-  },
-  {
     "id": 2,
     "nombre": "Crear bonsais desde cero",
     "descripcion": "Aprende el antiguo arte oriental de crear bonsais.\r\nEl arte del bonsái se originó en China hace unos dos mil años, en donde se conoce como Penjing, como objeto de culto para los monjes taoístas. Para ellos era símbolo de eternidad, el árbol representaba un puente entre lo divino y lo humano, el cielo y la tierra.",
     "edad": "adultos",
     "experiencia": "avanzado",
     "ambiente": "interior",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
     "idioma": "Japonés",
     "precio": "5000",
     "unidades": [
@@ -45,35 +14,9 @@
       "Cuidado de capullos",
       "Mantenimiento de plantas"
     ],
-    "requisitos": [
-      "Regadera",
-      "Tijera de Podar Setos",
-      "Tenedor de jardín",
-      "Rastrillo de jardín",
-      "Pala de Punta",
-      "Pala ancha o plana",
-      "Rastrillo plástico",
-      "Rastillo Metálico"
-    ],
-    "image": "image-1603158889872.jpg"
-  },
-  {
-    "id": 3,
-    "nombre": "Armar una huerta en tu jardín",
-    "descripcion": "Aprenderán a armar una huerta casera desde cero y sobre el cuidado de una gran variedad de frutas y vegetales.",
-    "edad": "jovenes_adultos",
-    "experiencia": "con_conocimiento",
-    "ambiente": "jardin",
+    "image": "image-1603158889872.jpg",
     "profesor": "Gonza",
     "duracion": "4 meses",
-    "idioma": "Inglés",
-    "precio": "2000",
-    "unidades": [
-      "Dónde conseguir los elementos básicos",
-      "Armado de macetas",
-      "Cuidado de capullos",
-      "Mantenimiento de plantas"
-    ],
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -83,8 +26,7 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-    ],
-    "image": "image-1603160114061.png"
+    ]
   },
   {
     "id": 4,
@@ -93,8 +35,6 @@
     "edad": "jovenes_adultos",
     "experiencia": "empezando",
     "ambiente": "patios_balcones",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
     "idioma": "Español",
     "precio": "1500",
     "unidades": [
@@ -103,6 +43,9 @@
       "Cuidado de capullos",
       "Mantenimiento de plantas"
     ],
+    "image": "image-1603160939825.jpg",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -112,18 +55,44 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-    ],
-    "image": "image-1603160939825.jpg"
+    ]
   },
   {
     "id": 5,
+    "nombre": "Tomatería nivel 1",
+    "descripcion": "Conviértete en el maestro del tomate, partiendo desde las bases, podrás sembrar hermosos árboles de tomates muy coloridos y saludables. En este primer nivel nos centraremos en qué tipo de tierras son necesarias y como hidratarlas para lograr una cosecha exitosa.",
+    "edad": "ninos",
+    "experiencia": "empezando",
+    "ambiente": "jardin",
+    "idioma": "Español",
+    "precio": "650",
+    "unidades": [
+      "Dónde conseguir los elementos básicos",
+      "Armado de macetas",
+      "Cuidado de capullos",
+      "Mantenimiento de plantas"
+    ],
+    "image": "image-1605046797869.jpg",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
+    "requisitos": [
+      "Regadera",
+      "Tijera de Podar Setos",
+      "Tenedor de jardín",
+      "Rastrillo de jardín",
+      "Pala de Punta",
+      "Pala ancha o plana",
+      "Rastrillo plástico",
+      "Rastillo Metálico"
+    ]
+  },
+  {
+    "id": 6,
     "nombre": "Rosas rositas",
     "descripcion": "En este curso aprenderás todo lo esencial sobre sembrado de rosas color rosa, desde el tipo de tierra que necesitaremos, como el abono para la misma, riegos y cuidados ",
     "edad": "jovenes_adultos",
     "experiencia": "con_conocimiento",
     "ambiente": "jardin",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
     "idioma": "Español",
     "precio": "23",
     "unidades": [
@@ -134,6 +103,7 @@
       "Riego",
       "Mantenimiento"
     ],
+    "image": "image-1605140123781.jpg",
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -143,36 +113,6 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-    ],
-    "image": "image-1605140123781.jpg"
-  },
-  {
-    "id": 6,
-    "nombre": "Crece tu propio árbol de paltas",
-    "descripcion": "Aquí te mostramos cómo germinar la semilla de una palta para que crezca un árbol y puedas obtener sus frutos directamente desde tu jardín. ",
-    "edad": "jovenes_adultos",
-    "experiencia": "empezando",
-    "ambiente": "patios_balcones",
-    "profesor": "Facundo",
-    "duracion": "4 meses",
-    "idioma": "Español",
-    "precio": "2500",
-    "unidades": [
-      "Armado de la germinación",
-      "Cuidado diario de la semilla",
-      "Traspaso a tierra",
-      "Mantenimiento y crecimiento de la planta",
-      "Cosecha de los frutos"
-    ],
-    "requisitos": [
-      "Reecipiente de vidrio",
-      "Maceta grande",
-      "1 litro de tierra fértil",
-      "5 semillas de palta",
-      "Palillos afilados",
-      "Espacio bien luminoso",
-      "Una pala chica"
-    ],
-    "image": "image-1605149676793.png"
+    ]
   }
 ]

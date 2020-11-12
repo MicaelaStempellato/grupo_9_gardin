@@ -88,7 +88,7 @@ module.exports = {
 	},
 	
 	mostrarCursoElegido: function(req, res, next) {
-		let product = products[(req.params.id)];
+		let product = products[(req.params.id-1)];
 		
 		
 		
@@ -99,8 +99,16 @@ module.exports = {
 
 	delete: function (req,res,next){
 
-		let idDelete = req.params.id-1;
+		let idDelete = req.params.id;
 		let newBase = products.filter(producto => producto.id != idDelete);
+		
+
+
+		for (let i = 1; i <= newBase.length; i++){
+			
+			console.log(newBase[i])
+		}
+
 		let newBaseJSON= JSON.stringify(newBase, null, 2);
 		
 
