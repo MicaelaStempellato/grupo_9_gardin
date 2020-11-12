@@ -53,10 +53,13 @@ module.exports = {
 				producto.descripcion = req.body.descripcion;
 				producto.edad = req.body.edad;
 				producto.experiencia = req.body.experiencia;
-                producto.ambiente = req.body.ambiente;
+				producto.ambiente = req.body.ambiente;
+				producto.profesor = req.body.profesor;
+				producto.duracion = req.body.duracion;
                 producto.idioma = req.body.idioma;
 				producto.precio = req.body.precio;
 				producto.unidades = req.body.unidades;
+				producto.requisitos = req.body.requisitos;
 				if(req.file == undefined){
 					producto.image = producto.image
 				}else{
