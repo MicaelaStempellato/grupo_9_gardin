@@ -129,5 +129,13 @@ module.exports = {
         res.render('products/cursosPorExperiencia', { title: 'Cursos por Experiencia', css: 'listadoTodos', productsExperiencia });
 	},
 
+	filtroAmbiente: function(req, res, next) {
+        let productsAmbiente = products.filter(function(producto){
+            return producto.ambiente == req.params.ambiente;
+        })
+        
+        res.render('products/cursosPorAmbiente', { title: 'Cursos por Ambiente', css: 'listadoTodos', productsAmbiente });
+	}
+
 
 }
