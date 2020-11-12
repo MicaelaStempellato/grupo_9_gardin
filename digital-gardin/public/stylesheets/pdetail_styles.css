@@ -102,6 +102,7 @@ aside{
     padding: 2%;
     padding-top: 10%;
     padding-left: 0;
+    background: rgba(154, 208, 143, 0.5);
     width: 20%;
     flex: 1 1 30%;
     display: flex;
@@ -122,7 +123,7 @@ aside .datos_curso{
 
 aside .datos_curso .dat__{
     margin: 1%;
-    background-color: #FF1C45;
+    background-color: white;
 }
 
 aside .datos_curso .precio{
@@ -142,7 +143,7 @@ aside img{
 aside .botones{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
 }
 
 aside .botones .buy_boton{
@@ -151,16 +152,21 @@ aside .botones .buy_boton{
     background-color: #4C9C45;
     padding: 10px;
     border: none;
-    width: 70%;
-    height: 70%;
-    transition: all 1s;
     
+    transition: all 1s;
+    box-sizing: border-box;
 }
+
+aside .botones form{
+    width: auto;
+}
+
 
 aside .botones .modify_botons{
     display: flex;
-    justify-content:    space-around;
+    justify-content: space-around;
     margin-top: 2%;
+
 }
 
 aside .botones .delete_boton{
@@ -169,9 +175,8 @@ aside .botones .delete_boton{
     background-color: #FF1C45;
     padding: 10px;
     border: none;
-    width: 30%;
-    height: 100%;
     transition: all 1s;
+    margin-top: 2%;
 }
 
 aside .botones .edit_boton{
@@ -180,9 +185,8 @@ aside .botones .edit_boton{
     background-color: orange;
     padding: 10px;
     border: none;
-    width: 30%;
-    height: 100%;
     transition: all 1s;
+    margin-top: 2%;
 }
 
 

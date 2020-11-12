@@ -67,9 +67,8 @@ router.get('/:cursoElegido', function(req, res, next) {
 
 /* GET product detail page. */
 router.get('/ver/:id', productsController.mostrarCursoElegido);
-
 router.delete('/delete/:id', productsController.delete);
 
-  
+
 
 module.exports = router;

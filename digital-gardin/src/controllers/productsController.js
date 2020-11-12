@@ -88,9 +88,10 @@ module.exports = {
 	},
 	
 	mostrarCursoElegido: function(req, res, next) {
-		let product = products[(req.params.id-1)];
 		
-		
+		let id = req.params.id
+		let product = products.find(unProducto => id == unProducto.id)
+
 		
 		
 
@@ -104,12 +105,9 @@ module.exports = {
 		
 
 
-		for (let i = 1; i <= newBase.length; i++){
-			
-			console.log(newBase[i])
-		}
+		
 
-		let newBaseJSON= JSON.stringify(newBase, null, 2);
+		let newBaseJSON = JSON.stringify(newBase, null, 2);
 		
 
 		fs.writeFileSync(productsFilePath, newBaseJSON);

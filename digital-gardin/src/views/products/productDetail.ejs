@@ -62,12 +62,17 @@
                 <class class="botones">
                     <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button>
                     
-                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="delete_boton"><i class="fas fa-trash-alt basura"></i></button>
-                    </form>
 
+                    <class class="modify_botones">
+                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="delete_boton"><i class="fas fa-trash-alt basura"></i></button>
+                        </form>
+
+                        <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+                            <button type="submit" class="edit_boton"><i class="far fa-edit"></i></button>
+                        </form>
+                    </class>
                     
-                    <button class="edit_boton"><i class="fas fa-edit editar"></i></button>
                     
                     
                 </class>
