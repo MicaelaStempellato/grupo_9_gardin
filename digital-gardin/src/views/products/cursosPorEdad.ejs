@@ -5,9 +5,14 @@
     <%- include('../partials/navbar') %>
     <%- include('../partials/categoriasCursos') %>
 
-    <h2 class="tituloCursos">Todos los cursos para 
-    
-    </h2>
+    <% if(productsEdad.edad == "ninos"){ %>
+    <h2 class="tituloCursos">Todos los cursos para niños:</h2>
+    <% } else if (productsEdad.edad == "jovenes_adultos"){ %>
+        <h2 class="tituloCursos">Todos los cursos para jóvenes adultos:</h2>
+        <% } else if (productsEdad.edad == "adultos") { %>
+        <h2 class="tituloCursos">Todos los cursos para adultos:</h2>
+        <% } %>
+            
     <div class="losProductos">
     <% productsEdad.forEach(producto => {  %>
     <article class="unProducto">
