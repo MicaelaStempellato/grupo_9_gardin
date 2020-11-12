@@ -143,5 +143,34 @@
       "Rastrillo plástico",
       "Rastillo Metálico"
     ]
+  },
+  {
+    "id": 6,
+    "nombre": "Crece tu propio árbol de paltas",
+    "descripcion": "Aquí te mostramos cómo germinar la semilla de una palta para que crezca un árbol y puedas obtener sus frutos directamente desde tu jardín. ",
+    "edad": "jovenes_adultos",
+    "experiencia": "empezando",
+    "ambiente": "patios_balcones",
+    "profesor": "Facundo",
+    "duracion": "4 meses",
+    "idioma": "Español",
+    "precio": "2500",
+    "unidades": [
+      "Armado de la germinación",
+      "Cuidado diario de la semilla",
+      "Traspaso a tierra",
+      "Mantenimiento y crecimiento de la planta",
+      "Cosecha de los frutos"
+    ],
+    "requisitos": [
+      "Reecipiente de vidrio",
+      "Maceta grande",
+      "1 litro de tierra fértil",
+      "5 semillas de palta",
+      "Palillos afilados",
+      "Espacio bien luminoso",
+      "Una pala chica"
+    ],
+    "image": "image-1605149676793.png"
   }
 ]

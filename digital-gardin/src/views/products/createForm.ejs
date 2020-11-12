@@ -94,6 +94,8 @@
                     <option value="jardin">Jardín</option>
                     <% } %> 
             </select>
+            <input type="text" placeholder="Nombre del profesor" name="profesor" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.profesor : "" %>">
+            <input type="text" placeholder="Duración del curso" name="duracion" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.duracion : "" %>">
         </section>
         <section>
             <input type="file" name="image" id="image" required>
@@ -174,6 +176,78 @@
                  
                <!-- <textarea name="unidades" id="" cols="30" rows="10" placeholder="Unidades a ver..." required minlength="20"><%= typeof old != "undefined" ? old.unidades : "" %></textarea> -->
                 </article>
+
+                <article>
+                    <label class="unitsTitle">Requisitos:</label>
+                    <%if(typeof old != "undefined"){%>
+        
+                    <ul id="newElementId2">
+        
+                    <% old.requisitos.forEach(requisito => {%>
+                    
+                    <li>
+                     
+                    <input type="text" class='requisitos' name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%=requisito%>">
+        
+                </li>
+        
+                    <%})%>
+        
+                </ul>
+        
+                    <%}else{%>
+                    
+                    <input type="text" name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%= typeof old != "undefined" ? old.requisitos : "" %>">
+        
+                    <%}%>
+        
+                    <script type="text/JavaScript">
+                        function createNewElement2() {
+                            // First create a DIV element.
+                            var txtNewInputBox = document.createElement('li');
+                        
+                            // Then add the content (a new input box) of the element.
+                            txtNewInputBox.innerHTML = "<input type='text' id='newInputBox2' class='requisitos' name='requisitos' minlength='4' required placeholder='Requisitos...'>";
+                        
+                            // Finally put it where it is supposed to appear.
+                            document.getElementById("newElementId2").appendChild(txtNewInputBox);
+        
+                        }
+        
+        
+        
+                        function deleteElement2(elementId) {
+        
+                            let requisitos = document.getElementById('newElementId2');
+                            requisitos.removeChild(requisitos.lastElementChild);
+                            
+                            //let units = document.getElementById('newElementId');
+                            //units.remove();
+                            //document.removeElement('units.lastElementChild');
+                        
+        
+                        }
+                        </script>
+        
+                    
+        
+        
+                    <ul id="newElementId2"></ul>
+                    
+                    <section class="masMenos">
+                    <div>
+                        <input type="button" value="+" onclick="createNewElement2();"/>
+                     </div>
+        
+                     <div>
+                        <input type="button" value="-" onclick="deleteElement2();"/>
+                     </div>
+    
+                    </section>
+        
+        
+                     
+                     </article>
 
         </section>
         <div class="botones_form">

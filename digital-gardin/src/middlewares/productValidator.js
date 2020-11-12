@@ -5,7 +5,7 @@ module.exports={
     product: [
         body("nombre")
         .notEmpty()
-        .withMessage("El nombre es obligatorio")
+        .withMessage("El nombre del curso es obligatorio")
         .bail()
         .isLength({min: 5, max: 40})
         .withMessage("Debe tener entre 5 y 120 caracteres"),
@@ -38,6 +38,18 @@ module.exports={
             return false;
         })
         .withMessage("Imagen debe ser un archivo jpg, jpeg o png"),
+        body("profesor")
+        .notEmpty()
+        .withMessage("El nombre del profesor es obligatorio")
+        .bail()
+        .isLength({min: 5, max: 120})
+        .withMessage("El nombre del profesor debe tener mínimo 5 caracteres y máximo 120"),
+        body("duracion")
+        .notEmpty()
+        .withMessage("La duración del curso es obligatoria")
+        .bail()
+        .isLength({min: 5, max: 120})
+        .withMessage("La duración del curso debe tener mínimo 5 caracteres y máximo 120"),
         body("idioma")
         .notEmpty()
         .withMessage("El idioma es obligatorio"),
@@ -47,6 +59,12 @@ module.exports={
         .bail()
         .isLength({min: 5})
         .withMessage("Las uidades deben tener mínimo 5 caracteres"),
+        body("requisitos")
+        .notEmpty()
+        .withMessage("Los requisitos son obligatorios")
+        .bail()
+        .isLength({min: 4})
+        .withMessage("Los requisitos deben tener mínimo 4 caracteres"),
         body("edad")
         .notEmpty()
         .withMessage("La edad es obligatoria"),
@@ -93,6 +111,18 @@ module.exports={
              })
     
         .withMessage("Imagen debe ser un archivo jpg, jpeg o png"),
+        body("profesor")
+        .notEmpty()
+        .withMessage("El nombre del profesor es obligatorio")
+        .bail()
+        .isLength({min: 5, max: 120})
+        .withMessage("El nombre del profesor debe tener mínimo 5 caracteres y máximo 120"),
+        body("duracion")
+        .notEmpty()
+        .withMessage("La duración del curso es obligatoria")
+        .bail()
+        .isLength({min: 5, max: 120})
+        .withMessage("La duración del curso debe tener mínimo 5 caracteres y máximo 120"),
         body("idioma")
         .notEmpty()
         .withMessage("El idioma es obligatorio"),
@@ -102,6 +132,12 @@ module.exports={
         .bail()
         .isLength({min: 5})
         .withMessage("Las uidades deben tener mínimo 5 caracteres"),
+        body("requisitos")
+        .notEmpty()
+        .withMessage("Los requisitos son obligatorios")
+        .bail()
+        .isLength({min: 4})
+        .withMessage("Los requisitos deben tener mínimo 4 caracteres"),
         body("edad")
         .notEmpty()
         .withMessage("La edad es obligatoria"),

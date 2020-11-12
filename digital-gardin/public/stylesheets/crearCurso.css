@@ -74,13 +74,17 @@
     padding-left: 20px;
 }
 
-#newElementId{
+#newElementId, #newElementId2{
     padding-left: inherit;
 }
 
 #newElementId li{
 list-style: none;
 }
+
+#newElementId2 li{
+    list-style: none;
+    }
 
 .masMenos{
     display: flex;
