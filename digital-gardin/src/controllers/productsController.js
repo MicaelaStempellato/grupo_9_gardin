@@ -119,7 +119,15 @@ module.exports = {
         })
         
         res.render('products/cursosPorEdad', { title: 'Cursos por Edad', css: 'listadoTodos', productsEdad });
-    }
+	},
+	
+	filtroExperiencia: function(req, res, next) {
+        let productsExperiencia = products.filter(function(producto){
+            return producto.experiencia == req.params.experiencia;
+        })
+        
+        res.render('products/cursosPorExperiencia', { title: 'Cursos por Experiencia', css: 'listadoTodos', productsExperiencia });
+	},
 
 
 }

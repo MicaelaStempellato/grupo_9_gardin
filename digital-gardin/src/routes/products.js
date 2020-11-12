@@ -48,6 +48,7 @@ var storage = multer.diskStorage({
 
   /* Cursos filtrados */
   router.get('/edad/:edad', productsController.filtroEdad);
+  router.get('/experiencia/:experiencia', productsController.filtroExperiencia);
 
  /* Ir al carrito*/   
  router.get('/carrito', productsController.carrito);

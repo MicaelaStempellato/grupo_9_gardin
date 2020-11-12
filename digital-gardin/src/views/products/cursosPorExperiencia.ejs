@@ -5,16 +5,16 @@
     <%- include('../partials/navbar') %>
     <%- include('../partials/categoriasCursos') %>
 
-    <% if(productsEdad[0].edad == "ninos"){ %>
-    <h2 class="tituloCursos">Todos los cursos para niños:</h2>
-    <% } else if (productsEdad[0].edad == "jovenes_adultos"){ %>
-        <h2 class="tituloCursos">Todos los cursos para jóvenes adultos:</h2>
-        <% } else if (productsEdad[0].edad == "adultos") { %>
-        <h2 class="tituloCursos">Todos los cursos para adultos:</h2>
+    <% if(productsExperiencia[0].experiencia == "empezando"){ %>
+    <h2 class="tituloCursos">Todos los cursos para principiantes:</h2>
+    <% } else if (productsExperiencia[0].experiencia == "con_conocimiento"){ %>
+        <h2 class="tituloCursos">Todos los cursos para los que tienen conocimiento:</h2>
+        <% } else if (productsExperiencia[0].experiencia == "avanzado") { %>
+        <h2 class="tituloCursos">Todos los cursos para avanzados:</h2>
         <% } %>
             
     <div class="losProductos">
-    <% productsEdad.forEach(producto => {  %>
+    <% productsExperiencia.forEach(producto => {  %>
     <article class="unProducto">
         <a href="/products/ver/<%=producto.id%>">
         <section class="sectionProducto imgProducto">
