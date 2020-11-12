@@ -6,6 +6,8 @@
     "edad": "jovenes_adultos",
     "experiencia": "empezando",
     "ambiente": "patios_balcones",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
     "idioma": "Español",
     "precio": "2500",
     "unidades": [
@@ -14,9 +16,6 @@
       "Cuidado de capullos",
       "Mantenimiento de plantas"
     ],
-    "image": "image-1603155381115.jpg",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -26,7 +25,8 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-    ]
+    ],
+    "image": "image-1603155381115.jpg"
   },
   {
     "id": 2,
@@ -35,6 +35,8 @@
     "edad": "adultos",
     "experiencia": "avanzado",
     "ambiente": "interior",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
     "idioma": "Japonés",
     "precio": "5000",
     "unidades": [
@@ -43,9 +45,6 @@
       "Cuidado de capullos",
       "Mantenimiento de plantas"
     ],
-    "image": "image-1603158889872.jpg",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -55,7 +54,8 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-    ]
+    ],
+    "image": "image-1603158889872.jpg"
   },
   {
     "id": 3,
@@ -64,6 +64,8 @@
     "edad": "jovenes_adultos",
     "experiencia": "con_conocimiento",
     "ambiente": "jardin",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
     "idioma": "Inglés",
     "precio": "2000",
     "unidades": [
@@ -72,9 +74,6 @@
       "Cuidado de capullos",
       "Mantenimiento de plantas"
     ],
-    "image": "image-1603160114061.png",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -84,7 +83,8 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-    ]
+    ],
+    "image": "image-1603160114061.png"
   },
   {
     "id": 4,
@@ -93,6 +93,8 @@
     "edad": "jovenes_adultos",
     "experiencia": "empezando",
     "ambiente": "patios_balcones",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
     "idioma": "Español",
     "precio": "1500",
     "unidades": [
@@ -101,9 +103,6 @@
       "Cuidado de capullos",
       "Mantenimiento de plantas"
     ],
-    "image": "image-1603160939825.jpg",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -113,7 +112,8 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-    ]
+    ],
+    "image": "image-1603160939825.jpg"
   },
   {
     "id": 5,
@@ -122,6 +122,8 @@
     "edad": "ninos",
     "experiencia": "empezando",
     "ambiente": "jardin",
+    "profesor": "Gonza",
+    "duracion": "4 meses",
     "idioma": "Español",
     "precio": "650",
     "unidades": [
@@ -130,9 +132,6 @@
       "Cuidado de capullos",
       "Mantenimiento de plantas"
     ],
-    "image": "image-1605046797869.jpg",
-    "profesor": "Gonza",
-    "duracion": "4 meses",
     "requisitos": [
       "Regadera",
       "Tijera de Podar Setos",
@@ -142,7 +141,8 @@
       "Pala ancha o plana",
       "Rastrillo plástico",
       "Rastillo Metálico"
-    ]
+    ],
+    "image": "image-1605046797869.jpg"
   },
   {
     "id": 6,
