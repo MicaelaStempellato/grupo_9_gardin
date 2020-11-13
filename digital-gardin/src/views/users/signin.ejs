@@ -8,13 +8,17 @@
             <h2 class="registrarse">Registrarse</h2>
             <p class="ir-a-login">¿Ya eres usuario? <a href="/users/login">Ingresa</a></p>
         </div>
+        <div>
+
+        </div>
         <form class="formulario" action="/users/registro" method="POST" >
             
-            <input class="user-name" type="text" name="user-name" placeholder="Ingresa tu nombre">
-            <input class="user-surname" type="text" name="user-surname" placeholder="Ingresa tu apellido">
+            <input class="user-name" type="text" name="userName" placeholder="Ingresa tu nombre">
+            <input class="user-surname" type="text" name="userSurname" placeholder="Ingresa tu apellido">
             <input class="user-email" type="text" name="email" placeholder="Ingresa tu email">
             <input class="pass" type="password" name="pass" placeholder="Constraseña">
             <input class="pass" type="password" name="pass2" placeholder="Repetir constraseña">
+            <input class="avatar" type="file" name="avatar">
             <button class="boton" type="submit">Registrarse </button>
         </form>
     </main>
