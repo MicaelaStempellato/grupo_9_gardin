@@ -88,10 +88,6 @@ module.exports = {
 		
 		let id = req.params.id
 		let product = products.find(unProducto => id == unProducto.id)
-
-		
-		
-
 		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', product});
 	},
 
