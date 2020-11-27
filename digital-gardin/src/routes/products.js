@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-let productsController = require('../controllers/productsController')
+let productsController = require('../controllers/productsController');
+let filtrosController = require('../controllers/filtrosController');
 const multer = require('multer');
 const path = require('path');
 let productValidator = require('../middlewares/productValidator');
@@ -34,7 +35,7 @@ var storage = multer.diskStorage({
  });
 
 /* Todos los cursos*/
- router.get('/', productsController.listadoTodo);
+ router.get('/', filtrosController.listadoTodo);
 
  /* Los forms para crear y editar cursos*/
  router.get('/create', productsController.create);
@@ -47,9 +48,9 @@ var storage = multer.diskStorage({
  router.put('/edit/:id', upload.single('image'), productValidator.update, productsController.update);
 
   /* Cursos filtrados */
-  router.get('/edad/:edad', productsController.filtroEdad);
-  router.get('/experiencia/:experiencia', productsController.filtroExperiencia);
-  router.get('/ambiente/:ambiente', productsController.filtroAmbiente);
+  router.get('/edad/:edad', filtrosController.filtroEdad);
+  router.get('/experiencia/:experiencia', filtrosController.filtroExperiencia);
+  router.get('/ambiente/:ambiente', filtrosController.filtroAmbiente);
 
  /* Ir al carrito*/   
  router.get('/carrito', productsController.carrito);
