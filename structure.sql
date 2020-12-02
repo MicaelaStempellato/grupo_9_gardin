@@ -19,7 +19,7 @@ CREATE TABLE `products` (
   `price` INT NOT NULL,
   `image` varchar(50) NOT NULL,
   `professor` varchar(50) NOT NULL,
-  `duration` INT NOT NULL,
+  `duration` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) CHARSET=utf8mb4;
 
@@ -35,7 +35,7 @@ CREATE TABLE `users` (
   `last_name` varchar(95) NOT NULL,
   `email` varchar(95) NOT NULL,
   `password` varchar(95) NOT NULL,
-  `avatar` varchar(50) NOT NULL,
+  `avatar` varchar(50) NULL,
   `category_id` INT NOT NULL,
   PRIMARY KEY (`id`)
 ) CHARSET=utf8mb4;
