@@ -2,14 +2,25 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 const { product } = require('../middlewares/productValidator');
+const {Product} = require('../database/models');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 module.exports = {
 
-    listadoTodo: function(req, res, next) {
-        res.render('products/todosCursos', { title: 'Digital Gardin', css: 'listadoTodos', products });
+    listadoTodo: async function(req, res, next) {
+
+        try{
+            const products = await Product.findAll()
+            console.log(products)
+            res.render('products/todosCursos', { title: 'Digital Gardin', css: 'listadoTodos', products });
+        }catch(error){
+            console.log(error);
+            res.render('error')
+        }
+
+        //res.render('products/todosCursos', { title: 'Digital Gardin', css: 'listadoTodos', products });
 	},
 
     filtroEdad: function(req, res, next) {
