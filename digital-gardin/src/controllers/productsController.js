@@ -3,43 +3,81 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const { product } = require('../middlewares/productValidator');
 
+const {Age, Environment, Experience, Product, Unit, Requirement} = require('../database/models');
+
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 module.exports = {
-    create: function(req, res, next) {
-        res.render('products/createForm', { title: 'Crear Curso', css: 'crearCurso' });
+    create: async function(req, res, next) {
+		try{
+			const edad = await Age.findAll();
+			const ambiente = await Environment.findAll();
+			const experiencia = await Experience.findAll();
+			res.render('products/createForm', { title: 'Crear Curso', css: 'crearCurso', edad, ambiente, experiencia });
+		}catch(error){
+			console.log(error)
+            res.render('error')
+		}
+        
       },
 	edit: function(req, res, next) {
 		let id = req.params.id
 		let curso = products.find(unProducto => id == unProducto.id)
 		res.render('products/editForm', {curso, title: 'Editar Curso', css: 'crearCurso'})
 		},
-	store: function(req, res, next) {
+	store: async function(req, res, next) {
 		let errors = validationResult(req);
 		if(errors.isEmpty()){
 
-			let elId;
-			if(products==""){
-				elId = 1
-			} else{
-				elId = products[products.length-1].id+1
-			};
+			try{
+				console.log(req.body.name)
+				await Product.create({
+					name: req.body.name,
+					description: req.body.description,
+					age_id: req.body.age_id,
+					experience_id: req.body.experience_id,
+					environment_id: req.body.environment_id,
+					language: req.body.language,
+					price: req.body.price,
+					image: req.file.filename,
+					professor: req.body.professor,
+					duration: req.body.duration
+				})
 
-		let newProduct = {
-			id: elId,
-			...req.body,
-			image: req.file.filename
-		}
-		let newDB = [...products, newProduct];
-		let newDBJSON = JSON.stringify(newDB, null, 2);
-		fs.writeFileSync(productsFilePath, newDBJSON)
+				let productId = await Product.findOne({
+					where:{
+						image: req.file.filename
+					}
+				})
 
-		res.redirect('/');
+				for(let i = 0; i < req.body.unit_name.length; i++)
+				await Unit.create({
+					unit_name: req.body.unit_name[i],
+					product_id: productId.id
+				})
+
+				for(let i = 0; i < req.body.req_name.length; i++)
+				await Requirement.create({
+					req_name: req.body.req_name[i],
+					product_id: productId.id
+				})
+				
+				res.redirect('/');
+
+			}catch(error){
+				console.log(error)
+				res.render('error')
+			}
+
+			
 
 		} else {
-			return res.render('products/createForm', {errors: errors.errors, old: req.body, title: 'Editar Curso', css: 'crearCurso'})
+			const edad = await Age.findAll();
+			const ambiente = await Environment.findAll();
+			const experiencia = await Experience.findAll();
+			return res.render('products/createForm', {errors: errors.errors, old: req.body, title: 'Editar Curso', css: 'crearCurso', edad, ambiente, experiencia})
 		}
     },
     

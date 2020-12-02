@@ -4,9 +4,6 @@ const { validationResult } = require('express-validator');
 const { product } = require('../middlewares/productValidator');
 const {Product, Age, Experience} = require('../database/models');
 
-//const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 module.exports = {
 
     listadoTodo: async (req, res, next) => {
@@ -17,8 +14,6 @@ module.exports = {
         }catch(error){
             res.render('error')
         }
-
-        //res.render('products/todosCursos', { title: 'Digital Gardin', css: 'listadoTodos', products });
 	},
 
     filtroEdad: async function(req, res, next) {

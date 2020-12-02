@@ -20,104 +20,75 @@
         </div>
 
         <section>
-            <input type="text" placeholder="Nombre" name="nombre" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.nombre : "" %>">
-            <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción..." required minlength="20" maxlength="400"><%= typeof old != "undefined" ? old.descripcion : "" %></textarea>
-            <select name="edad" id="edad" required>
+            <input type="text" placeholder="Nombre" name="name" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.name : "" %>">
+            <textarea name="description" id="descripcion" cols="30" rows="10" placeholder="Descripción..." required minlength="20" maxlength="400"><%= typeof old != "undefined" ? old.description : "" %></textarea>
+            <select name="age_id" id="edad" required>
                 <option value="">Edad recomendada</option>
-                <% if (typeof old != "undefined"){ %>
-                <% if (old.edad == "ninos"){ %> 
-                    <option value="ninos" selected>Niños</option>
-                <% } else { %> 
-                    <option value="ninos">Niños</option>
-                <% } %> 
-                <% if (old.edad == "jovenes_adultos"){ %> 
-                    <option value="jovenes_adultos" selected>Jóvenes adultos</option>
-                <% } else { %> 
-                    <option value="jovenes_adultos">Jóvenes adultos</option>
-                <% } %> 
-                <% if (old.edad == "adultos"){ %> 
-                    <option value="adultos" selected>Adultos</option>
-                <% } else { %> 
-                    <option value="adultos">Adultos</option>
-                <% } %> 
-                <% } else { %> 
-                    <option value="ninos">Niños</option>
-                    <option value="jovenes_adultos">Jóvenes adultos</option>
-                    <option value="adultos">Adultos</option>
-                    <% } %> 
+                    <% edad.forEach(edad => { %>
+                    <%if(typeof old != "undefined"){%>
+                        <%if(old.age_id == edad.id){%>
+                        <option value="<%=edad.id%>" selected><%=edad.category_name%></option>
+                        <%}else{%>
+                        <option value="<%=edad.id%>" ><%=edad.category_name%></option>
+                        <%}%>
+                    <%}else{%>
+                    <option value="<%=edad.id%>"><%=edad.category_name%></option>
+                    <%}%>
+                    <%})%>
+              
             </select>
-            <select name="experiencia" id="experiencia" required>
+            <select name="experience_id" id="experiencia" required>
                 <option value="">Experiencia recomendada</option>
-                <% if (typeof old != "undefined"){ %>
-                <% if (old.experiencia == "empezando"){ %> 
-                    <option value="empezando" selected>Empezando</option>
-                <% } else { %> 
-                    <option value="empezando">Empezando</option>
-                <% } %> 
-                <% if (old.experiencia == "con_conocimiento"){ %> 
-                    <option value="con_conocimiento" selected>Con conocimiento</option>
-                <% } else { %> 
-                    <option value="con_conocimiento">Con conocimiento</option>
-                <% } %> 
-                <% if (old.experiencia == "avanzado"){ %> 
-                    <option value="avanzado" selected>Avanzada</option>
-                <% } else { %> 
-                    <option value="avanzado">Avanzada</option>
-                <% } %> 
-                <% } else { %> 
-                    <option value="empezando">Empezando</option>
-                    <option value="con_conocimiento">Con conocimiento</option>
-                    <option value="avanzado">Avanzada</option>
-                    <% } %> 
+                <% experiencia.forEach(experiencia => { %>
+                    <%if(typeof old != "undefined"){%>
+                        <%if(old.experience_id == experiencia.id){%>
+                        <option value="<%=experiencia.id%>" selected><%=experiencia.category_name%></option>
+                        <%}else{%>
+                        <option value="<%=experiencia.id%>" ><%=experiencia.category_name%></option>
+                        <%}%>
+                    <%}else{%>
+                    <option value="<%=experiencia.id%>"><%=experiencia.category_name%></option>
+                    <%}%>
+                    <%})%>
             </select>
-            <select name="ambiente" id="ambiente" required>
+            <select name="environment_id" id="ambiente" required>
                 <option value="">Ambiente</option>
-                <% if (typeof old != "undefined"){ %>
-                <% if (old.ambiente == "interior"){ %> 
-                    <option value="interior" selected>Interior</option>
-                <% } else { %> 
-                    <option value="interior">Interior</option>
-                <% } %> 
-                <% if (old.ambiente == "patios_balcones"){ %> 
-                    <option value="patios_balcones" selected>Patios y balcones</option>
-                <% } else { %> 
-                    <option value="patios_balcones">Patios y balcones</option>
-                <% } %> 
-                <% if (old.ambiente == "jardin"){ %> 
-                    <option value="jardin" selected>Jardín</option>
-                <% } else { %> 
-                    <option value="jardin">Jardín</option>
-                <% } %> 
-                <% } else { %> 
-                    <option value="interior">Interior</option>
-                    <option value="patios_balcones">Patios y balcones</option>
-                    <option value="jardin">Jardín</option>
-                    <% } %> 
+                <% ambiente.forEach(ambiente => { %>
+                    <%if(typeof old != "undefined"){%>
+                        <%if(old.environment_id == ambiente.id){%>
+                        <option value="<%=ambiente.id%>" selected><%=ambiente.category_name%></option>
+                        <%}else{%>
+                        <option value="<%=ambiente.id%>" ><%=ambiente.category_name%></option>
+                        <%}%>
+                    <%}else{%>
+                    <option value="<%=ambiente.id%>"><%=ambiente.category_name%></option>
+                    <%}%>
+                    <%})%>
             </select>
-            <input type="text" placeholder="Nombre del profesor" name="profesor" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.profesor : "" %>">
-            <input type="text" placeholder="Duración del curso" name="duracion" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.duracion : "" %>">
+            <input type="text" placeholder="Nombre del profesor" name="professor" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.professor : "" %>">
+            <input type="text" placeholder="Duración del curso" name="duration" required minlength="5" maxlength="120" value="<%= typeof old != "undefined" ? old.duration : "" %>">
         </section>
         <section>
             <input type="file" name="image" id="image" required>
-            <input type="text" name="idioma" placeholder="Idioma" required value="<%= typeof old != "undefined" ? old.idioma : "" %>">
-            <input type="text" name="precio" placeholder="Precio Total" required value="<%= typeof old != "undefined" ? old.precio : "" %>">
+            <input type="text" name="language" placeholder="Idioma" required value="<%= typeof old != "undefined" ? old.language : "" %>">
+            <input type="text" name="price" placeholder="Precio Total" required value="<%= typeof old != "undefined" ? old.price : "" %>">
            
             <article>
                 <label class="unitsTitle">Unidades:</label>
                 <%if(typeof old != "undefined"){%>
 
-                <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=old.unidades[0]%>">
+                <input type="text" class='units' name="unit_name" required minlength="5" placeholder='Unidad...' value= "<%=old.unit_name[0]%>">
                 
-                <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=old.unidades[1]%>">
+                <input type="text" class='units' name="unit_name" required minlength="5" placeholder='Unidad...' value= "<%=old.unit_name[1]%>">
     
                 <ul id="newElementId">
 
     
-                <% for(let i = 2; i < old.unidades.length; i++){ %>
+                <% for(let i = 2; i < old.unit_name.length; i++){ %>
                 
                 <li>
                  
-                <input type="text" class='units' name="unidades" required minlength="5" placeholder='Unidad...' value= "<%=old.unidades[i]%>">
+                <input type="text" class='units' name="unit_name" required minlength="5" placeholder='Unidad...' value= "<%=old.unit_name[i]%>">
     
             </li>
     
@@ -127,8 +98,8 @@
     
                 <%}else{%>
                 
-                <input type="text" name="unidades" required minlength="5" placeholder='Unidad...' value= "<%= typeof old != "undefined" ? old.unidades : "" %>">
-                <input type="text" name="unidades" required minlength="5" placeholder='Unidad...' value= "<%= typeof old != "undefined" ? old.unidades : "" %>">
+                <input type="text" name="unit_name" required minlength="5" placeholder='Unidad...' value= "<%= typeof old != "undefined" ? old.unit_name : "" %>">
+                <input type="text" name="unit_name" required minlength="5" placeholder='Unidad...' value= "<%= typeof old != "undefined" ? old.unit_name : "" %>">
     
                 <%}%>
     
@@ -138,7 +109,7 @@
                         var txtNewInputBox = document.createElement('li');
                     
                         // Then add the content (a new input box) of the element.
-                        txtNewInputBox.innerHTML = "<input type='text' id='newInputBox' class='units' name='unidades' minlength='5' required placeholder='Unidad...'>";
+                        txtNewInputBox.innerHTML = "<input type='text' id='newInputBox' class='units' name='unit_name' minlength='5' required placeholder='Unidad...'>";
                     
                         // Finally put it where it is supposed to appear.
                         document.getElementById("newElementId").appendChild(txtNewInputBox);
@@ -187,17 +158,17 @@
                     <label class="unitsTitle">Requisitos:</label>
                     <%if(typeof old != "undefined"){%>
 
-                    <input type="text" class='requisitos' name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%=old.requisitos[0]%>">
+                    <input type="text" class='requisitos' name="req_name" required minlength="4" placeholder='Requisitos...' value= "<%=old.req_name[0]%>">
                 
-                    <input type="text" class='requisitos' name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%=old.requisitos[1]%>">
+                    <input type="text" class='requisitos' name="req_name" required minlength="4" placeholder='Requisitos...' value= "<%=old.req_name[1]%>">
         
                     <ul id="newElementId2">
         
-                    <% for(let i = 2; i < old.requisitos.length; i++){ %>
+                    <% for(let i = 2; i < old.req_name.length; i++){ %>
                     
                     <li>
                      
-                    <input type="text" class='requisitos' name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%=old.requisitos[i]%>">
+                    <input type="text" class='requisitos' name="req_name" required minlength="4" placeholder='Requisitos...' value= "<%=old.req_name[i]%>">
         
                 </li>
         
@@ -207,8 +178,8 @@
         
                     <%}else{%>
                     
-                    <input type="text" name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%= typeof old != "undefined" ? old.requisitos : "" %>">
-                    <input type="text" name="requisitos" required minlength="4" placeholder='Requisitos...' value= "<%= typeof old != "undefined" ? old.requisitos : "" %>">
+                    <input type="text" name="req_name" required minlength="4" placeholder='Requisitos...' value= "<%= typeof old != "undefined" ? old.req_name : "" %>">
+                    <input type="text" name="req_name" required minlength="4" placeholder='Requisitos...' value= "<%= typeof old != "undefined" ? old.req_name : "" %>">
         
                     <%}%>
         
@@ -218,7 +189,7 @@
                             var txtNewInputBox = document.createElement('li');
                         
                             // Then add the content (a new input box) of the element.
-                            txtNewInputBox.innerHTML = "<input type='text' id='newInputBox2' class='requisitos' name='requisitos' minlength='4' required placeholder='Requisitos...'>";
+                            txtNewInputBox.innerHTML = "<input type='text' id='newInputBox2' class='requisitos' name='req_name' minlength='4' required placeholder='Requisitos...'>";
                         
                             // Finally put it where it is supposed to appear.
                             document.getElementById("newElementId2").appendChild(txtNewInputBox);
