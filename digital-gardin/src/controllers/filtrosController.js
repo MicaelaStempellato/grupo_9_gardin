@@ -9,7 +9,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 module.exports = {
 
-    listadoTodo: async function(req, res, next) {
+    listadoTodo: async (req, res, next) => {
 
         try{
             const products = await Product.findAll()

@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "gardin_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -9,6 +9,7 @@ module.exports = {
       underscored: true,
       timestamps: false
     },
+    "port": "8889"
   },
   "test": {
     "username": "root",
