@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 const { product } = require('../middlewares/productValidator');
-const {Product} = require('../database/models');
+const {Product, Age, Experience} = require('../database/models');
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+//const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 module.exports = {
 
@@ -13,38 +13,61 @@ module.exports = {
 
         try{
             const products = await Product.findAll()
-            console.log(products)
             res.render('products/todosCursos', { title: 'Digital Gardin', css: 'listadoTodos', products });
         }catch(error){
-            console.log(error);
             res.render('error')
         }
 
         //res.render('products/todosCursos', { title: 'Digital Gardin', css: 'listadoTodos', products });
 	},
 
-    filtroEdad: function(req, res, next) {
-        let productsEdad = products.filter(function(producto){
-            return producto.edad == req.params.edad;
-        })
+    filtroEdad: async function(req, res, next) {
+
+        try{
+            const products = await Product.findAll({
+                include: ["edad"],
+                where: {
+                    age_id: req.params.edad,
+                }
+            })
+            res.render('products/cursosPorEdad', { title: 'Digital Gardin', css: 'listadoTodos', products });
+        }catch(error){
+            res.render('error')
+        }
+
         
-        res.render('products/cursosPorEdad', { title: 'Cursos por Edad', css: 'listadoTodos', productsEdad });
 	},
 	
-	filtroExperiencia: function(req, res, next) {
-        let productsExperiencia = products.filter(function(producto){
-            return producto.experiencia == req.params.experiencia;
-        })
-        
-        res.render('products/cursosPorExperiencia', { title: 'Cursos por Experiencia', css: 'listadoTodos', productsExperiencia });
+	filtroExperiencia: async function(req, res, next) {
+
+        try{
+            const products = await Product.findAll({
+                include: ["experiencia"],
+                where: {
+                    experience_id: req.params.experiencia,
+                }
+            })
+            res.render('products/cursosPorExperiencia', { title: 'Digital Gardin', css: 'listadoTodos', products });
+        }catch(error){
+            res.render('error')
+        }
 	},
 
-	filtroAmbiente: function(req, res, next) {
-        let productsAmbiente = products.filter(function(producto){
-            return producto.ambiente == req.params.ambiente;
-        })
-        
-        res.render('products/cursosPorAmbiente', { title: 'Cursos por Ambiente', css: 'listadoTodos', productsAmbiente });
+	filtroAmbiente: async function(req, res, next) {
+
+        try{
+            const products = await Product.findAll({
+                include: ["ambiente"],
+                where: {
+                    environment_id: req.params.ambiente,
+                }
+            })
+            res.render('products/cursosPorAmbiente', { title: 'Digital Gardin', css: 'listadoTodos', products });
+        }catch(error){
+            res.render('error')
+        }
+
+    
 	}
 
 }

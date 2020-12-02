@@ -5,24 +5,25 @@
     <%- include('../partials/navbar') %>
     <%- include('../partials/categoriasCursos') %>
 
-    <% if(productsEdad[0].edad == "ninos"){ %>
+    
+    <% if(products[0].age_id == 1){ %>
     <h2 class="tituloCursos">Todos los cursos para niños:</h2>
-    <% } else if (productsEdad[0].edad == "jovenes_adultos"){ %>
+    <% } else if (products[0].age_id == 2){ %>
         <h2 class="tituloCursos">Todos los cursos para jóvenes adultos:</h2>
-        <% } else if (productsEdad[0].edad == "adultos") { %>
+        <% } else if (products[0].age_id == 3) { %>
         <h2 class="tituloCursos">Todos los cursos para adultos:</h2>
         <% } %>
             
     <div class="losProductos">
-    <% productsEdad.forEach(producto => {  %>
+    <% products.forEach(producto => {  %>
     <article class="unProducto">
         <a href="/products/ver/<%=producto.id%>">
         <section class="sectionProducto imgProducto">
-            <img src="/images/cursos/<%=producto.image%>" alt="<%=producto.nombre%>">
+            <img src="/images/cursos/<%=producto.image%>" alt="<%=producto.name%>">
         </section>
         <section class="sectionProducto infoProducto">
-            <h3><%=producto.nombre%></h3>
-            <p><%=producto.descripcion%> </p>
+            <h3><%=producto.name%></h3>
+            <p><%=producto.description%> </p>
         </section>
     </a>
     </article>

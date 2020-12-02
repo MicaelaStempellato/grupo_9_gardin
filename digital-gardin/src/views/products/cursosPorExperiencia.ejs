@@ -5,24 +5,24 @@
     <%- include('../partials/navbar') %>
     <%- include('../partials/categoriasCursos') %>
 
-    <% if(productsExperiencia[0].experiencia == "empezando"){ %>
+    <% if(products[0].experience_id == 1){ %>
     <h2 class="tituloCursos">Todos los cursos para principiantes:</h2>
-    <% } else if (productsExperiencia[0].experiencia == "con_conocimiento"){ %>
+    <% } else if (products[0].experience_id == 2){ %>
         <h2 class="tituloCursos">Todos los cursos para los que tienen conocimiento:</h2>
-        <% } else if (productsExperiencia[0].experiencia == "avanzado") { %>
+        <% } else if (products[0].experience_id == 3) { %>
         <h2 class="tituloCursos">Todos los cursos para avanzados:</h2>
         <% } %>
             
     <div class="losProductos">
-    <% productsExperiencia.forEach(producto => {  %>
+    <% products.forEach(producto => {  %>
     <article class="unProducto">
         <a href="/products/ver/<%=producto.id%>">
         <section class="sectionProducto imgProducto">
-            <img src="/images/cursos/<%=producto.image%>" alt="<%=producto.nombre%>">
+            <img src="/images/cursos/<%=producto.image%>" alt="<%=producto.name%>">
         </section>
         <section class="sectionProducto infoProducto">
-            <h3><%=producto.nombre%></h3>
-            <p><%=producto.descripcion%> </p>
+            <h3><%=producto.name%></h3>
+            <p><%=producto.description%> </p>
         </section>
     </a>
     </article>
