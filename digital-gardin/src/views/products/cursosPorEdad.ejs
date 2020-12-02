@@ -5,7 +5,8 @@
     <%- include('../partials/navbar') %>
     <%- include('../partials/categoriasCursos') %>
 
-    
+    <%if(products != ""){%> 
+
     <% if(products[0].age_id == 1){ %>
     <h2 class="tituloCursos">Todos los cursos para niños:</h2>
     <% } else if (products[0].age_id == 2){ %>
@@ -15,6 +16,7 @@
         <% } %>
             
     <div class="losProductos">
+   
     <% products.forEach(producto => {  %>
     <article class="unProducto">
         <a href="/products/ver/<%=producto.id%>">
@@ -28,6 +30,11 @@
     </a>
     </article>
     <% }) %> 
+    <%}else{%>
+    <div class="losProductos" style="margin-bottom: 40px;">
+    <h2 class="tituloCursos">No hay cursos de esta categoría por el momento.</h2>
+    </div>
+    <%}%>
 </div>
 
     <%- include('../partials/footer') %>

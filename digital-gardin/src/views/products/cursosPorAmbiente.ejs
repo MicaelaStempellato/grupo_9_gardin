@@ -5,6 +5,8 @@
     <%- include('../partials/navbar') %>
     <%- include('../partials/categoriasCursos') %>
 
+    <%if(products != ""){%> 
+
     <% if(products[0].environment_id == 1){ %>
     <h2 class="tituloCursos">Todos los cursos para interior:</h2>
     <% } else if (products[0].environment_id == 2){ %>
@@ -27,6 +29,13 @@
     </a>
     </article>
     <% }) %> 
+
+    <%}else{%>
+    <div class="losProductos" style="margin-bottom: 40px;">
+    <h2 class="tituloCursos">No hay cursos de esta categoría por el momento.</h2>
+    </div>
+    <%}%>
+
 </div>
 
     <%- include('../partials/footer') %>
