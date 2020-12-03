@@ -1,44 +1,49 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const { users } = require('../middlewares/usersValidator');
+const { usersReg, usersLog } = require('../middlewares/usersValidator');
+const db = require('../database/models');
 
-const usersdbPatch = path.join(__dirname, '../data/usersDB.json');
-let usersDb = JSON.parse(fs.readFileSync(usersdbPatch, 'utf-8'));
+
 
 module.exports = {
     login: function(req, res, next) {
         res.render('users/login', { title: 'Inicia Sesión', css: 'login_styles'});
       },
 
-      registrarse: function(req, res, next) {
+    loginForm: function(req, res, next) {
+      let errors = validationResult(req);
+        if (errors.isEmpty()){
+          res.render('index');
+        } else {
+          res.render('users/login', { title: 'Inicia Sesión', css: 'login_styles'});
+        }
+      },
+
+    registrarse: function(req, res, next) {
         res.render('users/signin', { title: 'Registrate', css: 'signin_styles'});
       },
 
-      registroForm: function(req, res, next) {
+    registroForm: function(req, res, next) {
         let errors = validationResult(req);
         if (errors.isEmpty()){
 
-          let usersID;
-          if(usersDb==""){
-            usersID = 1
-          } else{
-            usersID = usersDb[usersDb.length-1].id+1
-          };
-
-          let newUsersDB = {
-            id: usersID,
-            userName: req.body.userName,
-            userSurname: req.body.userSurname,
-            email: req.body.email,
-            pass: req.body.pass
-            //image: req.file.filename
+          try{
+            db.User.create({
+              first_name: req.body.userName,
+              last_name: req.body.userSurname,
+              email: req.body.email,
+              password: req.body.pass,
+              //avatar: req.file.filename,
+              category_id: req.body.category
+            });
+  
+            res.render('users/login', { title: 'Inicia Sesión', css: 'login_styles'});
           }
-
-          let usersdbJSON = JSON.stringify([...usersDb, newUsersDB]);
-          fs.writeFileSync(usersdbPatch, usersdbJSON);
-
-          res.render('users/login', { title: 'Inicia Sesión', css: 'login_styles'});
+          catch(error){
+            console.log(error)
+            res.render('error')
+          }
 
         } else {
           console.log(errors.errors);

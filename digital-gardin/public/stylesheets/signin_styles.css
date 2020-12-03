@@ -63,7 +63,7 @@ main{
     align-items: center;
 }
 
-.user-email, .user-name, .user-surname, .pass, .avatar{
+.user-email, .user-name, .user-surname, .pass, .avatar, .category{
     display: block;
     margin: 0 auto 20px auto;
     width:200px;

@@ -34,7 +34,8 @@ var upload = multer({
 
 /* GET users listing. */
 router.get('/login', usersController.login);
+router.post('/login', usersValidator.usersLog, usersController.loginForm);
 router.get('/signin', usersController.registrarse);
-router.post('/registro', upload.single('image'), usersValidator.users, usersController.registroForm);
+router.post('/registro', upload.single('image'), usersValidator.usersReg, usersController.registroForm);
 
 module.exports = router;

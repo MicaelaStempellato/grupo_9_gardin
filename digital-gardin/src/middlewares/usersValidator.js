@@ -1,8 +1,9 @@
 const { check, validationResult, body } = require("express-validator");
 var path = require("path")
+const db = require('../database/models');
 
 module.exports={
-    users: [
+    usersReg: [
         body('userName')
         .notEmpty()
         .withMessage('Este campo no puede estar vacio')
@@ -40,5 +41,20 @@ module.exports={
         })
         .withMessage('las contraseñas deben coincidir')
         */
+
+        body('category')
+        .notEmpty()
+        .withMessage('Por favor, seleccione una opción')
+    ],
+    usersLog: [
+        body('email')
+        .notEmpty()
+        .withMessage('Por favor, ingrese su E-mail')
+        .isEmail()
+        .withMessage('Por favor, ingrese su E-mail'),
+
+        body('pass')
+        .notEmpty()
+        .withMessage('Por favor, ingrese su contraseña')
     ]
 }
