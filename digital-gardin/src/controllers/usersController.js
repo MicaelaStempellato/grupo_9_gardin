@@ -24,12 +24,12 @@ module.exports = {
         res.render('users/signin', { title: 'Registrate', css: 'signin_styles'});
       },
 
-    registroForm: function(req, res, next) {
+    registroForm: async function(req, res, next) {
         let errors = validationResult(req);
         if (errors.isEmpty()){
 
           try{
-            db.User.create({
+            await db.User.create({
               first_name: req.body.userName,
               last_name: req.body.userSurname,
               email: req.body.email,
@@ -49,5 +49,20 @@ module.exports = {
           console.log(errors.errors);
           return res.render('users/signin', {errors: errors.errors, title: 'Registrate', css: 'signin_styles'})
         }
+      },
+
+      perfil: async function(req, res, next) {
+        try{
+          let usuario = await db.User.findByPk(1, {include: ['category']})
+          let products = await db.Product.findAll({
+            where:{
+              experience_id: 2
+            }
+          })
+          return res.render('users/perfil', {title: usuario.first_name, css: 'perfil_styles', usuario, products})
+        }catch(error){
+            console.log(error)
+            res.render('error')
+          }
       }
 }

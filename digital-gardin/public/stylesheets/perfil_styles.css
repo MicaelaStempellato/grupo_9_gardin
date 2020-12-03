@@ -1,0 +1,143 @@
+.intro_usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    box-sizing: border-box;
+}
+
+.nombre_usuario{
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.img_usuario{
+    width: 100px;
+    border-radius: 50px;
+}
+
+.category_usuario{
+    text-align: center;
+    color: #4E4E4E;
+}
+
+.edit_usuario{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
+.edit_boton{
+    margin-left: 10px;
+    color: #4E4E4E;
+}
+
+
+.unProducto{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px 0px 10px 0px;
+    height: 420px;
+    transition: 1s all;
+    
+}
+
+.unProducto:hover{
+    transform: scale(1.02);
+}
+
+.imgProducto img{
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.unProducto a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.infoProducto h3{
+    font-size: 20px;
+}
+
+.infoProducto p{
+    font-size: 18px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-top: 5px;
+}
+
+.infoProducto{
+    margin-top: 10px;
+}
+
+.losProductos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: flex-start;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.tituloCursos{
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+@media (min-width: 768px){
+
+    .unProducto{
+        width: 40%;
+        margin: 10px;
+    }
+
+    .infoProducto h3{
+        font-size: 22px;
+    }
+    .losProductos{
+        flex-direction: row;
+    }
+    .tituloCursos{
+        margin-top: 20px;
+        padding-left: 8%;
+        width: 50%;
+        text-align: left;
+    }
+}
+
+@media (min-width: 1200px){
+
+    .unProducto{
+        width: 28%;
+        margin: 5px;
+    }
+
+    .imgProducto img{
+        height: 248px;
+    }
+
+    .unProducto{
+        height: 398px;
+    }
+
+    .infoProducto h3{
+        font-size: 20px;
+    }
+}

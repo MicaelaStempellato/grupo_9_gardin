@@ -38,4 +38,7 @@ router.post('/login', usersValidator.usersLog, usersController.loginForm);
 router.get('/signin', usersController.registrarse);
 router.post('/registro', upload.single('image'), usersValidator.usersReg, usersController.registroForm);
 
+/* GET users profile. */
+router.get('/profile', usersController.perfil);
+
 module.exports = router;

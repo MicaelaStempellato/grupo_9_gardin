@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <section class="intro_usuario">
+        <img class="img_usuario" src="/images/profile-pic.png" alt="Foto de usuario">
+        <h2 class="nombre_usuario"><%=usuario.first_name + " " + usuario.last_name%></h2>
+        <div class="edit_usuario">
+        <h3 class="category_usuario"><%=usuario.category.category_name%></h3>
+        <a href="/users/edit"><i class="far fa-edit edit_boton"></i></a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="tituloCursos">Mis cursos</h2>
+        <div class="losProductos">
+        <% products.forEach(producto => {  %>
+            <article class="unProducto">
+                <a href="/products/ver/<%=producto.id%>">
+                <section class="sectionProducto imgProducto">
+                    <img src="/images/cursos/<%=producto.image%>" alt="<%=producto.name%>">
+                </section>
+                <section class="sectionProducto infoProducto">
+                    <h3><%=producto.name%></h3>
+                    <p><%=producto.description%> </p>
+                </section>
+            </a>
+            </article>
+            <% }) %> 
+        </div>
+    </section>
+    <%- include('../partials/footer') %>
+</body>
+<%- include('../partials/linksJsAbajo') %>
+</html>
