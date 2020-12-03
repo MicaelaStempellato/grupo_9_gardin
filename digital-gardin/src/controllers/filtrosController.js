@@ -3,6 +3,7 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const { product } = require('../middlewares/productValidator');
 const {Product, Age, Experience} = require('../database/models');
+const db = require('../database/models');
 
 module.exports = {
 
@@ -63,6 +64,26 @@ module.exports = {
         }
 
     
-	}
+    },
+    
+    search: async (req, res, next) => {
+        try{
+            const products = await Product.findAll({
+                where: {
+                    name: {
+                        [db.Sequelize.Op.like]: `%${req.body.buscar}%` 
+                    }
+                },
+                order: [
+                ['name', 'ASC']
+                ]
+                
+            })
+            res.render('products/searchResults', { title: 'Resultados de la Busqueda', css: 'listadoTodos', products, busqueda: req.body.buscar });
+     
+        }catch(error){
+            res.render('error')
+        }
+    }
 
 }

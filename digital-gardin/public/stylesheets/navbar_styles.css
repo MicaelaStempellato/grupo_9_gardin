@@ -154,6 +154,12 @@ a{
     background-color: #D2E8C9;
 }
 
+.botonLupa{
+    border: none;
+    background: none;
+    width: 26px;
+}
+
 @media (min-width: 768px){
     .hamburger{
         display: none!important;

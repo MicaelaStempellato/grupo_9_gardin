@@ -184,6 +184,11 @@ body{
     margin-top: 10px;
 }
 
+.noResults{
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
 @media (min-width: 768px){
     .categorias{
         flex-direction: row;
@@ -203,6 +208,10 @@ body{
 
     .infoProducto h3{
         font-size: 22px;
+    }
+
+    .noResults{
+        margin-left: 25px;
     }
 
 }
@@ -234,6 +243,10 @@ body{
 
     .infoProducto h3{
         font-size: 20px;
+    }
+
+    .noResults {
+        margin-left: 40px;
     }
 
 }

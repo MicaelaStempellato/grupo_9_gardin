@@ -38,6 +38,9 @@ var storage = multer.diskStorage({
 /* Todos los cursos*/
  router.get('/', filtrosController.listadoTodo);
 
+ /* Buscar cursos*/
+ router.post('/search-results', filtrosController.search);
+
  /* Los forms para crear y editar cursos*/
  router.get('/create', viewController.create);
  router.get('/edit/:id', viewController.edit);

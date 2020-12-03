@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/navbar') %>
+    <%- include('../partials/categoriasCursos') %>
+
+    <h2 class="tituloCursos">Resultados para "<%= busqueda %>"</h2>
+    <div class="losProductos">
+    <%if (products != ""){ %>
+    <% products.forEach(producto => {  %>
+    <article class="unProducto">
+        <a href="/products/ver/<%=producto.id%>">
+        <section class="sectionProducto imgProducto">
+            <img src="/images/cursos/<%=producto.image%>" alt="<%=producto.name%>">
+        </section>
+        <section class="sectionProducto infoProducto">
+            <h3><%=producto.name%></h3>
+            <p><%=producto.description%> </p>
+        </section>
+    </a>
+    </article>
+    <% }) %> 
+    <%} else {%>
+        <h3 class="noResults">No se encontraron resultados para "<%= busqueda %>"</h3>
+    <% } %> 
+
+</div>
+
+    <%- include('../partials/footer') %>
+</body>
+<%- include('../partials/linksJsAbajo') %>
+</html>
