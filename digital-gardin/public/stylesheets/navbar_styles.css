@@ -91,7 +91,7 @@ a{
     display: flex;
     flex-direction: row;
     padding: 0 22px 48px 0;
-    width: 265px;
+    width: 255px;
 }
 
 .items_menu a{
@@ -164,23 +164,26 @@ a{
 .navbar_boton2{
     border: none;
     background: none;
-    width: 100px;
+    width: fit-content;
     color: #4E4E4E;
     padding: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 10px;
 }
 
 .navbar_boton2:focus {
-    outline-color: #D2E8C9;
+    outline-color: #ffffff;
 }
 
 .avatarUser{
     width: 35px;
     margin-left: 12px;
     border-radius: 50%;
+}
+
+.nombreUsuario{
+    display: none;
 }
 
 @media (min-width: 768px){
@@ -263,6 +266,19 @@ a{
     .estoy_aca{
         background-color: white;
         color: #4B9C45;
+    }
+
+    .nombreUsuario{
+        display: inherit;
+    }
+
+    .navbar_boton2{
+        margin-right: 10px;
+        width: 100px;
+    }
+
+    .navbar_boton2:focus {
+        outline-color: #D2E8C9;
     }
 
 }
