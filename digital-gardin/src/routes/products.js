@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 let productsController = require('../controllers/productsController');
 let filtrosController = require('../controllers/filtrosController');
+let viewController = require('../controllers/viewController');
 const multer = require('multer');
 const path = require('path');
 let productValidator = require('../middlewares/productValidator');
@@ -38,8 +39,8 @@ var storage = multer.diskStorage({
  router.get('/', filtrosController.listadoTodo);
 
  /* Los forms para crear y editar cursos*/
- router.get('/create', productsController.create);
- router.get('/edit/:id', productsController.edit);
+ router.get('/create', viewController.create);
+ router.get('/edit/:id', viewController.edit);
 
  
  
@@ -53,7 +54,7 @@ var storage = multer.diskStorage({
   router.get('/ambiente/:ambiente', filtrosController.filtroAmbiente);
 
  /* Ir al carrito*/   
- router.get('/carrito', productsController.carrito);
+ router.get('/carrito', viewController.carrito);
 
  /*
 router.get('/:cursoElegido', function(req, res, next) {
@@ -67,7 +68,7 @@ router.get('/:cursoElegido', function(req, res, next) {
   });*/
 
 /* GET product detail page. */
-router.get('/ver/:id', productsController.mostrarCursoElegido);
+router.get('/ver/:id', viewController.mostrarCursoElegido);
 router.delete('/delete/:id', productsController.delete);
 
 
