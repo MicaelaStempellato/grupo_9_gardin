@@ -176,28 +176,55 @@ module.exports = {
     },
     
 	
-	mostrarCursoElegido: function(req, res, next) {
+	mostrarCursoElegido: async function(req, res, next) {
+
+		try{
+			let product = await Product.findByPk(req.params.id, {include: ['edad', 'experiencia', 'ambiente']});
+			let unidades = await Unit.findAll({
+				where: {
+					product_id: req.params.id
+				}
+			})
+			let requisitos = await Requirement.findAll({
+				where: {
+					product_id: req.params.id
+				}
+			})
+			res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', product, unidades, requisitos});
+		}catch(error){
+			console.log(error)
+				res.render('error')	
+	}
 		
-		let id = req.params.id
-		let product = products.find(unProducto => id == unProducto.id)
-		res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', product});
 	},
 
-	delete: function (req,res,next){
+	delete: async function (req,res,next){
 
-		let idDelete = req.params.id;
-		let newBase = products.filter(producto => producto.id != idDelete);
-		
+		try{
+			const elcurso = await Product.findByPk(req.params.id);
+			await Unit.destroy({
+				where:{
+					product_id: req.params.id
+				}
+			});
+			await Requirement.destroy({
+				where:{
+					product_id: req.params.id
+				}
+			});
+			fs.unlinkSync(path.join(__dirname, '../../public/images/cursos/', elcurso.image));
+			await Product.destroy({
+				where:{
+					id: req.params.id
+				}
+			})
+			res.redirect('/');
+		}catch(error){
+			console.log(error)
+			res.render('error')	
+	}
 
 
-		
-
-		let newBaseJSON = JSON.stringify(newBase, null, 2);
-		
-
-		fs.writeFileSync(productsFilePath, newBaseJSON);
-
-		res.redirect('/');
 	},
 
 	carrito: function(req, res, next) {

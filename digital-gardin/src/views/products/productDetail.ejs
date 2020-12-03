@@ -20,12 +20,12 @@
                     <!-- titulo foto y descripcion en detalle_curso -->
 
                     
-                    <h1><%= product.nombre %></h1>
+                    <h1><%= product.name %></h1>
                     
                     <img src="/images/cursos/<%= product.image %>"   alt="Foto del curso" class="curso-img">
                     
                     <p class="descripcion_completa">
-                        <%= product.descripcion %>
+                        <%= product.description %>
                     </p>
                    
                 </article>
@@ -36,9 +36,9 @@
                     
                     <div class="unidades">
 
-                        <% for ( let i = 0; i < product.unidades.length; i++ ) {  %>
+                        <% for ( let i = 0; i < unidades.length; i++ ) {  %>
                         
-                            <p class="unidad"> <%= ("U"+(i+1)) + " - " + product.unidades[i] %> </p>
+                            <p class="unidad"> <%= ("U"+(i+1)) + " - " + unidades[i].unit_name %> </p>
 
                         <% } %>
                     </div>
@@ -47,9 +47,9 @@
                     <h2 class="desc_requisitos">Herramientas necesarias</h2>
                     
                     <div class="requisitos">
-                        <% for ( let i = 0; i < product.requisitos.length; i++ ) {  %>
+                        <% for ( let i = 0; i < requisitos.length; i++ ) {  %>
                     
-                            <p class="requisito"> <%= product.requisitos[i] %> </p>
+                            <p class="requisito"> <%= requisitos[i].req_name %> </p>
 
                         <% } %>
                     </div>
@@ -68,7 +68,7 @@
                             <button type="submit" class="delete_boton"><i class="fas fa-trash-alt basura"></i></button>
                         </form>
 
-                        <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+                        <form action="/products/edit/<%= product.id %>" method="GET">
                             <button type="submit" class="edit_boton"><i class="far fa-edit"></i></button>
                         </form>
                     </class>
@@ -79,12 +79,13 @@
                 <div class="datos_curso">
                     
                     
-                    <p class="dat__ precio">Precio: <%= "$" + product.precio %></p>    
-                    <p class="dat__">Dictado por:  <%= product.profesor %> </p>
-                    <p class="dat__">Dirigido a: <%= product.experiencia %> </p>
-                    <p class="dat__">Ambiente: <%= product.ambiente %></p>
-                    <p class="dat__">Idioma: <%= product.idioma %></p>
-                    <p class="dat__">Duracion: <%= product.duracion %></p>
+                    <p class="dat__ precio">Precio: <%= "$" + product.price %></p>    
+                    <p class="dat__">Dictado por:  <%= product.professor %> </p>
+                    <p class="dat__">Dirigido a: <%= product.experiencia.category_name %> </p>
+                    <p class="dat__">Ambiente: <%= product.ambiente.category_name %></p>
+                    <p class="dat__">Edad recomendada: <%= product.edad.category_name %></p>
+                    <p class="dat__">Idioma: <%= product.language %></p>
+                    <p class="dat__">Duracion: <%= product.duration %></p>
 
 
                 </div>
