@@ -22,10 +22,28 @@ module.exports = {
 		}
         
       },
-	edit: function(req, res, next) {
-		let id = req.params.id
-		let curso = products.find(unProducto => id == unProducto.id)
-		res.render('products/editForm', {curso, title: 'Editar Curso', css: 'crearCurso'})
+	edit: async function(req, res, next) {
+		try{
+			let curso = await Product.findByPk(req.params.id, {include: ['edad', 'ambiente', 'experiencia']})
+			let unidades = await Unit.findAll({
+				where:{
+					product_id: curso.id
+				}
+			})
+			let requisitos = await Requirement.findAll({
+				where:{
+					product_id: curso.id
+				}
+			})
+			const edad = await Age.findAll();
+			const ambiente = await Environment.findAll();
+			const experiencia = await Experience.findAll();
+			res.render('products/editForm', {curso, title: 'Editar Curso', css: 'crearCurso', edad, ambiente, experiencia, unidades, requisitos})
+		}catch(error){
+		console.log(error)
+        res.render('error')
+		}
+		
 		},
 	store: async function(req, res, next) {
 		let errors = validationResult(req);
@@ -81,43 +99,79 @@ module.exports = {
 		}
     },
     
-    update: (req, res, next) => {
+    update: async (req, res, next) => {
+
+	
 		let errors = validationResult(req);
 		if(errors.isEmpty()){
 
-		products.map(producto => {
-			if(req.params.id == producto.id){
-				producto.nombre = req.body.nombre;
-				producto.descripcion = req.body.descripcion;
-				producto.edad = req.body.edad;
-				producto.experiencia = req.body.experiencia;
-				producto.ambiente = req.body.ambiente;
-				producto.profesor = req.body.profesor;
-				producto.duracion = req.body.duracion;
-                producto.idioma = req.body.idioma;
-				producto.precio = req.body.precio;
-				producto.unidades = req.body.unidades;
-				producto.requisitos = req.body.requisitos;
-				if(req.file == undefined){
-					producto.image = producto.image
-				}else{
-					fs.unlinkSync(path.join(__dirname, '../../public/images/cursos/', producto.image));
-					producto.image = req.file.filename
-				}
+		try{
+
+			const image_name = await Product.findByPk(req.params.id)
+			let img_nombre
+			if(req.file == undefined){
+				img_nombre = image_name.image
+			}else{
+				fs.unlinkSync(path.join(__dirname, '../../public/images/cursos/', image_name.image));
+				img_nombre = req.file.filename
 			}
-		})
 
-			productsJSON= JSON.stringify(products, null, 2);
-			
+			await Product.update({
+				name: req.body.name,
+				description: req.body.description,
+				age_id: req.body.age_id,
+				experience_id: req.body.experience_id,
+				environment_id: req.body.environment_id,
+				language: req.body.language,
+				price: req.body.price,
+				image: img_nombre,
+				professor: req.body.professor,
+				duration: req.body.duration,
+				
+			},{
+				where: {
+					id: req.params.id
+				}
+			})
 
-			fs.writeFileSync(productsFilePath, productsJSON);
+			await Unit.destroy({
+				where:{
+					product_id: req.params.id
+				}
+			})
 
-			res.redirect('/');
+			for(let i = 0; i < req.body.unit_name.length; i++)
+				await Unit.create({
+					unit_name: req.body.unit_name[i],
+					product_id: req.params.id
+				})
 
+			await Requirement.destroy({
+				where:{
+					product_id: req.params.id
+				}
+			})
+
+				for(let i = 0; i < req.body.req_name.length; i++)
+				await Requirement.create({
+					req_name: req.body.req_name[i],
+					product_id: req.params.id
+				})
+
+				res.redirect('/');
+
+		}catch(error){
+				console.log(error)
+					res.render('error')	
+		}
+		
 		} else {
-			let id = req.params.id
-			let curso = products.find(unProducto => id == unProducto.id)
-			return res.render('products/editForm', {errors: errors.errors, old: req.body, curso, title: 'Editar Curso', css: 'crearCurso'})
+			let curso = await Product.findByPk(req.params.id)
+
+			const edad = await Age.findAll();
+			const ambiente = await Environment.findAll();
+			const experiencia = await Experience.findAll();
+			return res.render('products/editForm', {errors: errors.errors, old: req.body, curso, title: 'Editar Curso', css: 'crearCurso', edad, ambiente, experiencia})
 		}
     },
     

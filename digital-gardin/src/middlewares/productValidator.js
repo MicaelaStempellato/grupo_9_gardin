@@ -79,19 +79,19 @@ module.exports={
     ],
     
     update: [
-        body("nombre")
+        body("name")
         .notEmpty()
         .withMessage("El nombre es obligatorio")
         .bail()
         .isLength({min: 5, max: 40})
         .withMessage("Debe tener entre 5 y 120 caracteres"),
-        body("descripcion")
+        body("description")
         .notEmpty()
         .withMessage("La descripción es obligatoria")
         .bail()
         .isLength({min: 20, max:400})
         .withMessage("La descripción debe tener mínimo 20 caracteres y máximo 400"),
-        body("precio")
+        body("price")
         .notEmpty()
         .withMessage("El precio es obligatorio")
         .bail()
@@ -111,40 +111,40 @@ module.exports={
              })
     
         .withMessage("Imagen debe ser un archivo jpg, jpeg o png"),
-        body("profesor")
+        body("professor")
         .notEmpty()
         .withMessage("El nombre del profesor es obligatorio")
         .bail()
         .isLength({min: 5, max: 120})
         .withMessage("El nombre del profesor debe tener mínimo 5 caracteres y máximo 120"),
-        body("duracion")
+        body("duration")
         .notEmpty()
         .withMessage("La duración del curso es obligatoria")
         .bail()
         .isLength({min: 5, max: 120})
         .withMessage("La duración del curso debe tener mínimo 5 caracteres y máximo 120"),
-        body("idioma")
+        body("language")
         .notEmpty()
         .withMessage("El idioma es obligatorio"),
-        body("unidades")
+        body("unit_name")
         .notEmpty()
         .withMessage("Las unidades son obligatorias")
         .bail()
         .isLength({min: 5})
         .withMessage("Las uidades deben tener mínimo 5 caracteres"),
-        body("requisitos")
+        body("req_name")
         .notEmpty()
         .withMessage("Los requisitos son obligatorios")
         .bail()
         .isLength({min: 4})
         .withMessage("Los requisitos deben tener mínimo 4 caracteres"),
-        body("edad")
+        body("age_id")
         .notEmpty()
         .withMessage("La edad es obligatoria"),
-        body("experiencia")
+        body("experience_id")
         .notEmpty()
         .withMessage("La experiencia es obligatoria"),
-        body("ambiente")
+        body("environment_id")
         .notEmpty()
         .withMessage("El embiente es obligatorio")
         
