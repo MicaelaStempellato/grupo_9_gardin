@@ -15,6 +15,7 @@
 
     <section>
         <h2 class="tituloCursos">Mis cursos</h2>
+        <%if(products != ""){%>
         <div class="losProductos">
         <% products.forEach(producto => {  %>
             <article class="unProducto">
@@ -30,6 +31,16 @@
             </article>
             <% }) %> 
         </div>
+        <%}else{%>
+            <div class="losProductos2" style="margin-bottom: 40px;">
+            <h3 class="tituloCursos">No tenés cursos por el momento.</h3>
+            <%if (usuario.category_id == 1){%>
+            <a href="/products/create"><button class="rec_boton">¡Crea un curso nuevo!</button></a> 
+            <%} else {%>
+            <a href="/products"><button class="rec_boton">¡Empezá un curso hoy!</button></a>
+            <%}%>
+            </div>
+            <%}%>
     </section>
     <%- include('../partials/footer') %>
 </body>

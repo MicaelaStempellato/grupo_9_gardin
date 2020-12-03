@@ -83,7 +83,7 @@
     margin-top: 10px;
 }
 
-.losProductos{
+.losProductos, .losProductos2{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -100,6 +100,27 @@
     margin-top: 40px;
 }
 
+.rec_boton{
+    border: 3px solid #98D991;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    width: fit-content;
+    font-size: 15px;
+    padding: 17px;
+    transition: all 1s;
+}
+
+.rec_boton:hover{
+ background-color: rgba(75, 156, 69, 1);
+ color: white;
+ border: 3px solid #4C9C45;;
+}
+
+.losProductos2 a{
+    text-align: center;
+    margin-top: 15px;
+}
+
 
 @media (min-width: 768px){
 
@@ -111,7 +132,7 @@
     .infoProducto h3{
         font-size: 22px;
     }
-    .losProductos{
+    .losProductos, .losProductos2{
         flex-direction: row;
     }
     .tituloCursos{
