@@ -15,3 +15,9 @@ Retrospectiva: Sprint 4
 
 Se completaron todas las consignas sugeridas por el sprint, aún así, no logramos llegar a la fecha de entrega con la iteración completa, creemos que deberíamos mejorar la producción agregando mas tiempo de dedicación. Se mejoraron algunos aspectos estéticos de la aplicación, pero tuvimos presente un error en el enrutamiento del botón de edición para el curso elegido. Además, se nos sugirió generar mas controladores para descomprimir las funcionalidades que se hallaban dentro del controlador de productos. 
 Creemos que tenemos varios aspectos para mejorar todavía, entre ellos poder acordar días y horarios de reuniones con el equipo, como también poder aprovechar el diálogo para eliminar dudas.
+
+Retrospectiva: Sprint 6
+
+Se finalizaron las tareas asignadas por el sprint, estamos encontrando un ritmo de trabajo muy bueno, logramos complementarnos en muchas situaciones para distrubuir las tareas y tiempos.
+Nos encontramos con una complicación dado que un integrante del equipo estuvo de licencia por paternidad y eso conllevó a que nos adaptemos de una manera distinta, teniendo que re-asignar las tareas con el resto del equipo.
+Se nota un gran mejora con respecto al compromiso de cada integrante con el equipo. Tenemos un gran grupo de trabajo 
