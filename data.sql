@@ -66,3 +66,11 @@ INSERT INTO `units` VALUES (DEFAULT,'Dónde conseguir los elementos básicos', 1
 
 
 INSERT INTO `requirements` VALUES (DEFAULT, 'Pala ancha o plana', 1),(DEFAULT, 'Rastrillo de jardín', 1),(DEFAULT, 'Rastillo Metálico', 1),(DEFAULT, 'Tenedor de jardín', 2),(DEFAULT, 'Rastrillo plástico', 2),(DEFAULT, 'Rastillo Metálico', 2),(DEFAULT, 'Rastrillo de jardín', 3),(DEFAULT, 'Regadera', 3),(DEFAULT, 'Tijera de Podar Setos', 3),(DEFAULT, 'Pala de Punta', 4),(DEFAULT, 'Rastrillo plástico', 4),(DEFAULT, 'Pala de Punta', 5),(DEFAULT, 'Rastrillo plástico', 5),(DEFAULT, 'Tenedor de jardín', 5),(DEFAULT, 'Tenedor de jardín', 6),(DEFAULT, 'Tijera de Podar Setos', 6);
+
+
+--
+-- Dumping data for table `products_users`
+--
+
+
+INSERT INTO `products_users` VALUES (3, 5),(1, 10),(2, 12),(2, 5),(3, 7),(3, 10),(6, 11),(5, 15),(3, 15),(1, 11),(5, 4),(1, 7),(1, 13),(4, 8),(4, 15),(1, 1),(3, 14),(1, 2),(3, 13),(1, 14),(3, 4),(2, 15),(4, 4),(1, 9),(3, 3),(6, 13),(1, 8),(5, 12),(2, 8),(4, 12),(1, 12),(1, 5),(2, 3),(4, 10),(5, 9),(2, 1),(5, 2),(3, 6),(3, 1),(2, 11),(6, 9),(1, 6),(4, 13),(5, 7),(5, 6);

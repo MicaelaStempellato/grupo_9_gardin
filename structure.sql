@@ -141,3 +141,22 @@ ALTER TABLE `units`
 ADD CONSTRAINT `fk_products_units`
 FOREIGN KEY (`product_id`)
 REFERENCES products(`id`);
+
+--
+-- Table structure for table `products_users`
+--
+
+DROP TABLE IF EXISTS `products_users`;
+CREATE TABLE `products_users` (
+  `product_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  PRIMARY KEY (`product_id`,`user_id`)
+) CHARSET=utf8mb4;
+
+ALTER TABLE `products_users`
+ADD CONSTRAINT `fk_products`
+FOREIGN KEY (`product_id`)
+REFERENCES products(`id`),
+ADD CONSTRAINT `fk_users`
+FOREIGN KEY (`user_id`)
+REFERENCES users(`id`);
