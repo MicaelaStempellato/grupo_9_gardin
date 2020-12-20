@@ -4,6 +4,8 @@ var path = require('path');
 const methodOverride =  require('method-override');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
+
 
 var indexRouter = require('./routes/main');
 var usersRouter = require('./routes/users');
@@ -22,6 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(session({secret: 'Digital House 2020'}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
