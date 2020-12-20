@@ -49,7 +49,7 @@ module.exports={
     usersLog: [
         body('email')
         .notEmpty()
-        .withMessage('Por favor, ingrese su E-mail')
+        .withMessage('El campo no puede estar vacío')
         .isEmail()
         .withMessage('Por favor, ingrese su E-mail'),
 

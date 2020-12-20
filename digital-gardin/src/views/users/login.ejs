@@ -6,10 +6,20 @@
     <main class="login-main">
         <div class="main-header">
             <h2 class="ingresar">Ingresar</h2>
+            <div class="errores">
+                <% if(typeof errors != 'undefined'){ %>
+                    <p class="errorTitle">ERROR</p>
+                    <ul>
+                        <% for(let i=0; i<errors.length; i++){ %>
+                            <li style="font-size: 13px"><%= errors[i].msg %> </li> 
+                        <% } %> 
+                    </ul> 
+                <% } %> 
+            </div>
             <p class="ir-a-registro">¿No tenes cuenta? <a class="link-login" href="/users/signin">Registrate</a></p>
         </div>
         <div class="formularioLogin">
-        <form class="formulario" action="/user/login" method="POST" >
+        <form class="formulario" action="/users/login" method="POST" >
             <input class="user-email" type="text" name="email" placeholder="E-mail o nombre de usuario">
             <input class="pass" type="password" name="pass" placeholder="Constraseña">
             <button class="boton" type="submit">Ingresar </button>

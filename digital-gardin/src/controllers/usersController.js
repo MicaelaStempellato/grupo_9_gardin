@@ -12,11 +12,26 @@ module.exports = {
       },
 
     loginForm: function(req, res, next) {
+
       let errors = validationResult(req);
-        if (errors.isEmpty()){
-          res.render('index');
+      if (errors.isEmpty()){
+          // si no hay errores de validacion
+          let userLog = db.User.findAll({
+            where: {
+              email: req.body.email,
+              password: req.body.pass
+            }
+          }).then(resultado => {
+            if (resultado.length<1){
+              res.render('users/login',{ title: 'Inicia Sesión', css: 'login_styles'})
+            }else{
+              res.send('el usuario se logueo con éxito')
+            }
+          })
         } else {
-          res.render('users/login', { title: 'Inicia Sesión', css: 'login_styles'});
+          // si los hay  
+          console.log(errors.errors);
+          return res.render('users/login', {errors: errors.errors, title: 'Inicia Sesión', css: 'login_styles'});
         }
       },
 

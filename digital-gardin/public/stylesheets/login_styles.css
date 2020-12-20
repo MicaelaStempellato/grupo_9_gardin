@@ -107,6 +107,26 @@ main{
     align-items: center;
 }
 
+.errorTitle{
+    color: #C75D5D; 
+    font-size: 15px
+}
+
+.errores ul li{
+ list-style: none;
+ color: #C75D5D; 
+}
+
+.errores ul{
+    padding-left: 0px;
+}
+
+.errores{
+    padding-left: 20px;
+    text-align: center;
+}
+
+
 @media (min-width: 768px){
 
     .main-header {

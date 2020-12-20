@@ -63,6 +63,24 @@ main{
     align-items: center;
 }
 
+.errorTitle{
+    color: #C75D5D; 
+    font-size: 15px
+}
+
+.errores ul li{
+ list-style: none;
+ color: #C75D5D; 
+}
+
+.errores ul{
+    padding-left: 0px;
+}
+
+.errores{
+    padding-left: 20px;
+}
+
 .user-email, .user-name, .user-surname, .pass, .avatar, .category{
     display: block;
     margin: 0 auto 20px auto;

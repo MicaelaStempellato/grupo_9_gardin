@@ -6,6 +6,16 @@
     <main>
         <div class="main-header">
             <h2 class="registrarse">Registrarse</h2>
+            <div class="errores">
+                <% if(typeof errors != 'undefined'){ %>
+                    <p class="errorTitle">ERROR</p>
+                    <ul>
+                        <% for(let i=0; i<errors.length; i++){ %>
+                            <li style="font-size: 13px"><%= errors[i].msg %> </li> 
+                        <% } %> 
+                    </ul> 
+                <% } %> 
+            </div>
             <p class="ir-a-login">¿Ya eres usuario? <a href="/users/login">Ingresa</a></p>
         </div>
         <div>
