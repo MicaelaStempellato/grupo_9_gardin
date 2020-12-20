@@ -15,9 +15,9 @@
 
     <section>
         <h2 class="tituloCursos">Mis cursos</h2>
-        <%if(products != ""){%>
+        <%if(usuario.productos != ""){%>
         <div class="losProductos">
-        <% products.forEach(producto => {  %>
+        <% usuario.productos.forEach(producto => {  %>
             <article class="unProducto">
                 <a href="/products/ver/<%=producto.id%>">
                 <section class="sectionProducto imgProducto">

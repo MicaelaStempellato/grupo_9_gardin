@@ -53,13 +53,9 @@ module.exports = {
 
       perfil: async function(req, res, next) {
         try{
-          let usuario = await db.User.findByPk(1, {include: ['category']})
-          let products = await db.Product.findAll({
-            where:{
-              experience_id: 2
-            }
-          })
-          return res.render('users/perfil', {title: usuario.first_name, css: 'perfil_styles', usuario, products})
+          let usuario = await db.User.findByPk(1, {include: ['category', 'productos']})
+          
+          return res.render('users/perfil', {title: usuario.first_name, css: 'perfil_styles', usuario})
         }catch(error){
             console.log(error)
             res.render('error')

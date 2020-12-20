@@ -33,6 +33,12 @@ module.exports = (sequelize, DataTypes) => {
         product.hasMany(models.Unit, {
             as: 'unidades',
             foreignKey: 'product_id'
+        });
+        product.belongsToMany(models.User,{
+            as: 'usuarios',
+            through: 'products_users',
+            foreignKey: 'product_id',
+            otherKey: 'user_id'
         })
 
     })
