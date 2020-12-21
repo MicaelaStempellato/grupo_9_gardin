@@ -25,7 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(session({secret: 'Digital House 2020'}));   
+app.use(session({secret: 'Digital House 2020', resave: true,
+saveUninitialized: true, cookie: { secure: false }}));   
 app.use(rememberMiddleware);
 
 app.use('/', indexRouter);

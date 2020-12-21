@@ -26,13 +26,14 @@ module.exports = {
               res.render('users/login',{ errors: errors.errors, title: 'Inicia Sesión', css: 'login_styles'})
             }else{
               console.log(UserLog);
-              req.session.userLog = UserLog;
+              UserLog.map(log => log.get({ plain: true }));
+              req.session.userLog = UserLog[0].id;
 
               if (req.body.remember != undefined){
-                res.cookie('recordame', UserLog.email, { maxAge: 60000 })
+                res.cookie('recordame', UserLog[0].id, { maxAge: 60000 })
               }
-
-              res.render('users/profile',{title: 'Mi perfil', css: 'perfil_styles'})
+              req.session.save(() =>
+              res.redirect('/users/profile') )
             }
           })
         } else {
@@ -75,9 +76,16 @@ module.exports = {
 
       perfil: async function(req, res, next) {
         try{
-          let usuario = await db.User.findByPk(1, {include: ['category', 'productos']})
+          console.log(req.session);
+          if(req.session.userLog){
+            let usuario = await db.User.findByPk(req.session.userLog, {include: ['category', 'productos']})
+            return res.render('users/perfil', {title: usuario.first_name, css: 'perfil_styles', usuario})
+          }
           
-          return res.render('users/perfil', {title: usuario.first_name, css: 'perfil_styles', usuario})
+          //let usuario = await db.User.findByPk(1, {include: ['category', 'productos']})
+          //console.log(usuario);
+          
+          //return res.render('users/perfil', {title: usuario.first_name, css: 'perfil_styles', usuario})
         }catch(error){
             console.log(error)
             res.render('error')
