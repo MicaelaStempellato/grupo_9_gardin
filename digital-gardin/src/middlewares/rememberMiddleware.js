@@ -2,7 +2,6 @@ const db = require('../database/models');
 
 function rememberMiddleware(req,res,next){
 
-    
 
     if (req.cookies.recordame != undefined && req.session.userLog == undefined) {
         db.User.findAll({
@@ -12,6 +11,7 @@ function rememberMiddleware(req,res,next){
           }).then(UserLog => {
             if (UserLog.length>0){
               req.session.userLog = UserLog[0].id;
+              req.session.save();
             }
           })
     }

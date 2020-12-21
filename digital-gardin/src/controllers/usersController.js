@@ -30,7 +30,7 @@ module.exports = {
               req.session.userLog = UserLog[0].id;
 
               if (req.body.remember != undefined){
-                res.cookie('recordame', UserLog[0].id, { maxAge: 60000 })
+                res.cookie('recordame', UserLog[0].id, { maxAge: 1000 * 60 * 60 })
               }
               req.session.save(() =>
               res.redirect('/users/profile') )

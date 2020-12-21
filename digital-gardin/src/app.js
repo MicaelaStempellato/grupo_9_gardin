@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products');
 var apiRouter = require('./routes/api/productsApi');
 var rememberMiddleware = require('./middlewares/rememberMiddleware');
+var localsMiddleware = require('./middlewares/localsMiddleware');
 
 var app = express();
 
@@ -26,8 +27,9 @@ app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(session({secret: 'Digital House 2020', resave: true,
-saveUninitialized: true, cookie: { secure: false }}));   
+saveUninitialized: true, cookie: { secure: false, maxAge:900000}}));   
 app.use(rememberMiddleware);
+app.use(localsMiddleware);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

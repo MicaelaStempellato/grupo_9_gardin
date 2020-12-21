@@ -91,12 +91,13 @@ a{
     display: flex;
     flex-direction: row;
     padding: 0 22px 48px 0;
-    width: 255px;
+    width: 218px;
 }
 
 .items_menu a{
     width: fit-content;
     text-decoration: none;
+    margin-right: 5px;
 }
 
 .navbar_boton{
@@ -204,8 +205,12 @@ a{
     }
 
     .items_menu{
-        padding: 0 25px 48px 0;
-        width: 366px;
+        padding: 0 44px 48px 0;
+        width: 289px;
+    }
+
+    .items_menu form{
+        width: fit-content;
     }
 
     .navbar_boton {
@@ -217,7 +222,7 @@ a{
         width: 28%;
         margin: auto;
         margin-top: -117px;
-        margin-right: 400px;;
+        margin-right: 339px;
         transition: none;
     }
 
