@@ -90,5 +90,15 @@ module.exports = {
             console.log(error)
             res.render('error')
           }
+      },
+      logout: async function(req, res, next) {
+        try{
+          req.session.destroy();
+          res.clearCookie('recordame');
+          res.redirect('/')
+        }catch(error){
+          console.log(error)
+          res.render('error')
+        }
       }
 }

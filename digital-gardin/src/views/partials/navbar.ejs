@@ -4,7 +4,7 @@
   <div class="items_menu">
   <%if(usuarioLog != 0){%>
   <a href="/users/profile"><button class="navbar_boton2"><p class="nombreUsuario"><%=nombreLog%></p><img class="avatarUser" src="/images/profile-pic.png" alt="Mi Perfil"></button></a>
-  <form action="/logout" method="POST"><button type="submit" class="navbar_boton">Log out</button></form>
+  <form action="/users/logout" method="POST"><button type="submit" class="navbar_boton">Log out</button></form>
   <%}else{%>
   <a href="/users/login"><button class="navbar_boton">Login</button></a>
   <a href="/users/signin" class="signup_boton"><button class="navbar_boton">Sign up</button></a>
