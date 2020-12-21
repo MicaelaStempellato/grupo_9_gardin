@@ -16,16 +16,23 @@ module.exports = {
       let errors = validationResult(req);
       if (errors.isEmpty()){
           // si no hay errores de validacion
-          let userLog = db.User.findAll({
+          db.User.findAll({
             where: {
               email: req.body.email,
               password: req.body.pass
             }
-          }).then(resultado => {
-            if (resultado.length<1){
-              res.render('users/login',{ title: 'Inicia Sesión', css: 'login_styles'})
+          }).then(UserLog => {
+            if (UserLog.length<1){
+              res.render('users/login',{ errors: errors.errors, title: 'Inicia Sesión', css: 'login_styles'})
             }else{
-              res.send('el usuario se logueo con éxito')
+              console.log(UserLog);
+              req.session.userLog = UserLog;
+
+              if (req.body.remember != undefined){
+                res.cookie('recordame', UserLog.email, { maxAge: 60000 })
+              }
+
+              res.render('users/profile',{title: 'Mi perfil', css: 'perfil_styles'})
             }
           })
         } else {

@@ -11,6 +11,7 @@ var indexRouter = require('./routes/main');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products');
 var apiRouter = require('./routes/api/productsApi');
+var rememberMiddleware = require('./middlewares/rememberMiddleware');
 
 var app = express();
 
@@ -24,7 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(session({secret: 'Digital House 2020'}));
+app.use(session({secret: 'Digital House 2020'}));   
+app.use(rememberMiddleware);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

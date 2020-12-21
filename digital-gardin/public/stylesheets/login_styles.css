@@ -83,6 +83,14 @@ main{
 
 }
 
+.formulario .recordame{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    align-items: center;
+}
+
+
 .boton{
     margin: 0 25%;
     margin-top: 33px;
