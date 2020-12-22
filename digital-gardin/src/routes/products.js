@@ -7,6 +7,8 @@ const multer = require('multer');
 const path = require('path');
 let productValidator = require('../middlewares/productValidator');
 const { Router } = require('express');
+const professorMiddleware = require('../middlewares/professorMiddleware');
+const professorEditMiddleware = require('../middlewares/professorEditMiddleware')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -42,8 +44,8 @@ var storage = multer.diskStorage({
  router.post('/search-results', filtrosController.search);
 
  /* Los forms para crear y editar cursos*/
- router.get('/create', viewController.create);
- router.get('/edit/:id', viewController.edit);
+ router.get('/create', professorMiddleware, viewController.create);
+ router.get('/edit/:id', professorEditMiddleware, viewController.edit);
 
  
  

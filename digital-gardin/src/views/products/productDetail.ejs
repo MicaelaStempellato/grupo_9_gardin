@@ -60,9 +60,12 @@
 
             <aside>
                 <class class="botones">
-                    <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button>
-                    
 
+                    <%if((categoriaLog == 2 && esta == false) || categoriaLog == 0){%>
+                    <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button>
+                    <%}%>
+                    <%for(let i = 0; i < product.usuarios.length; i++){%>
+                    <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
                     <class class="modify_botones">
                         <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
                             <button type="submit" class="delete_boton"><i class="fas fa-trash-alt basura"></i></button>
@@ -72,6 +75,8 @@
                             <button type="submit" class="edit_boton"><i class="far fa-edit"></i></button>
                         </form>
                     </class>
+                    <%}%>
+                    <%}%>
                     
                     
                     

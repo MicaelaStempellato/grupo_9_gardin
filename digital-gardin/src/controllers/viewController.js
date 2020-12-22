@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator');
 const { product } = require('../middlewares/productValidator');
 
 const {Age, Environment, Experience, Product, Unit, Requirement} = require('../database/models');
+const { format } = require('path');
 
 
 module.exports = {
@@ -49,18 +50,27 @@ module.exports = {
 	mostrarCursoElegido: async function(req, res, next) {
 
 		try{
-			let product = await Product.findByPk(req.params.id, {include: ['edad', 'experiencia', 'ambiente']});
+			let product = await Product.findByPk(req.params.id, {include: ['edad', 'experiencia', 'ambiente', 'usuarios']});
 			let unidades = await Unit.findAll({
 				where: {
 					product_id: req.params.id
 				}
 			})
+			let esta = false;
+			for(let i = 0; i < product.usuarios.length; i++){
+				if(req.session.userLog == product.usuarios[i].id){
+					esta = true
+				}
+
+
+			}
+			
 			let requisitos = await Requirement.findAll({
 				where: {
 					product_id: req.params.id
 				}
 			})
-			res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', product, unidades, requisitos});
+			res.render('products/productDetail', { title: 'Digital Gardin', css: 'pdetail_styles', product, unidades, requisitos, esta});
 		}catch(error){
 			console.log(error)
 				res.render('error')	
