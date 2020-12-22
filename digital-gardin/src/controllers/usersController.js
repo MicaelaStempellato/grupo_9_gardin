@@ -37,7 +37,7 @@ module.exports = {
             }
           })
         } else {
-          // si los hay  
+          // si los hay
           console.log(errors.errors);
           return res.render('users/login', {errors: errors.errors, title: 'Inicia Sesión', css: 'login_styles'});
         }
@@ -57,7 +57,6 @@ module.exports = {
               last_name: req.body.userSurname,
               email: req.body.email,
               password: req.body.pass,
-              //avatar: req.file.filename,
               category_id: req.body.category
             });
   
@@ -91,6 +90,7 @@ module.exports = {
             res.render('error')
           }
       },
+
       logout: async function(req, res, next) {
         try{
           req.session.destroy();
@@ -100,5 +100,60 @@ module.exports = {
           console.log(error)
           res.render('error')
         }
+      },
+
+      edit: async function (req, res, next) {
+        try{
+          let user = await db.User.findByPk(req.session.userLog)
+          console.log(user);
+          res.render('users/edit', { user: user, title: 'Editar perfil', css: 'editUser_styles'});
+        }catch(error){
+          console.log(error)
+          res.render('error')
+        }
+      },
+
+      editForm: function (req, res, next) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
+
+          try{
+            let user = db.User.findByPk(req.session.userLog)
+            .then(console.log('UPDATED ' + user));
+
+            db.User.update({
+              first_name: req.body.userName,
+              last_name: req.body.userSurname,
+              email: req.body.email
+            }, {
+              where: {id: req.session.userLog}
+            })
+            .then(res.render('users/edit', { user: user, title: 'Editar perfil', css: 'signin_styles'}));
+          }
+          catch(error){
+            console.log(error)
+            console.log("----------SQL ERROR----------")
+            res.render('error')
+          }
+
+        } else {
+            console.log(errors.errors);
+            console.log("---------VALIDATION ERROR----------");
+            return res.render('users/edit', {errors: errors.errors, title: 'Editar perfil', css: 'signin_styles'})
+        }
+      },
+
+      editAvatar: function (req, res, next) {
+        db.User.update({
+          image: req.file.filename
+        }, {
+          where: {id: req.session.userLog}
+        })
+        .then(res.redirect('/users/profile'));
+      },
+
+      editPass: function (req, res, next) {
+        
       }
+
 }

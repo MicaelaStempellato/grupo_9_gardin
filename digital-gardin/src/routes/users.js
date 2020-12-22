@@ -32,11 +32,19 @@ var upload = multer({
     }
  });
 
-/* GET users listing. */
+// LogIn de usuarios.
 router.get('/login', usersController.login);
 router.post('/login', usersValidator.usersLog, usersController.loginForm);
+
+//Registración de usuarios
 router.get('/signin', usersController.registrarse);
-router.post('/registro', upload.single('image'), usersValidator.usersReg, usersController.registroForm);
+router.post('/registro', usersValidator.usersReg, usersController.registroForm);
+
+//Modificación de usuarios
+router.get('/edit', usersController.edit)
+router.post('/edit', usersValidator.userEdit, usersController.editForm)
+router.post('/avatar', upload.single('avatar'), usersController.editAvatar)
+router.post('/password', usersController.editPass)
 
 router.post('/logout', usersController.logout)
 

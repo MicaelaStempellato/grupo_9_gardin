@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <main>
+        <section class="formulario_edit">
+            <h2>Editar pefil</h2>
+            <div class="errores">
+                <% if(typeof errors != 'undefined'){ %>
+                    <p class="errorTitle">ERROR</p>
+                    <ul>
+                        <% for(let i=0; i<errors.length; i++){ %>
+                            <li style="font-size: 13px"><%= errors[i].msg %> </li> 
+                        <% } %> 
+                    </ul> 
+                <% } %>
+                </div>
+            <form class="formulario" action="/user/edit" method="POST">
+                <input class="user-name" type="text" name="userName" placeholder="nombre" value="<%= user.first_name %>">
+                <input class="user-surname" type="text" name="userSurname" placeholder="apellido" value="<%= user.last_name %>">
+                <input class="user-email" type="text" name="email" placeholder="email" value="<%= user.email %>">
+                <input class="pass" type="password" name="pass" placeholder="Introdusca contraseña para confirmar">
+                <button class="boton" type="submit">Confirmar</button>
+            </form>
+        </section>
+
+        <section class="formulario_edit">
+            <h2>Cambiar avatar</h2>
+            <form class="formulario avatar" action="/user/avatar" method="POST">
+                <input type="file">
+                <button class="boton" type="submit">Confirmar</button>
+            </form>
+        </section>
+
+        <section class="formulario_edit">
+            <h2>Cambiar contraseña</h2>
+            <form class="formulario" action="/user/password" method="POST">
+                <input class="pass" type="password" name="passOld" placeholder="Contraseña actual">
+                <input class="pass" type="password" name="passNew" placeholder="Nueva contraseña">
+                <input class="pass" type="password" name="passNew2" placeholder="Repita la nueva contraseña">
+                <button class="boton" type="submit">Confirmar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+    </body>
+<%- include('../partials/linksJsAbajo') %>
+</html>

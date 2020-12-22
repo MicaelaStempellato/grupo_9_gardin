@@ -56,5 +56,28 @@ module.exports={
         body('pass')
         .notEmpty()
         .withMessage('Por favor, ingrese su contraseña')
+    ],
+    userEdit: [
+        body('userName')
+        .notEmpty()
+        .withMessage('Este campo no puede estar vacio')
+        .isAlpha()
+        .withMessage('El nombre no puede contener numeros')
+        .isLength( {min:3, max:15} )
+        .withMessage('El nombre debe tener entre 3 y 15 caracteres'),
+
+        body('userSurname')
+        .notEmpty()
+        .withMessage('Este campo no puede estar vacio')
+        .isAlpha()
+        .withMessage('El apellido no puede contener numeros')
+        .isLength( {min:3, max:15} )
+        .withMessage('El apellido debe tener entre 3 y 15 caracteres'),
+
+        body('email')
+        .notEmpty()
+        .withMessage('Este campo no puede estar vacio')
+        .isEmail()
+        .withMessage('Este campo debe contener un E-mail')
     ]
 }
