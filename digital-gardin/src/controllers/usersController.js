@@ -121,12 +121,14 @@ module.exports = {
             let user = db.User.findByPk(req.session.userLog)
             .then(console.log('UPDATED ' + user));
 
+            let userID = req.session.userLog;
+
             db.User.update({
               first_name: req.body.userName,
               last_name: req.body.userSurname,
               email: req.body.email
             }, {
-              where: {id: req.session.userLog}
+              where: {id: userID}
             })
             .then(res.render('users/edit', { user: user, title: 'Editar perfil', css: 'signin_styles'}));
           }
@@ -144,12 +146,19 @@ module.exports = {
       },
 
       editAvatar: function (req, res, next) {
-        db.User.update({
-          image: req.file.filename
-        }, {
-          where: {id: req.session.userLog}
-        })
-        .then(res.redirect('/users/profile'));
+        try{
+          db.User.update({
+            image: req.file.filename
+          }, {
+            where: {id: req.session.userLog}
+          })
+          .then(res.redirect('/users/profile'));
+        }
+        catch(error){
+          console.log(error)
+          console.log("----------SQL ERROR----------")
+          res.render('error')
+        }
       },
 
       editPass: function (req, res, next) {
