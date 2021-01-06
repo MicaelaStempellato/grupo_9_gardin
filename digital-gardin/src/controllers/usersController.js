@@ -69,7 +69,7 @@ module.exports = {
 
         } else {
           console.log(errors.errors);
-          return res.render('users/signin', {errors: errors.errors, title: 'Registrate', css: 'signin_styles'})
+          return res.render('users/signin', {errors: errors.errors, old: req.body, title: 'Registrate', css: 'signin_styles'})
         }
       },
 
@@ -113,24 +113,27 @@ module.exports = {
         }
       },
 
-      editForm: function (req, res, next) {
+      editForm: async function (req, res, next) {
         let errors = validationResult(req);
         if (errors.isEmpty()){
 
           try{
-            let user = db.User.findByPk(req.session.userLog)
-            .then(console.log('UPDATED ' + user));
+            let user = await db.User.findByPk(req.session.userLog)
+            console.log(req.session.userLog);
+            console.log(user);
+            (console.log('UPDATED ' + user.id));
 
             let userID = req.session.userLog;
 
-            db.User.update({
+            await db.User.update({
               first_name: req.body.userName,
               last_name: req.body.userSurname,
               email: req.body.email
             }, {
               where: {id: userID}
             })
-            .then(res.render('users/edit', { user: user, title: 'Editar perfil', css: 'signin_styles'}));
+            
+            res.redirect('/users/profile');
           }
           catch(error){
             console.log(error)
@@ -141,7 +144,7 @@ module.exports = {
         } else {
             console.log(errors.errors);
             console.log("---------VALIDATION ERROR----------");
-            return res.render('users/edit', {errors: errors.errors, title: 'Editar perfil', css: 'signin_styles'})
+            return res.render('users/edit', {errors: errors.errors, old: req.body, title: 'Editar perfil', css: 'editUser_styles'})
         }
       },
 

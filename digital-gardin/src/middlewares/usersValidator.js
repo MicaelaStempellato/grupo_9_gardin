@@ -2,6 +2,16 @@ const { check, validationResult, body } = require("express-validator");
 var path = require("path")
 const db = require('../database/models');
 
+let verifyPasswordsMatch = function(req, res, next) {
+    check('pass')
+    .notEmpty()
+    .withMessage('Este campo no puede estar vacio')
+    .isLength( {min:6, max:20} )
+    .withMessage('La contraseña debe tener entre 6 y 20 caracteres')
+    .equals(req.body.pass2)
+    .withMessage('Las contraseñas deben coincidir')
+}
+
 module.exports={
     usersReg: [
         body('userName')
@@ -17,8 +27,8 @@ module.exports={
         .withMessage('Este campo no puede estar vacio')
         .isAlpha()
         .withMessage('El apellido no puede contener numeros')
-        .isLength( {min:3, max:15} )
-        .withMessage('El apellido debe tener entre 3 y 15 caracteres'),
+        .isLength( {min:2, max:15} )
+        .withMessage('El apellido debe tener entre 2 y 15 caracteres'),
 
         body('email')
         .notEmpty()
@@ -26,11 +36,17 @@ module.exports={
         .isEmail()
         .withMessage('Este campo debe contener un E-mail'),
 
-        body('pass')
+        /* verifyPasswordsMatch, */
+
+        /* body('pass')
         .notEmpty()
         .withMessage('Este campo no puede estar vacio')
         .isLength( {min:6, max:20} )
-        .withMessage('La contraseña debe tener entre 6 y 20 caracteres'),
+        .withMessage('La contraseña debe tener entre 6 y 20 caracteres')
+        .equals('pass2')
+        .withMessage('Las contraseñas deben coincidir'),
+
+    */
         
         /*
         body('pass2')
@@ -71,8 +87,8 @@ module.exports={
         .withMessage('Este campo no puede estar vacio')
         .isAlpha()
         .withMessage('El apellido no puede contener numeros')
-        .isLength( {min:3, max:15} )
-        .withMessage('El apellido debe tener entre 3 y 15 caracteres'),
+        .isLength( {min:2, max:15} )
+        .withMessage('El apellido debe tener entre 2 y 15 caracteres'),
 
         body('email')
         .notEmpty()

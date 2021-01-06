@@ -3,7 +3,7 @@
     <%- include('../partials/head') %>
 <body>
     <%- include('../partials/navbar') %>
-    <main>
+     <main>
         <div class="main-header">
             <h2 class="registrarse">Registrarse</h2>
             <div class="errores">
@@ -23,25 +23,26 @@
         </div>
         <form class="formulario" action="/users/registro" method="POST" >
             
-            <input class="user-name" type="text" name="userName" placeholder="Ingresa tu nombre">
-            <input class="user-surname" type="text" name="userSurname" placeholder="Ingresa tu apellido">
-            <input class="user-email" type="text" name="email" placeholder="Ingresa tu email">
-            <input class="pass" type="password" name="pass" placeholder="Constraseña">
-            <input class="pass" type="password" name="pass2" placeholder="Repetir constraseña">
-            <select class="category" name="category">
+            <input class="user-name" type="text" name="userName" placeholder="Ingresa tu nombre" required minlength="3" maxlength="15" value="<%= typeof old != "undefined" ? old.userName : "" %>">
+            <input class="user-surname" type="text" name="userSurname" placeholder="Ingresa tu apellido" required minlength="2" maxlength="15" value="<%= typeof old != "undefined" ? old.userSurname : "" %>">
+            <input class="user-email" type="text" name="email" placeholder="Ingresa tu email" required value="<%= typeof old != "undefined" ? old.email : "" %>">
+            <input class="pass" type="password" name="pass" placeholder="Constraseña" required minlength="6" maxlength="20">
+            <input class="pass" type="password" name="pass2" placeholder="Repetir constraseña" required>
+            <select class="category" name="category" required>
                     <option value="">
                         seleccione una opción
                     </option>
-                    <option value="1">
+                    <option value="2">
                         Estudiante 
                     </option>
-                    <option value="2">
+                    <option value="1">
                         Profesor
                     </option>
             </select>
             <button class="boton" type="submit">Registrarse </button>
         </form>
     </main>
+    
     <%- include('../partials/footer') %>
 </body>
 <%- include('../partials/linksJsAbajo') %>

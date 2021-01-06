@@ -19,11 +19,11 @@
                     </ul> 
                 <% } %>
                 </div>
-            <form class="formulario" action="/user/edit" method="POST">
-                <input class="user-name" type="text" name="userName" placeholder="nombre" value="<%= user.first_name %>">
-                <input class="user-surname" type="text" name="userSurname" placeholder="apellido" value="<%= user.last_name %>">
-                <input class="user-email" type="text" name="email" placeholder="email" value="<%= user.email %>">
-                <input class="pass" type="password" name="pass" placeholder="Introdusca contraseña para confirmar">
+            <form class="formulario" action="/users/edit" method="POST">
+                <input class="user-name" type="text" name="userName" placeholder="nombre" value="<%= typeof old != "undefined" ? old.userName : user.first_name %>" required minlength="3" maxlength="15">
+                <input class="user-surname" type="text" name="userSurname" placeholder="apellido" value="<%= typeof old != "undefined" ? old.userSurname : user.last_name %>" required minlength="2" maxlength="15">
+                <input class="user-email" type="text" name="email" placeholder="email" value="<%= typeof old != "undefined" ? old.email : user.email %>" required>
+                <!-- <input class="pass" type="password" name="pass" placeholder="Introdusca contraseña para confirmar"> -->
                 <button class="boton" type="submit">Confirmar</button>
             </form>
         </section>
@@ -32,7 +32,7 @@
 
         <section class="formulario_edit">
             <h2>Cambiar avatar</h2>
-            <form class="formulario" action="/user/avatar" method="POST">
+            <form class="formulario" action="/users/avatar" method="POST">
                 <input class="avatar" type="file">
                 <button class="boton" type="submit">Confirmar</button>
             </form>
@@ -41,7 +41,7 @@
     <section class="right">
         <section class="formulario_edit">
             <h2>Cambiar contraseña</h2>
-            <form class="formulario" action="/user/password" method="POST">
+            <form class="formulario" action="/users/password" method="POST">
                 <input class="pass" type="password" name="passOld" placeholder="Contraseña actual">
                 <input class="pass" type="password" name="passNew" placeholder="Nueva contraseña">
                 <input class="pass" type="password" name="passNew2" placeholder="Repita la nueva contraseña">
