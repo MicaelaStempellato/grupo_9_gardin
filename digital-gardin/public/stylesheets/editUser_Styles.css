@@ -20,7 +20,7 @@ a{
     font-family: 'Nunito', sans-serif;
 }
 
-main{
+.contenido{
     padding-top: 20px;
 }
 
@@ -128,16 +128,16 @@ Amarrillo #FFFBE9
 }
 
 @media (min-width: 1200px){
-    main{
+    .contenido{
         display: flex;
         flex-direction: row;
+        padding-top: 40px;
+        max-width: 80%;
+        margin: auto;
     }
 
     .formulario_edit{
         margin-top: 0px;
     }
 
-    main {
-        padding-top: 40px;
-    }
 }
