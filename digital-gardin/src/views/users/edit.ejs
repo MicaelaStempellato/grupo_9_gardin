@@ -5,6 +5,7 @@
     <%- include('../partials/navbar') %>
 
     <main>
+        <section class="left">
         <section class="formulario_edit">
             <h2>Editar pefil</h2>
             <div class="errores">
@@ -26,14 +27,17 @@
             </form>
         </section>
 
+        
+
         <section class="formulario_edit">
             <h2>Cambiar avatar</h2>
-            <form class="formulario avatar" action="/user/avatar" method="POST">
-                <input type="file">
+            <form class="formulario" action="/user/avatar" method="POST">
+                <input class="avatar" type="file">
                 <button class="boton" type="submit">Confirmar</button>
             </form>
         </section>
-
+    </section>
+    <section class="right">
         <section class="formulario_edit">
             <h2>Cambiar contraseña</h2>
             <form class="formulario" action="/user/password" method="POST">
@@ -43,6 +47,8 @@
                 <button class="boton" type="submit">Confirmar</button>
             </form>
         </section>
+    </section>
+    
 
     </main>
 

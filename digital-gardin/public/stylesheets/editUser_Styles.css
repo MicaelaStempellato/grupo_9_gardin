@@ -1,6 +1,7 @@
 h2{
     font-family: 'Nunito', sans-serif;
     margin: 0;
+    margin-bottom: 10px;
 }
 
 h3{
@@ -19,6 +20,10 @@ a{
     font-family: 'Nunito', sans-serif;
 }
 
+main{
+    padding-top: 20px;
+}
+
 /*
 Colores
 
@@ -33,9 +38,9 @@ Amarrillo #FFFBE9
     flex-wrap: wrap;
     flex-direction: column; 
     align-items: center;
-    margin-top: 20px;
     width: 100%;
-    margin-bottom: 5vh;
+    padding: 10px 20px 0px 20px;
+    box-sizing: border-box;
 }
 
 .main-header{
@@ -84,7 +89,7 @@ Amarrillo #FFFBE9
 .user-email, .user-name, .user-surname, .pass, .avatar, .category{
     display: block;
     margin: 0 auto 20px auto;
-    width:500px;
+    width:90%;
     height: 30px;
     border-top: none;
     border-left: none;
@@ -96,15 +101,15 @@ Amarrillo #FFFBE9
 
 .boton{
     display: block;
-    margin: 0 25%;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    width: 142px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 135px;
     height: 40px;
     border-style: none;
     background-color: #9AD08F;
-    color:white;
-    font-size: 22px;
+    color: white;
+    font-size: 21px;
 }
 
 
@@ -115,4 +120,24 @@ Amarrillo #FFFBE9
         text-align: center;
     }
 
+    .formulario_edit{
+        width: 80%;
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 1200px){
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .formulario_edit{
+        margin-top: 0px;
+    }
+
+    main {
+        padding-top: 40px;
+    }
 }
