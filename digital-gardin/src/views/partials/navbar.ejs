@@ -3,7 +3,11 @@
   <a class="logo_link" href="/"><img class="navbar_logo" src="/images/gardin_logo_verde.png" alt="Gardin Logo"></a>
   <div class="items_menu">
   <%if(usuarioLog != 0){%>
+    <%if(avatarLog == null){%>
   <a href="/users/profile"><button class="navbar_boton2"><p class="nombreUsuario"><%=nombreLog%></p><img class="avatarUser" src="/images/profile-pic.png" alt="Mi Perfil"></button></a>
+    <%} else {%>
+  <a href="/users/profile"><button class="navbar_boton2"><p class="nombreUsuario"><%=nombreLog%></p><img class="avatarUser" src="/images/users/<%=avatarLog%>" alt="Mi Perfil"></button></a>
+    <%}%>
   <form action="/users/logout" method="POST"><button type="submit" class="navbar_boton">Log out</button></form>
   <%}else{%>
   <a href="/users/login"><button class="navbar_boton">Login</button></a>

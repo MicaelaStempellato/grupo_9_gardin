@@ -148,10 +148,26 @@ module.exports = {
         }
       },
 
-      editAvatar: function (req, res, next) {
+      editAvatar: async function (req, res, next) {
         try{
-          db.User.update({
-            image: req.file.filename
+
+          const image_name = await db.User.findByPk(req.session.userLog)
+          let img_nombre
+          console.log(req.file);
+          console.log(req.file.filename);
+          console.log(image_name.avatar);
+          if(req.file == undefined){
+            img_nombre = image_name.avatar
+          }else if (image_name.avatar == null){
+            img_nombre = req.file.filename
+          }else{
+            fs.unlinkSync(path.join(__dirname, '../../public/images/users/', image_name.avatar));
+            img_nombre = req.file.filename
+          }
+          console.log(img_nombre);
+
+          await db.User.update({
+            avatar: img_nombre
           }, {
             where: {id: req.session.userLog}
           })

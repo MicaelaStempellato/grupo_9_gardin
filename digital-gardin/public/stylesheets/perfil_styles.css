@@ -13,13 +13,19 @@
 }
 
 .img_usuario{
-    width: 100px;
-    border-radius: 50px;
+    width: 100%;
 }
 
 .category_usuario{
     text-align: center;
     color: #4E4E4E;
+}
+
+.imagen_perfil{
+    height: 140px;
+    overflow: hidden;
+    width: 140px;
+    border-radius: 50%;
 }
 
 .edit_usuario{

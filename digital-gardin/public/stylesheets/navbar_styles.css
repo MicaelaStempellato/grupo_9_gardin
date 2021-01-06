@@ -181,6 +181,8 @@ a{
     width: 35px;
     margin-left: 12px;
     border-radius: 50%;
+    object-fit: cover;
+    height: 35px;
 }
 
 .nombreUsuario{

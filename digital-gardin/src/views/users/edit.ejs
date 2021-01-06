@@ -32,8 +32,8 @@
 
         <section class="formulario_edit">
             <h2>Cambiar avatar</h2>
-            <form class="formulario" action="/users/avatar" method="POST">
-                <input class="avatar" type="file">
+            <form class="formulario" action="/users/avatar" method="POST" enctype="multipart/form-data">
+                <input class="avatar" type="file" name="avatar">
                 <button class="boton" type="submit">Confirmar</button>
             </form>
         </section>

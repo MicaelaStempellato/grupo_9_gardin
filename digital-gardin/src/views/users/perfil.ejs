@@ -5,7 +5,13 @@
     <%- include('../partials/navbar') %>
 
     <section class="intro_usuario">
+        <section class="imagen_perfil">
+        <%if(usuario.avatar == null){%>
         <img class="img_usuario" src="/images/profile-pic.png" alt="Foto de usuario">
+        <%} else {%>
+        <img class="img_usuario" src="/images/users/<%=usuario.avatar%>" alt="Foto de usuario">
+        <%}%>
+        </section>
         <h2 class="nombre_usuario"><%=usuario.first_name + " " + usuario.last_name%></h2>
         <div class="edit_usuario">
         <h3 class="category_usuario"><%=usuario.category.category_name%></h3>
