@@ -32,8 +32,18 @@
 
         <section class="formulario_edit">
             <h2>Cambiar avatar</h2>
+            <div class="errores">
+                <% if(typeof errors2 != 'undefined'){ %>
+                    <p class="errorTitle">ERROR</p>
+                    <ul>
+                        <% for(let i=0; i<errors2.length; i++){ %>
+                            <li style="font-size: 13px"><%= errors2[i].msg %> </li> 
+                        <% } %> 
+                    </ul> 
+                <% } %>
+                </div>
             <form class="formulario" action="/users/avatar" method="POST" enctype="multipart/form-data">
-                <input class="avatar" type="file" name="avatar">
+                <input class="avatar" type="file" name="avatar" required>
                 <button class="boton" type="submit">Confirmar</button>
             </form>
         </section>

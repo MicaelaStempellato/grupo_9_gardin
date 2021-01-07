@@ -142,20 +142,20 @@ module.exports = {
           }
 
         } else {
+          let user = await db.User.findByPk(req.session.userLog);
             console.log(errors.errors);
             console.log("---------VALIDATION ERROR----------");
-            return res.render('users/edit', {errors: errors.errors, old: req.body, title: 'Editar perfil', css: 'editUser_styles'})
+            return res.render('users/edit', {user: user, errors: errors.errors, old: req.body, title: 'Editar perfil', css: 'editUser_styles'})
         }
       },
 
       editAvatar: async function (req, res, next) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()){
         try{
 
           const image_name = await db.User.findByPk(req.session.userLog)
           let img_nombre
-          console.log(req.file);
-          console.log(req.file.filename);
-          console.log(image_name.avatar);
           if(req.file == undefined){
             img_nombre = image_name.avatar
           }else if (image_name.avatar == null){
@@ -178,6 +178,12 @@ module.exports = {
           console.log("----------SQL ERROR----------")
           res.render('error')
         }
+        } else {
+          let user = await db.User.findByPk(req.session.userLog)
+          console.log(errors.errors);
+          console.log("---------VALIDATION ERROR----------");
+          return res.render('users/edit', {user: user, errors2: errors.errors, title: 'Editar perfil', css: 'editUser_styles'})
+      }
       },
 
       editPass: function (req, res, next) {

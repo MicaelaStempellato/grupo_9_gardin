@@ -95,5 +95,25 @@ module.exports={
         .withMessage('Este campo no puede estar vacio')
         .isEmail()
         .withMessage('Este campo debe contener un E-mail')
+    ],
+    avatar: [
+        body("avatar")
+        .custom(function(values, {req}){
+            if(req.file != undefined){
+                return true
+            }
+            return false
+        })
+        .withMessage("Imagen Obligatoria")
+        .bail()
+        .custom(function(value, {req}){
+            let ext = path.extname(req.file.originalname)
+            if(ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".JPG" || ext == ".JPEG" || ext == ".PNG"){
+                return true;
+            }
+            return false;
+        })
+        .withMessage("Imagen debe ser un archivo jpg, jpeg o png")
+
     ]
 }

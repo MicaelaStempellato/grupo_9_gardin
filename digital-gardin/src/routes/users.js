@@ -43,7 +43,7 @@ router.post('/registro', usersValidator.usersReg, usersController.registroForm);
 //Modificación de usuarios
 router.get('/edit', usersController.edit)
 router.post('/edit', usersValidator.userEdit, usersController.editForm)
-router.post('/avatar', upload.single('avatar'), usersController.editAvatar)
+router.post('/avatar', upload.single('avatar'), usersValidator.avatar, usersController.editAvatar)
 router.post('/password', usersController.editPass)
 
 router.post('/logout', usersController.logout)
