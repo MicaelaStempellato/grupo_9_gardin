@@ -1,0 +1,179 @@
+.container {
+    width: 100%;
+    max-width: 992px;
+    padding: 0px;
+}
+
+.preguntas .accordion {
+    max-width: 768px;
+    margin: 0 auto 100px;
+    border-top: 1px solid #ddd;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.accordion li {
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.accordion{
+    list-style: none;
+    padding: 0px;
+}
+
+.accordion a {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 4;
+    font-size: 15px;
+    text-indent: 15px;
+    user-select: none;
+    color: #2c6460;
+    text-decoration: none;
+}
+
+.accordion a:after {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #2c6460;
+    border-bottom: 2px solid #2c6460;
+    position: absolute;
+    right: 10px;
+    content: " ";
+    top: 25px;
+    transform: rotate(-45deg);
+}
+
+.container p {
+    margin-bottom: 15px;
+}
+
+.accordion li p {
+    padding: 10px 15px 30px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.accordion a.active {
+    color: #68dba5;
+}
+
+.show{
+    display: block;
+}
+
+.not-show{
+    display: none;
+}
+
+
+
+
+
+
+.contact {
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: 15px;
+    text-align: center;
+    width: 33%;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 100;
+    height: fit-content;
+}
+
+.titulo{
+    background-color: #D2E8C9;
+    color: black;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13px;
+    display: flex;
+}
+
+.main{
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-contact{
+    padding: 30px 40px;
+    width: 82%;
+}
+
+.intro-titulo{
+    margin-bottom: 10px;
+}
+
+.subtitulo{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    width: fit-content;
+}
+
+.subtitulo a{
+    text-decoration: none;
+}
+
+.planta-icon{
+    width: 153px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.planta-icon img{
+    width: 100%;
+}
+
+@media (min-width: 768px){
+
+.info-contact {
+    width: 600px;
+}
+
+.accordion a {
+    font-size: 18px;
+}
+
+}
+
+@media (min-width: 1200px){
+
+    .content{
+        margin: auto;
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 30px;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+    
+    .main{
+        width: fit-content;
+        margin: 0px;
+    }
+    
+    .aside{
+        width: 317px;
+    }
+    
+    .titulo{
+        height: 150px;
+    }
+
+    .planta-icon{
+        margin-top: 130px;
+    }
+
+    .subtitulo{
+        margin: 30px 0px;
+    }
+
+}

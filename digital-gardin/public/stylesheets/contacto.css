@@ -1,0 +1,99 @@
+.contact {
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: 15px;
+    text-align: center;
+    width: 33%;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 100;
+    height: fit-content;
+}
+
+.titulo{
+    background-color: #D2E8C9;
+    color: black;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13px;
+    display: flex;
+}
+
+.main{
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-contact{
+    padding: 30px 40px;
+    width: auto;
+}
+
+.subtitulo{
+    margin: 20px;
+    margin-top: 0px;
+    width: fit-content;
+}
+
+.subtitulo a{
+    text-decoration: none;
+}
+
+.post-titulo{
+    margin-top: 20px;
+    width: fit-content;
+}
+
+.info-contacto{
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.intro-tirulo{
+    margin-bottom: 10px;
+}
+
+.planta-icon{
+    width: 153px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.planta-icon img{
+    width: 100%;
+}
+
+@media (min-width: 768px){
+
+.content{
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+    justify-content: center;
+    height: 45vh;
+}
+
+.main{
+    width: fit-content;
+    margin: 0px;
+}
+
+.aside{
+    width: 317px;
+}
+
+.titulo{
+    height: 150px;
+}
+
+.subtitulo{
+    margin: 0px 0px 20px 0px;
+}
+
+}

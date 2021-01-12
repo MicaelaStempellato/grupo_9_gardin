@@ -24,17 +24,17 @@
 <form class="search_bar" action="/products/search-results" method="POST">
 <input name="buscar" type="text" placeholder="Buscar..."> <button type="submit" class="botonLupa"></button><i class="fas fa-search lupa"></i></button></form>
 </div>
-
+<script src="/javascripts/acaEstoy.js" type="text/javascript"></script>
 <div class="menu">
   <ul id="lista_menu" class="lista_menu">
-    <a href="index.html" class="no_web"><li class="estoy_aca">Inicio</li></a>
-    <a href="/products"><li>Cursos</li></a>
-    <a href="#"><li>Promociones</li></a>
+    <a href="/" class="no_web"><li id="navbarHome">Inicio</li></a>
+    <a href="/products"><li id="navbarProducts">Cursos</li></a>
+    <a href="#"><li id="navbarPromociones">Promociones</li></a>
     <!-- <a href="/users/profile" class="no_web"><li>Mi cuenta</li></a> -->
     <%if (categoriaLog == 1){%>
-    <a href="/products/create"><li>Crear Curso</li></a>
+    <a href="/products/create"><li id="navbarCreate">Crear Curso</li></a>
     <%}%>
-    <a href="#"><li>Contacto</li></a>
-    <a href="#"><li>Ayuda</li></a>
+    <a href="/contact"><li id="navbarContact">Contacto</li></a>
+    <a href="/help"><li id="navbarHelp">Ayuda</li></a>
   </ul>
 </div> 

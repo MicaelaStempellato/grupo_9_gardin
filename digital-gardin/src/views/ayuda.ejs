@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+
+<body>
+
+    <%- include('./partials/navbar') %>
+
+    <script src="/javascripts/ayuda.js" type="text/JavaScript"></script>
+   
+    <main>
+    
+    <section class="titulo"><h2 class="contact">Ayuda</h2></section>
+    <section class="content">
+    <article class="main">
+    <section class="info-contact">
+    <h3 class="intro-titulo">Preguntas Frequentes</h3>
+
+    <section class="container">
+        <ul class="accordion">
+            <li>
+                <a onclick="agregarClase();" class="link">¿Cómo anotarse a un curso?</a>
+                <p class="text not-show" style="overflow: hidden;">
+                    <strong>1) Elegí el o los cursos</strong><br><br>
+                Buscá el curso deseado desde el cuadro de búsqueda o por categoría en la página cursos. Una vez que seleccionaste tu curso ingresá a él y hacé click en el botón Agregar al Carrtio.<br><br>
+                <strong>2) Mi carrito</strong><br><br>
+                Aquí podrás visualizar el listado de cursos seleccionados hasta el momento. Podés hacer cambios o continuar comprando. Hacé click en el botón FINALIZAR COMPRA para continuar.<br><br>
+                <strong>3) Completá los datos personales</strong><br><br>
+                Ingresá tu correo electrónico y completa tus datos personales.<br><br>
+                <strong>4) Seleccioná el medio de pago</strong><br><br>
+                Seleccioná el medio de pago deseado y completá los datos requeridos.<br><br>
+                <strong> 5) Finalizá la compra</strong><br><br>
+                Hacé click sobre ANOTARSE AHORA  para concluir con la operación. Recibirás por mail las notificaciones sobre cómo asistir al curso.</p>
+            </li>
+            <li>
+                <a onclick="agregarClase2();" class="link2">¿Qué medios de pago puedo elegir para mi compra?</a>
+                <p class="text2 not-show" style="overflow: hidden">Podrás realizar el pago de tu compra con:<br><br>
+                    <span>Tarjeta de crédito</span>
+                    <span>Tarjeta de débito</span>
+                    <span>Mercado Pago</span></p>
+            </li>
+            <li>
+                <a onclick="agregarClase3();" class="link3">¿Cómo obtengo la factura de mi compra?</a>
+                <p class="text3 not-show" style="overflow: hidden;">Recibirás por mail la factura electrónica de tu compra una vez se concrete. La factura tiene validez fiscal ya que cuenta con el CAE (código de autorización electrónico).</p>
+            </li>
+            <li>
+                <a onclick="agregarClase4();" class="link4">¿Cuáles son las condiciones para realizar cancelaciones?</a>
+                <p class="text4 not-show" style="overflow: hidden;">Las cancelaciones se aceptarán hasta 10 días posteriores a la facturación de la compra. Solo se podrán cancelar aquellos cursos que no hayan iniciado su cursada.</p>
+            </li>
+        </ul><!-- / accordion -->
+    </section>
+
+    <h4 class="subtitulo"><b>¿No encontraste la respuesta a tu pregunta?<a href="/contact"> ¡Contactanos!</a></b></h4>
+    </section>
+    </article>
+    <article class="aside">
+        <section class="planta-icon">
+        <img src="/images/plant-question.png" alt="planta">
+        </section>
+    </article>
+    </section>
+    </main>
+
+    
+    <%- include('./partials/footer') %>
+</body>
+<%- include('./partials/linksJsAbajo') %>
+</html>
