@@ -93,6 +93,17 @@ main{
     
 }
 
+#message{
+    display: block;
+    margin: 0 auto 0px auto;
+    width:200px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    
+}
+
 
 .boton{
     margin: 0 25%;
@@ -104,6 +115,23 @@ main{
     background-color: #9AD08F;
     color:white;
     font-size: 22px;
+}
+
+.form-control{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div.form-control.error > input{
+border-color: #C75D5D; 
+}
+
+div.form-control.success > input{
+    border-color: #9AD08F; 
+    }
+
+small{
+    color: #C75D5D; 
 }
 
 
