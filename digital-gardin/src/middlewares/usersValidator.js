@@ -2,7 +2,7 @@ const { check, validationResult, body } = require("express-validator");
 var path = require("path")
 const db = require('../database/models');
 
-let verifyPasswordsMatch = function(req, res, next) {
+/*let verifyPasswordsMatch = function(req, res, next) {
     check('pass')
     .notEmpty()
     .withMessage('Este campo no puede estar vacio')
@@ -10,7 +10,7 @@ let verifyPasswordsMatch = function(req, res, next) {
     .withMessage('La contraseña debe tener entre 6 y 20 caracteres')
     .equals(req.body.pass2)
     .withMessage('Las contraseñas deben coincidir')
-}
+}*/
 
 module.exports={
     usersReg: [
@@ -35,6 +35,12 @@ module.exports={
         .withMessage('Este campo no puede estar vacio')
         .isEmail()
         .withMessage('Este campo debe contener un E-mail'),
+
+        check('pass')
+        .notEmpty()
+        .withMessage('Este campo no puede estar vacio')
+        .isLength( {min:6, max:20} )
+        .withMessage('La contraseña debe tener entre 6 y 20 caracteres'),
 
         /* verifyPasswordsMatch, */
 
@@ -114,6 +120,23 @@ module.exports={
             return false;
         })
         .withMessage("Imagen debe ser un archivo jpg, jpeg o png")
+
+    ],
+    passEdit: [
+    
+    body('passOld')
+    .notEmpty()
+    .withMessage('Por favor, ingrese su contraseña actual'),
+
+    check('passNew')
+    .notEmpty()
+    .withMessage('La contraseña nueva es obligatoria')
+    .isLength( {min:6, max:20} )
+    .withMessage('La contraseña nueva debe tener entre 6 y 20 caracteres'),
+
+    check('passNew2')
+    .notEmpty()
+    .withMessage('La contraseña nueva debe estar 2 veces')
 
     ]
 }

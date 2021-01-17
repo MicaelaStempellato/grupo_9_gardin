@@ -127,6 +127,11 @@
     margin-top: 15px;
 }
 
+.cursos_usuario{
+    min-height: 30vh;
+
+}
+
 
 @media (min-width: 768px){
 

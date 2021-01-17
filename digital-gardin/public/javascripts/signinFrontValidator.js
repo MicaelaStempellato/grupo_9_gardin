@@ -13,7 +13,7 @@ var errores = {}
     data.resultados.map(users=>{
         users.email
     })
-})*/
+})
 
 function passMatch(pass1, pass2){
 
@@ -23,6 +23,7 @@ function passMatch(pass1, pass2){
       $('#message').html('No coinciden').css('color', '#C75D5D');
 
 }
+*/
 
 
 /*function emailTaken(email){

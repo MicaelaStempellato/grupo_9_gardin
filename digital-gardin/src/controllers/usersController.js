@@ -53,13 +53,8 @@ module.exports = {
       },
 
     registrarse: async function(req, res, next) {
-      let users = await db.User.findAll()
-      let emails= []
-      users.forEach(user => {
-        emails.push(user.email)
-      });
-      console.log(emails);
-        res.render('users/signin', { title: 'Registrate', emails: emails, css: 'signin_styles'});
+      
+        res.render('users/signin', { title: 'Registrate', css: 'signin_styles'});
       },
 
     registroForm: async function(req, res, next) {
@@ -228,8 +223,48 @@ module.exports = {
       }
       },
 
-      editPass: function (req, res, next) {
-        
+      editPass: async function (req, res, next) {
+        let errors = validationResult(req);
+        let contrasena = false
+        if(req.body.passNew == req.body.passNew2){
+          contrasena = true
+        }
+
+        let newContrasena = false
+        if(req.body.passNew != req.body.passOld){
+          newContrasena = true
+        }
+
+        if (errors.isEmpty() && contrasena && newContrasena){
+        try{
+          if(req.session.userLog){
+            let usuario = await db.User.findByPk(req.session.userLog);
+            let contrasenia = usuario.password;
+            if(bcrypt.compareSync(req.body.passOld, contrasenia)){
+              await db.User.update({
+                password: bcrypt.hashSync(req.body.passNew, 10)
+              }, {
+                where: {id: usuario.id}
+              })
+              res.redirect('/users/profile')
+            }else{
+              console.log(errors.errors);
+              let msg = 'Contraseña equivocada';
+              console.log("---------VALIDATION ERROR----------");
+              return res.render('users/edit', {user: usuario, msg: msg, old: req.body, title: 'Editar perfil', css: 'editUser_styles'})
+            }
+          }
+
+        }catch(error){
+          console.log(error);
+        }
+      } else {
+        let user = await db.User.findByPk(req.session.userLog)
+        console.log(errors.errors);
+        console.log("---------VALIDATION ERROR----------");
+        return res.render('users/edit', {user: user, errors3: errors.errors, old: req.body, title: 'Editar perfil', css: 'editUser_styles'})
+    }
+
       }
 
 }
