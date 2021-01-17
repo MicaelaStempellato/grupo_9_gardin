@@ -20,9 +20,7 @@
             </div>
             <p class="ir-a-login">¿Ya eres usuario? <a href="/users/login">Ingresa</a></p>
         </div>
-        <div>
-
-        </div>
+       
         <form class="formulario" action="/users/registro" method="POST" >
             <div class="form-control">
             <input class="user-name" type="text" name="userName" id="firstname" placeholder="Ingresa tu nombre" required minlength="3" maxlength="15" value="<%= typeof old != "undefined" ? old.userName : "" %>">
@@ -35,6 +33,9 @@
             <div class="form-control">
             <input class="user-email" type="text" name="email" id="email" placeholder="Ingresa tu email" required value="<%= typeof old != "undefined" ? old.email : "" %>">
             <small id="message_email"></small>
+            <% if(typeof msg != 'undefined'){ %>
+                <p class="errorTitle"><%=msg%></p>
+            <% } %> 
             </div>
             <div class="form-control">
             <input class="pass" type="password" name="pass" id="pass" placeholder="Constraseña" required minlength="6" maxlength="20">

@@ -3,6 +3,8 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const { usersReg, usersLog } = require('../middlewares/usersValidator');
 const db = require('../database/models');
+const bcrypt = require('bcrypt');
+const { map } = require('../app');
 
 
 
@@ -19,12 +21,14 @@ module.exports = {
           db.User.findAll({
             where: {
               email: req.body.email,
-              password: req.body.pass
+              //password: req.body.pass
             }
           }).then(UserLog => {
             if (UserLog.length<1){
               res.render('users/login',{ errors: errors.errors, title: 'Inicia Sesión', css: 'login_styles'})
             }else{
+              let contrasenia = UserLog[0].password;
+              if(bcrypt.compareSync(req.body.pass, contrasenia)){
               console.log(UserLog);
               UserLog.map(log => log.get({ plain: true }));
               req.session.userLog = UserLog[0].id;
@@ -34,6 +38,11 @@ module.exports = {
               }
               req.session.save(() =>
               res.redirect('/users/profile') )
+            }else{
+              let msg = 'Los datos son incorrectos'
+              console.log('no anda');
+              return res.render('users/login', {old: req.body, msg, title: 'Inicia Sesión', css: 'login_styles'});
+            }
             }
           })
         } else {
@@ -43,20 +52,52 @@ module.exports = {
         }
       },
 
-    registrarse: function(req, res, next) {
-        res.render('users/signin', { title: 'Registrate', css: 'signin_styles'});
+    registrarse: async function(req, res, next) {
+      let users = await db.User.findAll()
+      let emails= []
+      users.forEach(user => {
+        emails.push(user.email)
+      });
+      console.log(emails);
+        res.render('users/signin', { title: 'Registrate', emails: emails, css: 'signin_styles'});
       },
 
     registroForm: async function(req, res, next) {
         let errors = validationResult(req);
-        if (errors.isEmpty()){
+        let contrasena = false
+        if(req.body.pass == req.body.pass2){
+          contrasena = true
+        }
+
+        let usuarios = await db.User.findAll()
+        let emails= []
+        usuarios.forEach(user => {
+        emails.push(user.email)
+        });
+
+        let mailTaken = false;
+        emails.map(mail=>{
+          if(mail == req.body.email){
+            mailTaken = true;
+          }
+        })
+
+        if(mailTaken==true){
+          
+            let msg = "El email ya está en uso"  
+            return res.render('users/signin', {msg: msg, old: req.body, title: 'Registrate', css: 'signin_styles'})
+          
+        }else{
+
+
+        if (errors.isEmpty() && contrasena){
 
           try{
             await db.User.create({
               first_name: req.body.userName,
               last_name: req.body.userSurname,
               email: req.body.email,
-              password: req.body.pass,
+              password: bcrypt.hashSync(req.body.pass, 10),
               category_id: req.body.category
             });
   
@@ -71,6 +112,7 @@ module.exports = {
           console.log(errors.errors);
           return res.render('users/signin', {errors: errors.errors, old: req.body, title: 'Registrate', css: 'signin_styles'})
         }
+      }
       },
 
       perfil: async function(req, res, next) {

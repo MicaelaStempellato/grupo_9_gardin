@@ -17,6 +17,10 @@
                 <% } %> 
             </div>
             <p class="ir-a-registro">¿No tenes cuenta? <a class="link-login" href="/users/signin">Registrate</a></p>
+           
+            <% if(typeof msg != 'undefined'){ %>
+                <p class="errorTitle"><%=msg%></p>
+            <% } %> 
         </div>
         <div class="formularioLogin">
         <form class="formulario" action="/users/login" method="POST" >

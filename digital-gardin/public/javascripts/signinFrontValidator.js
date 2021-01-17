@@ -25,6 +25,14 @@ function passMatch(pass1, pass2){
 }
 
 
+/*function emailTaken(email){
+    emails.map(mail=>{
+        if(email==mail){
+            return true
+        }
+    })
+}*/
+
 
 function isEmail(email){
     const re = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/
@@ -59,6 +67,8 @@ function checkInputs(){
         setError(email, 'El campo no puede estar vacío')
     }else if(!isEmail(emailValue)){
         setError(email, 'El email es inválido')
+    /*}else if(emailTaken(emailValue)){
+        setError(email, 'El email ya está en uso')*/
     }else{
         setSuccess(email)
     }
