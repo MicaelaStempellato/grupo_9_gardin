@@ -8,6 +8,7 @@ const path = require('path');
 let productValidator = require('../middlewares/productValidator');
 const { Router } = require('express');
 const professorMiddleware = require('../middlewares/professorMiddleware');
+const alumnoMiddleware = require('../middlewares/alumnoMiddleware');
 const professorEditMiddleware = require('../middlewares/professorEditMiddleware')
 
 var storage = multer.diskStorage({
@@ -59,7 +60,7 @@ var storage = multer.diskStorage({
   router.get('/ambiente/:ambiente', filtrosController.filtroAmbiente);
 
  /* Ir al carrito*/   
- router.get('/carrito', viewController.carrito);
+ router.get('/carrito', alumnoMiddleware, viewController.carrito);
 
  /*
 router.get('/:cursoElegido', function(req, res, next) {

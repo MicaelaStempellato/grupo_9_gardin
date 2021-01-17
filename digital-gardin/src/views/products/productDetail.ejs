@@ -61,9 +61,12 @@
             <aside>
                 <class class="botones">
 
-                    <%if((categoriaLog == 2 && esta == false) || categoriaLog == 0){%>
+                    <%if((categoriaLog == 2 && esta == false)){%>
                     <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button>
                     <%}%>
+                    <%if(categoriaLog == 0){%>
+                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button></a>
+                        <%}%>
                     <%for(let i = 0; i < product.usuarios.length; i++){%>
                     <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
                     <class class="modify_botones">
