@@ -9,7 +9,7 @@ module.exports = {
       underscored: true,
       timestamps: false
     },
-    "port": "8889"
+    "port": "3306"
   },
   "test": {
     "username": "root",

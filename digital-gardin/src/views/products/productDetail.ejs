@@ -15,12 +15,20 @@
             <!-- HEADER --->
                 
 
-            <main>
+            <main>  
                 <article class="portada">
                     <!-- titulo foto y descripcion en detalle_curso -->
 
                     
                     <h1><%= product.name %></h1>
+
+                    <h3>Un curso dictado por <%= product.professor %></h2>
+
+                    <div class="datos_sub">
+                        <p class="dat__"><i class="fas fa-book"></i>Nivel: <%= product.experiencia.category_name %> </p>
+                        <p class="dat__"><i class="fas fa-leaf"></i>Ambiente: <%= product.ambiente.category_name %></p>
+                        <p class="dat__"><i class="fas fa-volume-up"></i></i>Idioma: <%= product.language %></p>
+                    </div>
                     
                     <img src="/images/cursos/<%= product.image %>"   alt="Foto del curso" class="curso-img">
                     
@@ -36,11 +44,19 @@
                     
                     <div class="unidades">
 
+                        <p class="subtittle_unit">Unidades</p>
+
                         <% for ( let i = 0; i < unidades.length; i++ ) {  %>
                         
-                            <p class="unidad"> <%= ("U"+(i+1)) + " - " + unidades[i].unit_name %> </p>
+                            <div class="unidad"> 
+                                <p class='unit_indice'> <%= (i+1) %> </p>
+                                <p class='unit_name'> <%= unidades[i].unit_name %> </p>
+                                
+
+                            </div>
 
                         <% } %>
+                        
                     </div>
 
                 
@@ -56,6 +72,45 @@
                 </article>
 
 
+                <hr>
+
+                <article class="sobre_dg">
+
+                    <h2 class="desc_dg">Así es Digital Gardin</h2>
+                    
+                    <div class="items_dg">
+
+
+
+                        <div class="item">
+
+                            <h3 class="item_tittle"><i class="far fa-clock"></i>Tú manejas el tiempo</h3>
+                            <p class="item_desc">Organiza tus horarios a medida y de la forma que mas te guste.</p>
+                        </div>
+
+                        <div class="item">
+                            <h3 class="item_tittle"><i class="fas fa-user-tie"></i>Tutores expertos</h3>
+                            <p class="item_desc">Los cursos son dictados por profesionales expertos en el tema.</p>
+                        </div> 
+
+                        <div class="item">
+                            <h3 class="item_tittle"><i class="fas fa-video"></i>Contenido de alta calidad</h3>
+                            <p class="item_desc">Los contenidos son de calidad profesional.</p>
+                        </div>
+
+                        <div class="item">
+                            <h3 class="item_tittle"><i class="fas fa-signal"></i>Clases en linea</h3>
+                            <p class="item_desc">Los contenidos son de calidad profesional.</p>
+                        </div>
+                        
+                    </div>
+
+            
+                </article>
+
+
+
+
             </main>  
 
             <aside>
@@ -65,7 +120,7 @@
                     <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button>
                     <%}%>
                     <%if(categoriaLog == 0){%>
-                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button></a>
+                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button></a>
                         <%}%>
                     <%for(let i = 0; i < product.usuarios.length; i++){%>
                     <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
@@ -88,13 +143,14 @@
                     
                     
                     <p class="dat__ precio">Precio: <%= "$" + product.price %></p>    
-                    <p class="dat__">Dictado por:  <%= product.professor %> </p>
-                    <p class="dat__">Dirigido a: <%= product.experiencia.category_name %> </p>
-                    <p class="dat__">Ambiente: <%= product.ambiente.category_name %></p>
-                    <p class="dat__">Edad recomendada: <%= product.edad.category_name %></p>
-                    <p class="dat__">Idioma: <%= product.language %></p>
-                    <p class="dat__">Duracion: <%= product.duration %></p>
-
+                    <p class="dat__"><i class="far fa-user"></i>Dictado por:  <%= product.professor %> </p>
+                    <p class="dat__"><i class="fas fa-book"></i>Nivel: <%= product.experiencia.category_name %> </p>
+                    <p class="dat__"><i class="fas fa-leaf"></i>Ambiente: <%= product.ambiente.category_name %></p>
+                    <p class="dat__"><i class="far fa-smile"></i>Para: <%= product.edad.category_name %></p>
+                    <p class="dat__"><i class="far fa-file-pdf"></i>Contenido descargable</p>
+                    <p class="dat__"><i class="fas fa-volume-up"></i></i>Idioma: <%= product.language %></p>
+                    <p class="dat__"><i class="far fa-clock"></i>Duracion: <%= product.duration %></p>
+                    <p class="dat__"><i class="fas fa-infinity"></i>Acceso ilimitado por siempre</p>
 
                 </div>
             </aside>

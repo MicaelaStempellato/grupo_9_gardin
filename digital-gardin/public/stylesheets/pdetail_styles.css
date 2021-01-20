@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+hr{
+    color: gray;
+    margin: 30px 0px ;
+}
+
 .contenedor{
     display: flex;
     flex-direction: row;
@@ -26,9 +31,41 @@ main .portada{
 }
 
 main .portada h1{
-    font-size: xx-large;
+    font-size: x-large;
     padding-bottom: 2%;
 }
+
+main .portada h3{
+    font-size: small;
+    padding-bottom: 2%;
+
+}
+
+main .portada .datos_sub{
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+
+main .portada .datos_sub .dat__{
+    width: auto;
+    height: auto;
+    margin-left: 15px;
+    font-size: small;
+}
+
+main .portada .datos_sub i{
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+
+
 
 main .portada p{
     padding-bottom: 2%;
@@ -78,32 +115,82 @@ main .programa .requisito{
 
 main .programa .unidades{
     
-    margin-top: 3%;
+    margin-top: 10px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    box-shadow: 0 -2px 7px 0 rgba(22,22,22,.01), 0 2px 10px 0 rgba(80,80,80,.1);    
+    
+}
+
+main .programa .unidades .subtittle_unit{
+
+    padding: 20px 30px;
+    
+    font-size: large;
 }
 
 main .programa .unidades .unidad{
-
-    padding: 3%;
+    font-size: small;
+    padding: 1%;
     margin: 1%;
-    width: 30%;
-    height: 40%;
+    width: 40%;
     text-align: center;
     vertical-align: middle;
     border-radius:150px;
     border: 1px solid #4C9C45;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+main .programa .unidades .unidad .unit_indice{
+    
+    width: 32px ;
+    height: 32px;
+    background-color: rgba(154, 208, 143, 0.5);;
+    border-radius:150px;
+    border: none;
+    text-align: center;
+    
+}
+main .programa .unidades .unidad .unit_name{
+
+    width: auto ;
+    padding-left: 10px;
+}
+
+main .sobre_dg{
+    margin-top: 20px;
+}
+
+main .sobre_dg .item{
+
+    margin-top: 40px;
+}
+
+main .sobre_dg h2{
+
+    margin-left: 10px;
+}
+
+main .sobre_dg p{
+    color: #848484;
+}
+
+
+
+main .sobre_dg i{
+    width: auto;
+    height: auto;
+    margin-right: 20px;
 }
 
 aside{
-    padding: 2%;
-    padding-top: 10%;
-    padding-left: 0;
+    padding: 40px 30px;
     background: rgba(154, 208, 143, 0.5);
-    width: 20%;
     flex: 1 1 30%;
     display: flex;
     flex-wrap: wrap;
@@ -112,49 +199,51 @@ aside{
 }
 
 aside .datos_curso{
-    
-    padding: 10%;
-    margin-top: 3%;
     display: flex;
     flex-direction: column;
     
-
 }
 
 aside .datos_curso .dat__{
-    margin: 1%;
-    background-color: white;
+    margin: 5px 0%;
+    font-size: small;
+}
+
+aside .datos_curso i{
+    width: auto;
+    margin-right: 10px;
 }
 
 aside .datos_curso .precio{
     
     
-    font-size: xx-large;
+    font-size: x-large;
     text-align: center;
     
 }
 
 
-aside img{
-    border-radius:150px;
-    width: 50%;
-}
-
 aside .botones{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     
 }
 
 aside .botones .buy_boton{
     color: white;
-    font-size: xx-large;
+    font-size: large;
     background-color: #4C9C45;
-    padding: 10px;
+    height: 50px;
+    width: 200px;
     border: none;
-    
+    margin: 0px 10px;
     transition: all 1s;
     box-sizing: border-box;
+}
+
+aside .botones .buy_boton i{
+    width: auto;
 }
 
 aside .botones form{
@@ -192,10 +281,19 @@ aside .botones .edit_boton{
 
 @media (max-width: 768px){
 
+
+
     .contenedor{
         flex-direction: column;
     }
 
+    main .portada{
+        order: -1;
+    }
+
+    main .programa{
+        order: 1;
+    }
 
     main .programa .unidades{
         
@@ -208,9 +306,8 @@ aside .botones .edit_boton{
     }
 
     main .programa .unidades .unidad{
-       width: 100%;
-      
-        
+       width: 60%;
+
     }
     
 
@@ -225,10 +322,7 @@ aside .botones .edit_boton{
     }
 
     main .programa .desc_requisitos{
-
-        margin-top: 50%;
-        
-        
+        margin-top: 10px;
     }
 
     main .programa .requisito{
@@ -240,7 +334,7 @@ aside .botones .edit_boton{
     aside{
         width: 100%;
         padding:0;
-
+        order: 0;
     }
 
     aside .boton{
@@ -261,12 +355,24 @@ aside .botones .edit_boton{
     
         padding-left: 3%;
         padding-bottom: 4%;
-        margin:0;
+        margin:1;
         
     }
 
     aside .datos_curso .precio{
         
         padding-bottom: 6%;
-    }
+    }    
+}
+
+@media (max-width: 420px){
+        
+
+    main .programa .unidades .unidad{
+        width: 100%;
+       
+         
+     }
+
+        
 }
