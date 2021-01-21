@@ -38,7 +38,6 @@ main .portada h1{
 main .portada h3{
     font-size: small;
     padding-bottom: 2%;
-
 }
 
 main .portada .datos_sub{
@@ -49,7 +48,6 @@ main .portada .datos_sub{
     justify-content: flex-start;
     margin-bottom: 10px;
 }
-
 
 main .portada .datos_sub .dat__{
     width: auto;
@@ -64,9 +62,6 @@ main .portada .datos_sub i{
     margin: 5px;
 }
 
-
-
-
 main .portada p{
     padding-bottom: 2%;
 }
@@ -76,7 +71,6 @@ main .portada .descripcion_completa{
     font-size: large;
 }
 
-
 main .programa{
     font-size: large;
     display: flex;
@@ -85,7 +79,6 @@ main .programa{
 
 main .programa h2{
     padding-top: 4%;
-
 }
 
 main .programa .unidades_curso{
@@ -98,23 +91,25 @@ main .programa .unidades_curso{
 main .programa .requisitos{
     padding-top: 3%;
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+}
+
+main .programa .requisitos i{
+    width: auto;
+    height: auto;
+    padding: 20px 20px;
+    color: black
 }
 
 main .programa .requisito{
-    padding: 3%;
-    margin: 2%;
-    border-radius:10px;
-    border: 1px solid  #4C9C45;
+    font-size: small;
+    width: 200px;
     background-color: white;
-    width: 30%;
-    height: 200px;
+    color: #272727;
 }
 
-main .programa .unidades{
-    
+main .programa .unidades{ 
     margin-top: 10px;
     padding-bottom: 30px;
     display: flex;
@@ -122,13 +117,10 @@ main .programa .unidades{
     flex-wrap: wrap;
     justify-content: center;
     box-shadow: 0 -2px 7px 0 rgba(22,22,22,.01), 0 2px 10px 0 rgba(80,80,80,.1);    
-    
 }
 
 main .programa .unidades .subtittle_unit{
-
     padding: 20px 30px;
-    
     font-size: large;
 }
 
@@ -147,17 +139,16 @@ main .programa .unidades .unidad{
 }
 
 main .programa .unidades .unidad .unit_indice{
-    
     width: 32px ;
-    height: 32px;
+    height: 32px; 
     background-color: rgba(154, 208, 143, 0.5);;
     border-radius:150px;
     border: none;
     text-align: center;
-    
+    vertical-align: auto;
 }
-main .programa .unidades .unidad .unit_name{
 
+main .programa .unidades .unidad .unit_name{
     width: auto ;
     padding-left: 10px;
 }
@@ -167,12 +158,10 @@ main .sobre_dg{
 }
 
 main .sobre_dg .item{
-
     margin-top: 40px;
 }
 
 main .sobre_dg h2{
-
     margin-left: 10px;
 }
 
@@ -180,16 +169,21 @@ main .sobre_dg p{
     color: #848484;
 }
 
-
-
 main .sobre_dg i{
     width: auto;
     height: auto;
     margin-right: 20px;
 }
 
+
+.botones{
+    display: none;
+}
+
+/* SIDEBAR */
+
 aside{
-    padding: 40px 30px;
+    padding: 80px 30px;
     background: rgba(154, 208, 143, 0.5);
     flex: 1 1 30%;
     display: flex;
@@ -198,36 +192,33 @@ aside{
     align-items: center;
 }
 
-aside .datos_curso{
+.datos_curso{
     display: flex;
     flex-direction: column;
     
 }
 
-aside .datos_curso .dat__{
+.datos_curso .dat__{
     margin: 5px 0%;
     font-size: small;
 }
 
-aside .datos_curso i{
+.datos_curso i{
     width: auto;
     margin-right: 10px;
 }
 
-aside .datos_curso .precio{
-    
-    
+.datos_curso .precio{
+    margin: 20px 0px;
+    font-style: unset;
     font-size: x-large;
-    text-align: center;
-    
+    text-align: left;   
 }
-
 
 aside .botones{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
 
 aside .botones .buy_boton{
@@ -235,7 +226,7 @@ aside .botones .buy_boton{
     font-size: large;
     background-color: #4C9C45;
     height: 50px;
-    width: 200px;
+    width: 300px;
     border: none;
     margin: 0px 10px;
     transition: all 1s;
@@ -246,133 +237,135 @@ aside .botones .buy_boton i{
     width: auto;
 }
 
-aside .botones form{
-    width: auto;
-}
-
-
-aside .botones .modify_botons{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2%;
-
-}
 
 aside .botones .delete_boton{
     color: white;
-    font-size: xx-large;
-    background-color: #FF1C45;
-    padding: 10px;
+    font-size: large;
+    background-color: #da341e;
+    height: 50px;
+    width: 300px;
     border: none;
+    margin: 0px 10px;
     transition: all 1s;
-    margin-top: 2%;
+    box-sizing: border-box;
+}
+
+aside .botones .delete_boton i{
+    width: auto;
 }
 
 aside .botones .edit_boton{
     color: white;
-    font-size: xx-large;
-    background-color: orange;
-    padding: 10px;
+    font-size: large;
+    background-color: #ebc000;
+    height: 50px;
+    width: 300px;
     border: none;
+    margin: 0px 10px;
     transition: all 1s;
-    margin-top: 2%;
+    box-sizing: border-box;
+}
+
+aside .botones .edit_boton i{
+    width: auto;
 }
 
 
-@media (max-width: 768px){
 
+@media (max-width: 1267px){
+    aside{
+        display: none;
+    }
 
-
-    .contenedor{
+    .botones{
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+    
+    .botones .buy_boton{
+        color: white;
+        font-size: large;
+        background-color: #4C9C45;
+        height: 50px;
+        width: 300px;
+        border: none;
+        margin: 0px 10px;
+        transition: all 1s;
+        box-sizing: border-box;
+        justify-self: center;
+    }
+
+    .botones a{
+        
+        box-sizing: border-box;
+        
+    }
+    
+    .botones .buy_boton i{
+        width: auto;
+        
+    }
+    
+    
+    .botones .delete_boton{
+        color: white;
+        font-size: large;
+        background-color: #da341e;
+        height: 50px;
+        width: 300px;
+        border: none;
+        margin: 0px 10px;
+        transition: all 1s;
+        box-sizing: border-box;
+    }
+    
+    .botones .delete_boton i{
+        width: auto;
+    }
+    
+    .botones .edit_boton{
+        color: white;
+        font-size: large;
+        background-color: #ebc000;
+        height: 50px;
+        width: 300px;
+        border: none;
+        margin: 0px 10px;
+        transition: all 1s;
+        box-sizing: border-box;
+    }
+    
+    .botones .edit_boton i{
+        width: auto;
     }
 
     main .portada{
-        order: -1;
-    }
-
-    main .programa{
-        order: 1;
-    }
-
-    main .programa .unidades{
-        
-        padding: 1%;
-        margin: 1%;
-        align-items: center;
-        flex-wrap: wrap;
-        display: flex;
-        flex-direction: row;
-    }
-
-    main .programa .unidades .unidad{
-       width: 60%;
-
-    }
-    
-
-    main .programa .requisitos{
-
-        margin-top: 10%;
-       
-        display: flex;
+        display:flex;
         flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    main .programa .desc_requisitos{
-        margin-top: 10px;
-    }
-
-    main .programa .requisito{
-
-        width: 50%;
         
     }
 
-    aside{
-        width: 100%;
-        padding:0;
-        order: 0;
+    main .portada img{
+        order: -1;
+       
     }
 
-    aside .boton{
-        width: 50%;
+    main .portada .datos_sub{
+      display:none;
     }
 
-    aside .datos_curso{
-        
-        padding-left: 3%;
-        padding-bottom: 3% ;
-        display: flex;
+    .datos_curso{
+        display:flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    aside .datos_curso .dat__{
-    
-        padding-left: 3%;
-        padding-bottom: 4%;
-        margin:1;
-        
+    .datos_curso .dat__{
+        width: 300px;
+        padding: 3px 3px;
     }
 
-    aside .datos_curso .precio{
-        
-        padding-bottom: 6%;
-    }    
-}
-
-@media (max-width: 420px){
-        
-
-    main .programa .unidades .unidad{
-        width: 100%;
-       
-         
-     }
-
-        
+    
 }

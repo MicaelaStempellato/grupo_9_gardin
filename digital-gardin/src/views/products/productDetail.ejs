@@ -17,11 +17,9 @@
 
             <main>  
                 <article class="portada">
+
                     <!-- titulo foto y descripcion en detalle_curso -->
-
-                    
                     <h1><%= product.name %></h1>
-
                     <h3>Un curso dictado por <%= product.professor %></h2>
 
                     <div class="datos_sub">
@@ -32,43 +30,71 @@
                     
                     <img src="/images/cursos/<%= product.image %>"   alt="Foto del curso" class="curso-img">
                     
-                    <p class="descripcion_completa">
-                        <%= product.description %>
-                    </p>
-                   
+                    <p class="descripcion_completa"><%= product.description %></p>
+
+                </article>
+
+                <article class="botones">
+
+                    <%if((categoriaLog == 2 && esta == false)){%>
+                        <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar (<%= "$" + product.price %>) </button>
+                    <%}%>
+
+                    <%if(categoriaLog == 0){%>
+                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar (<%= "$" + product.price %>)  </button></a>
+                    <%}%>
+                    <%for(let i = 0; i < product.usuarios.length; i++){%>
+                        <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
+                        <class class="modify_botones">
+                            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="delete_boton"><i class="fas fa-trash-alt basura"></i> Borrar </button>
+                            </form>
+
+                            <form action="/products/edit/<%= product.id %>" method="GET">
+                                <button type="submit" class="edit_boton"><i class="far fa-edit"></i> Editar </button>
+                            </form>
+                        </class>
+                        <%}%>
+                    <%}%>
+
+                    <div class="datos_curso">
+                     
+                        <!-- Datos del curso que van en el sidebar --->
+                         
+                        <p class="dat__"><i class="far fa-user"></i>Dictado por:  <%= product.professor %> </p>
+                        <p class="dat__"><i class="fas fa-book"></i>Nivel: <%= product.experiencia.category_name %> </p>
+                        <p class="dat__"><i class="fas fa-leaf"></i>Ambiente: <%= product.ambiente.category_name %></p>
+                        <p class="dat__"><i class="far fa-smile"></i>Para: <%= product.edad.category_name %></p>
+                        <p class="dat__"><i class="far fa-file-pdf"></i>Contenido descargable</p>
+                        <p class="dat__"><i class="fas fa-volume-up"></i></i>Idioma: <%= product.language %></p>
+                        <p class="dat__"><i class="far fa-clock"></i>Duracion: <%= product.duration %></p>
+                        <p class="dat__"><i class="fas fa-infinity"></i>Acceso ilimitado por siempre</p>
+    
+                    </div>
+
                 </article>
 
                 <article class="programa">
 
                     <h2 class="desc_unidades">¿Que vamos a ver en el curso?</h2>
-                    
+            
                     <div class="unidades">
-
                         <p class="subtittle_unit">Unidades</p>
-
                         <% for ( let i = 0; i < unidades.length; i++ ) {  %>
-                        
                             <div class="unidad"> 
                                 <p class='unit_indice'> <%= (i+1) %> </p>
                                 <p class='unit_name'> <%= unidades[i].unit_name %> </p>
-                                
-
                             </div>
-
                         <% } %>
-                        
                     </div>
 
-                
                     <h2 class="desc_requisitos">Herramientas necesarias</h2>
-                    
                     <div class="requisitos">
                         <% for ( let i = 0; i < requisitos.length; i++ ) {  %>
-                    
-                            <p class="requisito"> <%= requisitos[i].req_name %> </p>
-
+                            <p class="requisito"> <i class="fas fa-tools"></i> <%= requisitos[i].req_name %> </p>
                         <% } %>
                     </div>
+
                 </article>
 
 
@@ -79,11 +105,7 @@
                     <h2 class="desc_dg">Así es Digital Gardin</h2>
                     
                     <div class="items_dg">
-
-
-
                         <div class="item">
-
                             <h3 class="item_tittle"><i class="far fa-clock"></i>Tú manejas el tiempo</h3>
                             <p class="item_desc">Organiza tus horarios a medida y de la forma que mas te guste.</p>
                         </div>
@@ -101,48 +123,44 @@
                         <div class="item">
                             <h3 class="item_tittle"><i class="fas fa-signal"></i>Clases en linea</h3>
                             <p class="item_desc">Los contenidos son de calidad profesional.</p>
-                        </div>
-                        
+                        </div>        
                     </div>
 
-            
                 </article>
-
-
-
 
             </main>  
 
             <aside>
-                <class class="botones">
+                <div class="botones">
 
                     <%if((categoriaLog == 2 && esta == false)){%>
-                    <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i></button>
+                        <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button>
                     <%}%>
+
                     <%if(categoriaLog == 0){%>
                         <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button></a>
-                        <%}%>
+                    <%}%>
                     <%for(let i = 0; i < product.usuarios.length; i++){%>
-                    <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
-                    <class class="modify_botones">
-                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                            <button type="submit" class="delete_boton"><i class="fas fa-trash-alt basura"></i></button>
-                        </form>
+                        <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
+                        <class class="modify_botones">
+                            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="delete_boton"><i class="fas fa-trash-alt basura"></i> Borrar </button>
+                            </form>
 
-                        <form action="/products/edit/<%= product.id %>" method="GET">
-                            <button type="submit" class="edit_boton"><i class="far fa-edit"></i></button>
-                        </form>
-                    </class>
+                            <form action="/products/edit/<%= product.id %>" method="GET">
+                                <button type="submit" class="edit_boton"><i class="far fa-edit"></i> Editar </button>
+                            </form>
+                        </class>
+                        <%}%>
                     <%}%>
-                    <%}%>
                     
                     
                     
-                </class>
+                </div>
                 <div class="datos_curso">
-                    
-                    
-                    <p class="dat__ precio">Precio: <%= "$" + product.price %></p>    
+                     
+                    <!-- Datos del curso que van en el sidebar --->
+                    <p class="dat__ precio"><%= "$" + product.price %>  </p>    
                     <p class="dat__"><i class="far fa-user"></i>Dictado por:  <%= product.professor %> </p>
                     <p class="dat__"><i class="fas fa-book"></i>Nivel: <%= product.experiencia.category_name %> </p>
                     <p class="dat__"><i class="fas fa-leaf"></i>Ambiente: <%= product.ambiente.category_name %></p>
