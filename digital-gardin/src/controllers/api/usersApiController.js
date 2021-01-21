@@ -28,11 +28,16 @@ module.exports = {
     detail: async(req, res) => {
         try{
             let respuesta
-            const users = await User.findByPk( req.params.id, {include:['category', 'productos']})
+            const users = await User.findByPk(req.params.id,{include:['category']})
             
             console.log(users);
                 let datav = users.dataValues;
-               datav.link_img = `/images/cursos/${datav.image}`   
+                if(datav.avatar == null){
+                    datav.link_img = `/images/profile-pic.png`  
+                }else{
+                    datav.link_img = `/images/users/${datav.avatar}`   
+                }
+                delete datav.password;
                
                console.log(users);
            
