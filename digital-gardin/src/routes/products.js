@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let productsController = require('../controllers/productsController');
+let carritoController = require('../controllers/carritoController');
 let filtrosController = require('../controllers/filtrosController');
 let viewController = require('../controllers/viewController');
 const multer = require('multer');
@@ -61,6 +62,10 @@ var storage = multer.diskStorage({
 
  /* Ir al carrito*/   
  router.get('/carrito', alumnoMiddleware, viewController.carrito);
+
+ /*Agregar al carrito */
+
+ router.post('/carrito/agregarAlCarrito', carritoController.addCart);
 
  /*
 router.get('/:cursoElegido', function(req, res, next) {
