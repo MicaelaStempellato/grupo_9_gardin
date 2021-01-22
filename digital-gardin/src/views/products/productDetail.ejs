@@ -42,6 +42,10 @@
                             <input type="hidden"  name="product_id" value="<%= product.id%>">
                         </form>
                         
+                        <% if(typeof msg != 'undefined'){ %>
+                            <p style="padding: 20px"><%=msg%></p>
+                        <% } %> 
+
                     <%}%>
 
                     <%if(categoriaLog == 0){%>
@@ -142,6 +146,10 @@
                             <button type="submit" class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button>
                             <input type="hidden"  name="product_id" value="<%= product.id%>">
                         </form>
+
+                        <% if(typeof msg != 'undefined'){ %>
+                            <p style="padding: 20px"><%=msg%></p>
+                        <% } %> 
                     <%}%>
 
                     <%if(categoriaLog == 0){%>

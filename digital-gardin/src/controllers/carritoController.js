@@ -5,17 +5,17 @@ const db = require('../database/models');
 module.exports = {
     addCart: async function (req, res, next){
         try{
-        /*let itemSelec = await db.Item.findAll({
+        let itemSelec = await db.Item.findAll({
             where:{
                 user_id: req.session.userLog,
-                product_id: req.body.productId
+                product_id: req.body.product_id
             }
-        })*/
+        })
         console.log('ACAAAAAAAA');
         //console.log(itemSelec);
         
 
-        //if(itemSelec.length == 0){
+        if(itemSelec.length == 0){
             //Debemos buscar el producto por el id
             db.Product.findByPk(req.body.product_id)
             .then(productos =>{
@@ -32,13 +32,34 @@ module.exports = {
                 .then((item)  => res.redirect('/products'))
                 .catch(error => console.log(error)) 
             })
-        /*}else{
-            let msg= 'Este curso ya se encuentra en tu carrito';
-            db.Product.findByPk(req.body.productId)
-            .then((productos) =>{
-                res.render(path.resolve(__dirname, '..','views','products','productDetail'), {product: productos, msg: msg});
+        }else{
+
+            let product = await db.Product.findByPk(req.body.product_id, {include: ['edad', 'experiencia', 'ambiente', 'usuarios']});
+			let unidades = await db.Unit.findAll({
+				where: {
+					product_id: req.body.product_id
+				}
+			})
+			let esta = false;
+			for(let i = 0; i < product.usuarios.length; i++){
+				if(req.session.userLog == product.usuarios[i].id){
+					esta = true
+				}
+
+
+			}
+			
+			let requisitos = await db.Requirement.findAll({
+				where: {
+					product_id: req.body.product_id
+				}
             })
-        }*/
+            
+            let msg = 'Este curso ya se encuentra en tu carrito'
+
+                res.render(path.resolve(__dirname, '..','views','products','productDetail'), {msg: msg, title: 'Digital Gardin', css: 'pdetail_styles', product, unidades, requisitos, esta});
+            
+        }
     }catch(error){
         console.log('NOOOOOOO');
         console.log(error);
