@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
     //Aquí hago la relación entre mi módelo Dish y mi tabla items  la cual contiene todo lo que el usuario está comprando
         product.hasMany(models.Item, {
             as: "items",
-            foreignKey: "product_id",
+            foreignKey: "product_id"
         })
 
     })

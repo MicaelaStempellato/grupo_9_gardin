@@ -89,14 +89,15 @@ main {
                 width: 80%;
                 }
 
-    .cupon{
+    .total-valor{
         grid-area: cupon;
+        font-size: 50px;
         display: grid;
         grid-template-columns: 60% 40%;
-        background-color: #9AD08F
+
     }
     
-        .casilla_cupon{
+        /*.casilla_cupon{
             border-style: none;
             margin: 4px;
         }
@@ -106,7 +107,7 @@ main {
             background-color: transparent;
             color: white;
             cursor: pointer;
-        }
+        }*/
 
 .lista_carrito{
     width: 100%;

@@ -7,129 +7,60 @@
     <main>
         <section class="resumen_carrito">
             <article class="total">
-                <p class="ndescuento_total">total ahorrado</p>
-                <h2 class="precio_total">TOTAL:$$$$</h2>
+                <!--<p class="ndescuento_total">total ahorrado</p>-->
+                <h2 class="precio_total">TOTAL:</h2>
             </article>
             <article class="pago">
                 <button type="submit" class="button_pagar">Proceder al pago</button>
                 <div class="medios_pago">
-                    <img class="icon_pago" src="img/mastercard.png" alt="">
-                    <img class="icon_pago" src="img/visa.png" alt="">
-                    <img class="icon_pago" src="img/paypal.png" alt="">
+                    <img class="icon_pago" src="/images/mastercard.png" alt="">
+                    <img class="icon_pago" src="/images/visa.png" alt="">
+                    <img class="icon_pago" src="/images/paypal.png" alt="">
                 </div>
             </article>
-            <form class="cupon" action="">
-                <input class="casilla_cupon" type="text" placeholder="cuppón/codigo de descuento" name="cupon_code">
-                <button class="button_cupon" type="submit">Aplicar cupón</button>
-            </form>
+            <p class="total-valor">
+                $ <%= total %>
+            </p>
             <div class="borde_izquierdo"></div>
             <div class="borde_derecho"></div>
         </section>
 
-        <h3 class="cantidad_carrito">(N) cursos en cesta</h3>
+        <h3 class="cantidad_carrito">cursos en cesta</h3>
 
         <section class="lista_carrito">
 
-            <article class="producto">
-                <img class="miniatura" src="/images/miniatura.jpg" alt="Miniatura del curso">
-                <div class="detalles">
-                    <div class="titulo-profesor">
-                        <a href=""><h2 class="titulo">titulo del curso</h2></a>
-                        <a href="" class="profesor">nombre del profesor</a>
+            <% cart.forEach( e => { %>
+             
+                <article class="producto">
+                    <img class="miniatura" src="/images/cursos/<%= e.product.image %>" alt="Miniatura del curso">
+                    <div class="detalles">
+                        <div class="titulo-profesor">
+                            <a href="/products/ver/<%= e.product.id %>"><h2 class="titulo"> <%= e.product.name %> </h2></a>
+                            <p class="profesor"> <%= e.product.professor %> </p>
+                        </div>
+                        <p class="idiomas"> - <%= e.product.language %> </p>
+                        <!--<p class="subtitulos">-subtitulos</p>-->
                     </div>
-                    <p class="idiomas">-idioma</p>
-                    <!--<p class="subtitulos">-subtitulos</p>-->
-                </div>
-                <div class="eliminar-precio">
-                    <div class="eliminar"><form action="" method="POST">
-                        <input class="button_eliminar" type="submit" value="Eliminar de la lista">
-                    </form></div>
-                    <div class="precio-ndescuento">
-                        <p class="ndescuento">precio s/descuento</p>
-                        <h2 class="precio">precio</h2>
+                    <div class="eliminar-precio">
+                        <div class="eliminar"><form action="" method="POST">
+                            <input class="button_eliminar" type="submit" value="Eliminar de la lista">
+                        </form></div>
+                        <div class="precio-ndescuento">
+                            <!--<p class="ndescuento">precio s/descuento</p>-->
+                            <h2 class="precio">$ <%= e.sale_price %></h2>
+                        </div>
                     </div>
-                </div>
-            </article>
-            <div class="barra_divisora"></div>
+                </article>
+                <div class="barra_divisora"></div>
 
-            <article class="producto">
-                <img class="miniatura" src="/images/miniatura.jpg" alt="Miniatura del curso">
-                <div class="detalles">
-                    <div class="titulo-profesor">
-                        <a href=""><h2 class="titulo">titulo del curso</h2></a>
-                        <a href="" class="profesor">nombre del profesor</a>
-                    </div>
-                    <p class="idiomas">-idioma</p>
-                    
-                </div>
-                <div class="eliminar-precio">
-                    <div class="eliminar"><form action="" method="POST">
-                        <input class="button_eliminar" type="submit" value="Eliminar de la lista">
-                    </form></div>
-                    <div class="precio-ndescuento">
-                        <p class="ndescuento">precio s/descuento</p>
-                        <h2 class="precio">precio</h2>
-                    </div>
-                </div>
-            </article>
-            <div class="barra_divisora"></div>
-
-            <article class="producto">
-                <img class="miniatura" src="/images/miniatura.jpg" alt="Miniatura del curso">
-                <div class="detalles">
-                    <div class="titulo-profesor">
-                        <a href=""><h2 class="titulo">titulo del curso</h2></a>
-                        <a href="" class="profesor">nombre del profesor</a>
-                    </div>
-                    <p class="idiomas">-idioma</p>
-                    
-                </div>
-                <div class="eliminar-precio">
-                    <div class="eliminar"><form action="" method="POST">
-                        <input class="button_eliminar" type="submit" value="Eliminar de la lista">
-                    </form></div>
-                    <div class="precio-ndescuento">
-                        <p class="ndescuento">precio s/descuento</p>
-                        <h2 class="precio">precio</h2>
-                    </div>
-                </div>
-            </article>
+            <% }) %>
 
         </section>
         <!--
         <section class="promociones">
             <h2>Cursos en oferta:</h2>
             <div class="ofertas">
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
-                <img src="/images/miniatura.jpg" alt="curso en oferta">
-
+                
                 <img src="/images/miniatura.jpg" alt="curso en oferta">
 
             </div>

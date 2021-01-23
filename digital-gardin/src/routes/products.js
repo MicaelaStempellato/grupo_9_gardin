@@ -61,7 +61,7 @@ var storage = multer.diskStorage({
   router.get('/ambiente/:ambiente', filtrosController.filtroAmbiente);
 
  /* Ir al carrito*/   
- router.get('/carrito', alumnoMiddleware, viewController.carrito);
+ router.get('/carrito', alumnoMiddleware, carritoController.carrito);
 
  /*Agregar al carrito */
 

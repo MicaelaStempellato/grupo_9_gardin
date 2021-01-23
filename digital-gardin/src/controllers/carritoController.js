@@ -64,6 +64,23 @@ module.exports = {
         console.log('NOOOOOOO');
         console.log(error);
     }
-    }
+    },
+
+	carrito: async function(req, res, next) {
+        try{
+            let ItemsCart = await db.Item.findAll({ where: { user_id: req.session.userLog, state: 1 }, include: ['product'] });
+            //return res.send(ItemsCart)
+            let total = 0;
+            for (let i = 0; i < ItemsCart.length; i++) {
+                total += Number(ItemsCart[i].sale_price);
+                }
+            
+            res.render('products/productCart', { title: 'Carrito', css: 'productCart_Styles', cart: ItemsCart, total: total })
+            
+        
+        }catch(error){
+            console.log(error);
+        }
+	}
 
 }
