@@ -67,6 +67,10 @@ var storage = multer.diskStorage({
 
  router.post('/carrito/agregarAlCarrito', carritoController.addCart);
 
+ //Eliminar del carrito
+
+ router.post('carrito/eliminarDelCarrito', carritoController.delete)
+
  /*
 router.get('/:cursoElegido', function(req, res, next) {
     let cursoElegido = req.params.cursoElegido;

@@ -81,6 +81,10 @@ module.exports = {
         }catch(error){
             console.log(error);
         }
-	}
+    },
+    
+    delete: function (req, res, next) {
+        
+    }
 
 }

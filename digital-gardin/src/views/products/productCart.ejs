@@ -42,9 +42,11 @@
                         <!--<p class="subtitulos">-subtitulos</p>-->
                     </div>
                     <div class="eliminar-precio">
-                        <div class="eliminar"><form action="" method="POST">
-                            <input class="button_eliminar" type="submit" value="Eliminar de la lista">
-                        </form></div>
+                        <div class="eliminar">
+                            <form action="/products/eliminarDelCarrito" method="POST">
+                                <input class="button_eliminar" type="submit" value="Eliminar de la lista">
+                            </form>
+                        </div>
                         <div class="precio-ndescuento">
                             <!--<p class="ndescuento">precio s/descuento</p>-->
                             <h2 class="precio">$ <%= e.sale_price %></h2>
