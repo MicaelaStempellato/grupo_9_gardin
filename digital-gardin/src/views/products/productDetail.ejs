@@ -37,11 +37,19 @@
                 <article class="botones">
 
                     <%if((categoriaLog == 2 && esta == false)){%>
-                        <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar (<%= "$" + product.price %>) </button>
+                        <form action="/products/carrito/agregarAlCarrito" method="post">
+                            <button type="submit" class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button>
+                            <input type="hidden"  name="product_id" value="<%= product.id%>">
+                        </form>
+                        
+                        <% if(typeof msg != 'undefined'){ %>
+                            <p style="padding: 20px"><%=msg%></p>
+                        <% } %> 
+
                     <%}%>
 
                     <%if(categoriaLog == 0){%>
-                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar (<%= "$" + product.price %>)  </button></a>
+                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button></a>
                     <%}%>
                     <%for(let i = 0; i < product.usuarios.length; i++){%>
                         <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
@@ -134,7 +142,14 @@
                 <div class="botones">
 
                     <%if((categoriaLog == 2 && esta == false)){%>
-                        <button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button>
+                        <form action="/products/carrito/agregarAlCarrito" method="post">
+                            <button type="submit" class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button>
+                            <input type="hidden"  name="product_id" value="<%= product.id%>">
+                        </form>
+
+                        <% if(typeof msg != 'undefined'){ %>
+                            <p style="padding: 20px"><%=msg%></p>
+                        <% } %> 
                     <%}%>
 
                     <%if(categoriaLog == 0){%>

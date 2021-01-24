@@ -8,4 +8,6 @@ router.get('/products/:id', apiController.detail);
 router.get('/users', usersApiController.all);
 router.get('/users/:id', usersApiController.detail);
 
+router.get('/items', apiController.items);
+
 module.exports = router;

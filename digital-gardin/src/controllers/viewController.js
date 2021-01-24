@@ -76,10 +76,5 @@ module.exports = {
 				res.render('error')	
 	}
 		
-	},
-
-	carrito: function(req, res, next) {
-		res.render('products/productCart', { title: 'Carrito', css: 'productCart_Styles' });
 	}
-
 }

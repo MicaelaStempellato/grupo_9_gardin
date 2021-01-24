@@ -160,3 +160,46 @@ REFERENCES products(`id`),
 ADD CONSTRAINT `fk_users`
 FOREIGN KEY (`user_id`)
 REFERENCES users(`id`);
+
+-- Table structure for table `carts`
+--
+
+DROP TABLE IF EXISTS `carts`;
+CREATE TABLE `carts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_number` int(11) DEFAULT NULL,
+  `total` decimal(10,2) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Table structure for table `items`
+--
+
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sale_price` decimal(10,2) DEFAULT NULL,
+  `state` tinyint(4) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `cart_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1; 
+
+ALTER TABLE `carts`
+ADD CONSTRAINT `fk_user`
+FOREIGN KEY (`user_id`)
+REFERENCES users(`id`);
+
+ALTER TABLE `items`
+ADD CONSTRAINT `fk_products_`
+FOREIGN KEY (`product_id`)
+REFERENCES products(`id`),
+ADD CONSTRAINT `fk_users_`
+FOREIGN KEY (`user_id`)
+REFERENCES users(`id`),
+ADD CONSTRAINT `fk_carts_`
+FOREIGN KEY (`cart_id`)
+REFERENCES carts(`id`)

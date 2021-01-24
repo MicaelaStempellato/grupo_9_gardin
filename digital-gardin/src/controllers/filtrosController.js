@@ -26,7 +26,7 @@ module.exports = {
                     age_id: req.params.edad,
                 }
             })
-            res.render('products/cursosPorEdad', { title: 'Digital Gardin', css: 'listadoTodos', products });
+            res.render('products/cursosPorEdad', { title: 'Digital Gardin', css: 'listadoTodos', products: products });
         }catch(error){
             res.render('error')
         }
