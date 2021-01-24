@@ -78,7 +78,7 @@ module.exports = {
                 ['name', 'ASC']
                 ]
                 
-            })
+            })  
             res.render('products/searchResults', { title: 'Resultados de la Busqueda', css: 'listadoTodos', products, busqueda: req.body.buscar });
      
         }catch(error){

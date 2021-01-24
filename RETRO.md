@@ -21,3 +21,7 @@ Retrospectiva: Sprint 6
 Se finalizaron las tareas asignadas por el sprint, estamos encontrando un ritmo de trabajo muy bueno, logramos complementarnos en muchas situaciones para distrubuir las tareas y tiempos.
 Nos encontramos con una complicación dado que un integrante del equipo estuvo de licencia por paternidad y eso conllevó a que nos adaptemos de una manera distinta, teniendo que re-asignar las tareas con el resto del equipo.
 Se nota un gran mejora con respecto al compromiso de cada integrante con el equipo. Tenemos un gran grupo de trabajo 
+
+Retrospectiva: Sprint 5
+
+Se concluyó el sprint de manera satisfactoria aunque con algunas aristas pendientes. Finalizamos el sprint casi al comienzo de vacaciones en Digital House por lo cual sentimos que relajamos un poco el nivel. Estamos en la recta final del proyecto.
