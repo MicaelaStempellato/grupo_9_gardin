@@ -3,17 +3,23 @@
   <a class="logo_link" href="/"><img class="navbar_logo" src="/images/gardin_logo_verde.png" alt="Gardin Logo"></a>
   <div class="items_menu">
   <%if(usuarioLog != 0){%>
+    <div class='carrito-icon-navbar'>
+  <a href="/products/carrito" class="link_carrito"><i class="fas fa-shopping-cart navbar_carrito"></i></a>
+  <span class="badge badge-info carrito-icon-numero"><%= carritoCantidad %> </span>
+</div>
     <%if(avatarLog == null){%>
   <a href="/users/profile"><button class="navbar_boton2"><p class="nombreUsuario"><%=nombreLog%></p><img class="avatarUser" src="/images/profile-pic.png" alt="Mi Perfil"></button></a>
     <%} else {%>
   <a href="/users/profile"><button class="navbar_boton2"><p class="nombreUsuario"><%=nombreLog%></p><img class="avatarUser" src="/images/users/<%=avatarLog%>" alt="Mi Perfil"></button></a>
     <%}%>
   <form action="/users/logout" method="POST"><button type="submit" class="navbar_boton">Log out</button></form>
+  
   <%}else{%>
   <a href="/users/login"><button class="navbar_boton">Login</button></a>
   <a href="/users/signin" class="signup_boton"><button class="navbar_boton">Sign up</button></a>
+  <a href="/users/login" class="link_carrito"><i class="fas fa-shopping-cart navbar_carrito"></i></a>
   <%}%>
-  <a href="/products/carrito" class="link_carrito"><i class="fas fa-shopping-cart navbar_carrito"></i></a>
+  
   <button class="hamburger">&#9776;</button>
   <button class="cross">&#735;</button>
   </div>

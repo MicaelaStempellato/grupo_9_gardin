@@ -189,6 +189,38 @@ a{
     display: none;
 }
 
+.carrito-icon-navbar{
+    display: flex;
+    align-items: end;
+    position: relative;
+    width: fit-content;
+    margin-left: 20px;
+}
+
+.carrito-icon-numero{
+    width: fit-content;
+    position: absolute;
+    margin-left: 25px;
+    background-color: red;
+    margin-top: -5px;
+}
+
+.badge{
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+.badge-info {
+    color: #fff;
+}
+
 @media (min-width: 768px){
     .hamburger{
         display: none!important;
@@ -277,6 +309,7 @@ a{
 
     .nombreUsuario{
         display: inherit;
+        margin-bottom: 0px;
     }
 
     .navbar_boton2{

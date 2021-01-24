@@ -1,4 +1,4 @@
-let {Product} = require('../../database/models');
+let {Product, Item} = require('../../database/models');
 module.exports = {
     all: async(req, res) => {
         try{
@@ -51,4 +51,15 @@ module.exports = {
             res.render('error')
         }
     },
+
+    items: async (req, res, next) => {
+
+        try {
+        let itemsCart = await Item.findAll({where:{state: 1}, include: ['product']});
+        return res.send(itemsCart)
+        } catch (error) {
+            console.log(error);
+        }
+       
+    }
 }
