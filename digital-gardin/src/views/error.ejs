@@ -1,3 +1,20 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+
+<body>
+
+    <%- include('./partials/navbar') %>
+<div class="error-div">
+    <div class="planta-error"><img src="/images/planta-error.png" alt="Planta Error"></div>
+    <h1 class="titulo-error"><%= message %></h1>
+    <h2 class="status-error">Error <%= error.status %></h2>
+</div>
+
+<!--<pre><%= error.stack %></pre> -->
+
+
+<%- include('./partials/footer') %>
+</body>
+<%- include('./partials/linksJsAbajo') %>
+</html>

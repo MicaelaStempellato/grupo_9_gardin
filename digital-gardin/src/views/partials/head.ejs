@@ -2,7 +2,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1879ea28d1.js" crossorigin="anonymous"></script>
+    <%if(typeof css != 'undefined'){%>
     <link rel="stylesheet" href="/stylesheets/<%=css%>.css">
+    <%}else{%>
+        <link rel="stylesheet" href="/stylesheets/error.css">
+    <%}%>
     <link rel="stylesheet" href="/stylesheets/footer_styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/javascripts/home_cursos.js"></script>
@@ -14,6 +18,9 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
    
-
+    <%if(typeof css != 'undefined'){%>
     <title><%=title%></title>
+    <%}else{%>
+        <title>Error</title>
+    <%}%>
 </head>

@@ -1,0 +1,26 @@
+.error-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 33px;
+    box-sizing: border-box;
+}
+
+.planta-error{
+    width: 300px;
+    margin: auto;
+}
+
+.planta-error img{
+    width: 100%;
+}
+
+.titulo-error{
+    font-size: 60px;
+    color: #3f3f3f;
+}
+
+.status-error{
+    font-size: 40px;
+    color: #3f3f3f;
+}
