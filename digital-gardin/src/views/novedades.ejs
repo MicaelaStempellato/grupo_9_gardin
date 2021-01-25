@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+
+<body>
+
+    <%- include('./partials/navbar') %>
+
+    <div>
+        <img src="/images/banner-novedades.jpg" alt="Novedades Verano 2021">
+    </div>
+
+    <h2 class="tituloCursos">Los nuevos cursos</h2>
+    <div class="losProductos">
+    <% products.forEach(producto => {  %>
+    <article class="unProducto">
+        <a href="/products/ver/<%=producto.id%>">
+        <section class="sectionProducto imgProducto">
+            <img src="/images/cursos/<%=producto.image%>" alt="<%=producto.name%>">
+        </section>
+        <section class="sectionProducto infoProducto">
+            <h3><%=producto.name%></h3>
+            <p><%=producto.description%> </p>
+        </section>
+    </a>
+    </article>
+    <% }) %> 
+</div>
+
+    <%- include('./partials/footer') %>
+</body>
+<%- include('./partials/linksJsAbajo') %>
+</html>

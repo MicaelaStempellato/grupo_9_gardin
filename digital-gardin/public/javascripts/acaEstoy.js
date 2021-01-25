@@ -14,7 +14,7 @@ window.addEventListener("load", ()=>{
         case 'help':
         document.querySelector("#navbarHelp").classList.add("estoy_aca");
         break;
-        case 'promotions':
+        case 'news':
         document.querySelector("#navbarPromociones").classList.add("estoy_aca");
         break;
         default:

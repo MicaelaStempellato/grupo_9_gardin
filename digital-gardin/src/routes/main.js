@@ -6,5 +6,6 @@ let mainController = require('../controllers/mainController')
 router.get('/', mainController.index);
 router.get('/contact', mainController.contacto);
 router.get('/help', mainController.ayuda);
+router.get('/news', mainController.novedades);
 
 module.exports = router;

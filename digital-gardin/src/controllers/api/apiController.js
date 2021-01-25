@@ -3,7 +3,7 @@ module.exports = {
     all: async(req, res) => {
         try{
             let respuesta
-            const products = await Product.findAll({include:['edad', 'experiencia', 'ambiente', 'requisitos', 'unidades']})
+            const products = await Product.findAll({include:['edad', 'experiencia', 'ambiente', 'requisitos', 'unidades'], order: [['id', 'ASC']]})
             const prods = products.map(producto=>{
                 let datav = producto.dataValues;
                datav.detail = `/api/products/${datav.id}`       
