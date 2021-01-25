@@ -83,8 +83,18 @@ module.exports = {
         }
     },
     
-    delete: function (req, res, next) {
+    delete: function (req, res) {
         
+           
+        db.Item.destroy({
+            
+            where:{
+                product_id : req.body.product_id,
+                user_id : req.session.userLog
+            }})
+            .then(()=> res.redirect('/products/carrito'))
+            .catch(error => console.log(error))
+
     }
 
 }

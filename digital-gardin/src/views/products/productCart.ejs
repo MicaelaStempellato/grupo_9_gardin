@@ -43,8 +43,10 @@
                     </div>
                     <div class="eliminar-precio">
                         <div class="eliminar">
-                            <form action="/products/eliminarDelCarrito" method="POST">
+                            <form action="/products/carrito/delete/<%=e.product.id%>" method="POST">
+                                <input type="hidden" name="product_id" value="<%=e.product.id%>">
                                 <input class="button_eliminar" type="submit" value="Eliminar de la lista">
+                                
                             </form>
                         </div>
                         <div class="precio-ndescuento">
