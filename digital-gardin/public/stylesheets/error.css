@@ -3,7 +3,9 @@
     flex-direction: column;
     text-align: center;
     padding: 33px;
+    margin-bottom: 20px;
     box-sizing: border-box;
+    height: 70vh;
 }
 
 .planta-error{
