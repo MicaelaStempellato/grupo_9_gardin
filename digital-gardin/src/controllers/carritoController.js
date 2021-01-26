@@ -95,6 +95,50 @@ module.exports = {
             .then(()=> res.redirect('/products/carrito'))
             .catch(error => console.log(error))
 
+    },
+    compra: (req,res)=>{
+        let totalPrecio = 0;
+        db.Item.findAll({
+            where:{
+                userId: req.session.userLog,
+                state: 1
+            }
+        })
+        db.Cart.findOne()
+        .then((cart)=>{
+            return db.Cart.create({
+                order_number: cart ? cart.order_number + 1 : 1,
+                user_id: req.session.userLog
+            })
+        })
+        .then(cart =>{
+            Item.update({
+                state: 0,
+                cart_id: cart.id
+            },{
+                where: {
+                    user_id: req.session.userLog,
+                    state: 1
+                }
+            }
+            )
+        })
+        .then(()=> res.redirect('/carrito/historial'))
+        .catch(error => console.log(error))
+    },
+    historial: function(req,res){
+        db.Cart.findAll({
+            where: {
+                userId : req.session.userLog
+            },
+            include: {
+                all: true,
+                nested: true
+            }
+        })
+        .then(carts =>{
+            res.send(carts);           
+        })
     }
 
 }

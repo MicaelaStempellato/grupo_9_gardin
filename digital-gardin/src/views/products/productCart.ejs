@@ -11,7 +11,10 @@
                 <h2 class="precio_total">TOTAL:</h2>
             </article>
             <article class="pago">
-                <button type="submit" class="button_pagar">Proceder al pago</button>
+                <form action="/products/carrito/comprar" method="POST">
+                    <button type="submit" class="button_pagar">Proceder al pago</button>
+                </form>
+               
                 <div class="medios_pago">
                     <img class="icon_pago" src="/images/mastercard.png" alt="">
                     <img class="icon_pago" src="/images/visa.png" alt="">
