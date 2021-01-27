@@ -41,16 +41,15 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    padding: 100px;
     margin: 0;
     background-color: white;
 }
 
 .resumen_carrito{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr;
-    grid-template-areas: "total pago" "cupon cupon";
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 2fr 3fr;
+    grid-template-areas: "total cupon" "pago pago";
     grid-gap: 5px;
     width: 100%;
     padding: 10px;
@@ -86,14 +85,15 @@ main {
         }
 
             .icon_pago{
-                width: 80%;
+                width: 60%;
+                padding: 10%;
                 }
 
     .total-valor{
         grid-area: cupon;
         font-size: 50px;
         display: grid;
-        grid-template-columns: 60% 40%;
+        /*grid-template-columns: 60% 40%;*/
 
     }
     
@@ -120,7 +120,16 @@ main {
     .producto{
         display: grid;
         grid-template-columns: 1fr 2fr 2fr;
+        margin-bottom: 20px;
+        padding: 5px;
+        background-color:  #D2E8C9;
+        border-radius: 5px;
     }
+
+        .miniatura{
+            background-color: #4B9C45;
+            padding: 2px;
+        }
 
         .detalles{
             display: grid;
@@ -147,12 +156,18 @@ main {
             grid-template-rows: 1fr 1fr;
         }
 
+            .eliminar{
+                text-align: right;
+            }
+
             .button_eliminar{
                 border-style: none;
                 background-color: transparent;
-                text-align: end;
-                color: #C75D5D;
+                border-radius: 5px;
+                background-color: #C75D5D;
                 cursor: pointer;
+                color: white;
+                width: 55%;
             }
 
             .precio-ndescuento{
@@ -205,6 +220,10 @@ main {
 /*.....LAPTOPS.....*/
 
 @media (min-width: 1200px){
+
+    main{
+        padding: 100px 0px;
+    }
 
     .resumen_carrito{
         order: 1;
