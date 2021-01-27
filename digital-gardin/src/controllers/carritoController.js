@@ -2,6 +2,32 @@ const path = require('path');
 
 const db = require('../database/models');
 
+async function unirUserProduct(){
+
+    const cartId = await db.Cart.findAll()
+    let ultimo = cartId.length-1;
+    let carroId = cartId[ultimo].id
+   
+    
+    const lastItems = await db.Item.findAll({
+        where: {
+            cart_id: carroId
+        }
+    })
+
+    lastItems.map(item => item.get({plain: true})) 
+
+   lastItems.forEach(async item => {
+        /// BUSCA LOS PRODUCTS DE LOS ITEMS A COMPRAR
+        let producto = await db.Product.findByPk(item.dataValues.product_id)
+          // BUSCAR EL USER EN SESION
+     let usuario = await db.User.findByPk(item.dataValues.user_id)
+        // VINCULA EL USER CON LOS ITEMS
+        producto.setUsuarios([usuario])
+    })
+
+}
+
 module.exports = {
     addCart: async function (req, res, next){
         try{
@@ -120,7 +146,7 @@ module.exports = {
                 user_id: req.session.userLog
         })})
        .then(cart =>{
-            db.Item.update({
+            return db.Item.update({
                 state: 0,
                 cart_id: cart.id
             },{
@@ -130,31 +156,16 @@ module.exports = {
                 }
             }
             )})
-
-
-
-        const cartId = await db.Cart.findOne({
-            order: [['id','DESC']]
+        .then(() =>{
+            unirUserProduct();
         })
-
         
-        const lastItems = await db.Item.findAll({
-            where: {
-                cart_id: cartId
-            }
-        })
-
-        lastItems.map(item => {
-            /// BUSCA LOS PRODUCTS DE LOS ITEMS A COMPRAR
-            let producto = Product.findByPk(item.product_id)
-            // BUSCAR EL USER EN SESION
-            let usuario = User.findByPk(req.session.userLog)
-            // VINCULA EL USER CON LOS ITEMS
-            producto.setUsuarios([usuario])
-        })
-
-
-        res.redirect('/users/profile')
+    
+        .catch(error => console.log(error));
+        
+        
+        
+       
     },
     historial: function(req,res){
         db.Cart.findAll({
