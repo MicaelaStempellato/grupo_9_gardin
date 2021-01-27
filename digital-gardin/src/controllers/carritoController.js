@@ -58,7 +58,6 @@ module.exports = {
             let msg = 'Este curso ya se encuentra en tu carrito'
 
                 res.render(path.resolve(__dirname, '..','views','products','productDetail'), {msg: msg, title: 'Digital Gardin', css: 'pdetail_styles', product, unidades, requisitos, esta});
-            
         }
     }catch(error){
         console.log('NOOOOOOO');
@@ -96,7 +95,7 @@ module.exports = {
             .catch(error => console.log(error))
 
     },
-    compra: (req,res)=>{
+    compra: async (req,res,next)=>{
         
         let totalPrecio = 0;
         db.Item.findAll({
@@ -105,9 +104,10 @@ module.exports = {
                 state: 1
             }})
         .then((items)=>{   
-            
+
 
             totalPrecio = items.reduce((total, item)=>(total=total+Number(item.sale_price)),0)
+            
         })
         db.Cart.findOne({
             order: [['id','DESC']]
@@ -130,6 +130,31 @@ module.exports = {
                 }
             }
             )})
+
+
+
+        const cartId = await db.Cart.findOne({
+            order: [['id','DESC']]
+        })
+
+        
+        const lastItems = await db.Item.findAll({
+            where: {
+                cart_id: cartId
+            }
+        })
+
+        lastItems.map(item => {
+            /// BUSCA LOS PRODUCTS DE LOS ITEMS A COMPRAR
+            let producto = Product.findByPk(item.product_id)
+            // BUSCAR EL USER EN SESION
+            let usuario = User.findByPk(req.session.userLog)
+            // VINCULA EL USER CON LOS ITEMS
+            producto.setUsuarios([usuario])
+        })
+
+
+        res.redirect('/users/profile')
     },
     historial: function(req,res){
         db.Cart.findAll({
