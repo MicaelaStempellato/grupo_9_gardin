@@ -39,7 +39,7 @@
   /*display: none;*/
 }
 .menu{
-    z-index:1000000; 
+    /*z-index:1000000; */
     font-weight:bold; 
     width:100%; 
     background:#f1f1f1;  
