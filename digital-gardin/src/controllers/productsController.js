@@ -3,7 +3,8 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 const { product } = require('../middlewares/productValidator');
 
-const {Age, Environment, Experience, Product, Unit, Requirement} = require('../database/models');
+const {Age, Environment, Experience, Product, Unit, Requirement, User} = require('../database/models');
+const { userEdit } = require('../middlewares/usersValidator');
 
 
 module.exports = {
@@ -44,6 +45,13 @@ module.exports = {
 					req_name: req.body.req_name[i],
 					product_id: productId.id
 				})
+
+			
+				let producto = await Product.findByPk(productId.id)
+				let usuario = await User.findByPk(req.session.userLog)
+				
+				producto.setUsuarios([usuario])
+
 				
 				res.redirect('/');
 
@@ -152,7 +160,14 @@ module.exports = {
 					product_id: req.params.id
 				}
 			});
+
+			let producto = await Product.findByPk(req.params.id)
+			let usuario = await User.findByPk(req.session.userLog)
+			await producto.removeUsuarios([usuario])
+
 			fs.unlinkSync(path.join(__dirname, '../../public/images/cursos/', elcurso.image));
+
+
 			await Product.destroy({
 				where:{
 					id: req.params.id

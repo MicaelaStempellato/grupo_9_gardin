@@ -3,10 +3,12 @@
   <a class="logo_link" href="/"><img class="navbar_logo" src="/images/gardin_logo_verde.png" alt="Gardin Logo"></a>
   <div class="items_menu">
   <%if(usuarioLog != 0){%>
+    <%if (categoriaLog == 2){%>
     <div class='carrito-icon-navbar'>
-  <a href="/products/carrito" class="link_carrito"><i class="fas fa-shopping-cart navbar_carrito"></i></a>
-  <span class="badge badge-info carrito-icon-numero"><%= carritoCantidad %> </span>
-</div>
+    <a href="/products/carrito" class="link_carrito"><i class="fas fa-shopping-cart navbar_carrito"></i></a>
+    <span class="badge badge-info carrito-icon-numero"><%= carritoCantidad %> </span>
+    </div>
+    <%}%>
     <%if(avatarLog == null){%>
   <a href="/users/profile"><button class="navbar_boton2"><p class="nombreUsuario"><%=nombreLog%></p><img class="avatarUser" src="/images/profile-pic.png" alt="Mi Perfil"></button></a>
     <%} else {%>
@@ -33,6 +35,11 @@
 <script src="/javascripts/acaEstoy.js" type="text/javascript"></script>
 <div class="menu">
   <ul id="lista_menu" class="lista_menu">
+    <%if(userEmail == "admin@digitalgardin.com"){%>
+      <a href="/" class="no_web"><li id="navbarHome">Inicio</li></a>
+      <a href="/products"><li id="navbarProducts">Cursos</li></a>
+      <a href="http://localhost:3000"><li>Dashboard</li></a>
+    <%}else{%>
     <a href="/" class="no_web"><li id="navbarHome">Inicio</li></a>
     <a href="/products"><li id="navbarProducts">Cursos</li></a>
     <a href="/news"><li id="navbarPromociones">Novedades</li></a>
@@ -42,5 +49,6 @@
     <%}%>
     <a href="/contact"><li id="navbarContact">Contacto</li></a>
     <a href="/help"><li id="navbarHelp">Ayuda</li></a>
+    <%}%>
   </ul>
 </div> 

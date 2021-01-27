@@ -5,6 +5,7 @@ module.exports = async function(req, res, next){
         res.locals.nombreLog = 0;
         res.locals.categoriaLog = 0;
         res.locals.avatarLog = 0;
+        res.locals.userEmail = 0;
         if (req.session.userLog){
             let usuario = await db.User.findByPk(req.session.userLog, {include: ['category', 'productos']});
             console.log(usuario);
@@ -12,6 +13,7 @@ module.exports = async function(req, res, next){
             res.locals.nombreLog = usuario.dataValues.first_name;
             res.locals.categoriaLog = usuario.dataValues.category_id;
             res.locals.avatarLog = usuario.dataValues.avatar;
+            res.locals.userEmail = usuario.dataValues.email;
         }
     
     next();
