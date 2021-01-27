@@ -5,60 +5,15 @@
     <%- include('../partials/navbar') %>
 
     <main>
-        <section class="resumen_carrito">
-            <article class="total">
-                <!--<p class="ndescuento_total">total ahorrado</p>-->
-                <h2 class="precio_total">TOTAL:</h2>
-            </article>
-            <article class="pago">
-                <form action="/products/carrito/comprar" method="POST"></form>
-                <button type="submit" class="button_pagar">Proceder al pago</button>
-                <div class="medios_pago">
-                    <img class="icon_pago" src="/images/mastercard.png" alt="">
-                    <img class="icon_pago" src="/images/visa.png" alt="">
-                    <img class="icon_pago" src="/images/paypal.png" alt="">
-                </div>
-            </article>
-            <p class="total-valor">
-                $ <%= total %>
-            </p>
-            <div class="borde_izquierdo"></div>
-            <div class="borde_derecho"></div>
-        </section>
-
-        <h3 class="cantidad_carrito">cursos en cesta</h3>
-
+        
         <section class="lista_carrito">
 
-            <% cart.forEach( e => { %>
-             
-                <article class="producto">
-                    <img class="miniatura" src="/images/cursos/<%= e.product.image %>" alt="Miniatura del curso">
-                    <div class="detalles">
-                        <div class="titulo-profesor">
-                            <a href="/products/ver/<%= e.product.id %>"><h2 class="titulo"> <%= e.product.name %> </h2></a>
-                            <p class="profesor"> <%= e.product.professor %> </p>
-                        </div>
-                        <p class="idiomas"> - <%= e.product.language %> </p>
-                        <!--<p class="subtitulos">-subtitulos</p>-->
-                    </div>
-                    <div class="eliminar-precio">
-                        <div class="eliminar">
-                            <form action="/products/carrito/delete/<%=e.product.id%>" method="POST">
-                                <input type="hidden" name="product_id" value="<%=e.product.id%>">
-                                <input class="button_eliminar" type="submit" value="Eliminar de la lista">
-                                
-                            </form>
-                        </div>
-                        <div class="precio-ndescuento">
-                            <!--<p class="ndescuento">precio s/descuento</p>-->
-                            <h2 class="precio">$ <%= e.sale_price %></h2>
-                        </div>
-                    </div>
-                </article>
-                <div class="barra_divisora"></div>
+            <%  for (let i = 0 ; i < carts.length; i++){ %{
 
-            <% }) %>
+                <p><%= carts[i] %></p>
+
+
+            <% } %>
 
         </section>
        

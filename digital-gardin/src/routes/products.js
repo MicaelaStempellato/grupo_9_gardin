@@ -78,8 +78,6 @@ router.post('/carrito/comprar', carritoController.compra);
 router.post('/carrito/historial', carritoController.historial);
 
 
-
-
  /*
 router.get('/:cursoElegido', function(req, res, next) {
     let cursoElegido = req.params.cursoElegido;

@@ -100,19 +100,26 @@ module.exports = {
         let totalPrecio = 0;
         db.Item.findAll({
             where:{
-                userId: req.session.userLog,
+                user_id : req.session.userLog,
                 state: 1
             }
+        })
+        .then((items)=>{
+            totalPrecio = items.forEach(element => {
+                totalPrecio+= element.sale_price;
+            });
+            
         })
         db.Cart.findOne()
         .then((cart)=>{
             return db.Cart.create({
                 order_number: cart ? cart.order_number + 1 : 1,
+                total: totalPrecio, 
                 user_id: req.session.userLog
             })
         })
         .then(cart =>{
-            Item.update({
+            db.Item.update({
                 state: 0,
                 cart_id: cart.id
             },{
@@ -129,7 +136,7 @@ module.exports = {
     historial: function(req,res){
         db.Cart.findAll({
             where: {
-                userId : req.session.userLog
+                user_id  : req.session.userLog
             },
             include: {
                 all: true,
@@ -137,7 +144,7 @@ module.exports = {
             }
         })
         .then(carts =>{
-            res.send(carts);           
+            res.redirect('/products');           
         })
     }
 
