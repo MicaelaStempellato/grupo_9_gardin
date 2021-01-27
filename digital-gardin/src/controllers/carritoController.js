@@ -29,7 +29,7 @@ module.exports = {
                     cart_id: null
                      
                 }) 
-                .then((item)  => res.redirect('/products'))
+                //.then((item)  => res.redirect('/products'))
                 .catch(error => console.log(error)) 
             })
         }else{

@@ -55,7 +55,7 @@ module.exports = {
     items: async (req, res, next) => {
 
         try {
-        let itemsCart = await Item.findAll({where:{state: 1}, include: ['product']});
+        let itemsCart = await Item.findAll({where:{state: 1, user_id: req.session.userLog}, include: ['product']});
         return res.send(itemsCart)
         } catch (error) {
             console.log(error);

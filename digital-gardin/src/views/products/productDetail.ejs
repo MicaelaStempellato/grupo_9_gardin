@@ -10,6 +10,10 @@
             
         <%- include('../partials/navbar') %>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+        <script src="/javascripts/carritoConfirm.js" type="text/javascript" defer></script>
+
         <div class="contenedor">
 
             <!-- HEADER --->
@@ -37,8 +41,8 @@
                 <article class="botones">
 
                     <%if((categoriaLog == 2 && esta == false)){%>
-                        <form action="/products/carrito/agregarAlCarrito" method="post">
-                            <button type="submit" class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button>
+                        <form action="/products/carrito/agregarAlCarrito" class="boton-comprar" method="post">
+                            <button type="submit" class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Agregar al Carrito </button>
                             <input type="hidden"  name="product_id" value="<%= product.id%>">
                         </form>
                         
@@ -49,7 +53,7 @@
                     <%}%>
 
                     <%if(categoriaLog == 0){%>
-                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button></a>
+                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Agregar al Carrito </button></a>
                     <%}%>
                     <%for(let i = 0; i < product.usuarios.length; i++){%>
                         <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
@@ -142,8 +146,8 @@
                 <div class="botones">
 
                     <%if((categoriaLog == 2 && esta == false)){%>
-                        <form action="/products/carrito/agregarAlCarrito" method="post">
-                            <button type="submit" class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button>
+                        <form action="/products/carrito/agregarAlCarrito" class="boton-comprar2" method="post">
+                            <button type="submit" class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Agregar al Carrito </button>
                             <input type="hidden"  name="product_id" value="<%= product.id%>">
                         </form>
 
@@ -153,7 +157,7 @@
                     <%}%>
 
                     <%if(categoriaLog == 0){%>
-                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Comprar </button></a>
+                        <a href="/users/login"><button class="buy_boton"><i class="fas fa-shopping-cart carrito"></i> Agregar al Carrito </button></a>
                     <%}%>
                     <%for(let i = 0; i < product.usuarios.length; i++){%>
                         <%if(categoriaLog == 1 && usuarioLog == product.usuarios[i].id){%>
